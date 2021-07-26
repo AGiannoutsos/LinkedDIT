@@ -37,4 +37,12 @@ export default {
     async editPersonalData({ commit, getters, dispatch }, personalData) {
         commit("EDIT_PERSONAL_DATA", personalData)
     },
+
+    async thumbsUp({ commit, getters, dispatch }, postId) {
+        commit("THUMBS_UP", postId)
+    },
+
+    async thumbsDown({ commit, getters, dispatch }, postId) {
+        commit("THUMBS_DOWN", postId)
+    },
 }

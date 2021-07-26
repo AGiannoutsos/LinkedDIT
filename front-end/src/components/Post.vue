@@ -30,7 +30,21 @@
       </q-card-section>
 
       <q-card-actions align="left">
-        <q-btn flat round color="red" icon="favorite" />
+        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
+        <div class="text-capitalize">
+          <q-btn flat class="text-caption" :label="'Liked by '+post.likes.length" @click="likedPop = true"/>
+        </div>
+
+        <q-dialog v-model="likedPop">
+          <q-card>
+            <q-card-section style="max-height: 50vh" class="scroll">
+              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-lg">
+                <UserCard :user="item" :connected="false"></UserCard>
+              </div>
+            </q-card-section>
+
+          </q-card>
+        </q-dialog>
       </q-card-actions>
 
       <q-separator />
@@ -75,8 +89,10 @@
 import { defineComponent, ref } from 'vue'
 import { mapActions, mapGetters } from "vuex"
 import { exportFile, useQuasar } from 'quasar'
+import UserCard from './UserCard.vue'
 
 export default defineComponent({
+  components: { UserCard },
   name: 'Post',
   props: {
     post: {
@@ -88,6 +104,7 @@ export default defineComponent({
   data(){
     return{
       commentText: "",
+      likedPop: false,
     }
   },
 
@@ -100,7 +117,7 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["postComment"]),
+    ...mapActions(["postComment", "thumbsUp", "thumbsDown"]),
     postComment_: function() {
       console.log("POST COMMENT", this.commentText)
 

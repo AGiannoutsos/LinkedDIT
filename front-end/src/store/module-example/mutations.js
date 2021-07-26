@@ -15,4 +15,15 @@ export default {
         // Vue.set(state.user.personalData, personalDataItemIdx, payload)
         state.user.personalData[personalDataItemIdx] = payload
 	},
+
+    THUMBS_UP(state, payload) {
+        const postIdx = state.posts.findIndex(p => p.id === payload)
+        state.posts[postIdx].likes.push(state.user)
+	},
+
+    THUMBS_DOWN(state, payload) {
+        const postIdx = state.posts.findIndex(p => p.id === payload)
+        const userIdx = state.posts[postIdx].likes.findIndex(u => u.id === state.user.id)
+        state.posts[postIdx].likes.splice(userIdx, 1)
+	},
 }
