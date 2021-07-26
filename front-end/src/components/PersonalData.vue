@@ -6,11 +6,11 @@
           <q-card-section>
             <div class="row justify-between">
               <div class="text-h6">{{ item.title }}</div>
-              <q-btn v-if="ownUser" color="secondary" icon="edit" label="Edit" @click="editorPop = true; currentItem = JSON.parse(JSON.stringify(item));"/>
+              <q-btn v-if="ownUser" color="secondary" icon="edit" label="Edit" @click="chooseEditor(item); currentItem = JSON.parse(JSON.stringify(item));"/>
             </div>
           </q-card-section>
 
-          <q-dialog v-model="editorPop" >
+          <q-dialog v-model="editorPop">
             <q-card style="max-width: 600px; max-height: 700px">
               <q-form @submit.prevent="submitPersonalInfo(currentItem)" @reset="canselPersonalInfo">
                 <q-card-section>
@@ -122,6 +122,39 @@
               </q-form>
             </q-card>
           </q-dialog>
+
+          <q-dialog v-model="selectPop">
+            <q-card style="max-width: 600px; max-height: 700px">
+              <q-form @submit.prevent="submitPersonalInfo(currentItem)" @reset="canselPersonalInfo">
+                <q-card-section>
+                  <div class="row justify-between">
+                    <div class="text-h6">{{ currentItem.title }}</div>
+                    <q-toggle
+                      v-model="currentItem.visibility"
+                      :color="!currentItem.visibility ? 'blue' : 'blue' "
+                      :icon="!currentItem.visibility ? 'visibility_off' : 'visibility' "
+                      :label="!currentItem.visibility ? 'Private' : 'Public' "
+                    />
+                  </div>
+                </q-card-section>
+
+                <q-card-section style="min-width: 300px">
+                  <q-select filled v-model="currentItem.content" :options="options" label="Choose Profession" />
+                </q-card-section>
+
+
+                <q-card-section class="q-pt-none">
+                  <q-card-actions align="right" class="text-primary">
+                    <q-btn type="submit" flat label="Submit" v-close-popup />
+                    <q-btn type="reset" flat label="Cancel" v-close-popup />
+                  </q-card-actions>
+                </q-card-section>
+
+              </q-form>
+            </q-card>
+          </q-dialog>
+
+          
           <q-separator />
 
           <q-card-section v-html="item.content" />
@@ -156,8 +189,69 @@ export default defineComponent({
     return{
       editor: "lorepon ise la",
       editorPop: false,
+      selectPop: false,
       toggleVisibility: false,
       currentItem: {title: "", content: "", visibility: true},
+      options: [ "Chiropractor",
+"Dentist",
+"Dietitian or Nutritionist",
+"Optometrist",
+"Pharmacist",
+"Physician",
+"Physician Assistant",
+"Podiatrist",
+"Registered Nurse",
+"Therapist",
+"Veterinarian",
+"Health Technologist or Technician",
+"Nursing, Psychiatric, or Home Health Aide",
+"Occupational",
+"Chief Executive",
+"General and Operations Manager",
+"Advertising, Marketing",
+"Operations Specialties Manager",
+"Construction Manager",
+"Engineering Manager",
+"Accountant, Auditor",
+"Business Operations or Financial Specialist",
+"Business Owner",
+"Architect, Surveyor, or Cartographer",
+"Engineer",
+"Postsecondary Teacher",
+"Primary, Secondary School Teacher",
+"Arts, Design, Entertainment, Sports",
+"Computer Specialist, Mathematical Science",
+"Lawyer, Judge",
+"Life Scientist",
+"Physical Scientist",
+"Religious Worker",
+"Social Scientist and Related Worker",
+"Supervisor of Administrative Support Workers",
+"Financial Clerk",
+"Secretary or Administrative Assistant",
+"Material Recording, and Dispatching Worker",
+"Protective Service",
+"Chef or Head Cook",
+"Cook or Food Preparation Worker",
+"Food and Beverage Serving Worker",
+"Building and Grounds Cleaning and Maintenance",
+"Personal Care and Service",
+"Sales Supervisor, Retail Sales",
+"Retail Sales Worker",
+"Insurance Sales Agent",
+"Sales Representative",
+"Real Estate Sales Agent",
+"Construction and Extraction",
+"Farming, Fishing, and Forestry",
+"Installation, Maintenance, and Repair",
+"Production Occupations",
+"Aircraft Pilot or Flight Engineer",
+"Motor Vehicle Operator",
+"Military",
+"Homemaker",
+"Don't Know",
+"Not Applicable", ]
+
     }
   },
 
@@ -178,12 +272,21 @@ export default defineComponent({
       this.editor = ""
       this.toggleVisibility = false
       this.editorPop = false
+      this.selectPop = false
     },
 
     canselPersonalInfo: function() {      
       this.editor = ""
       this.toggleVisibility = false
       this.editorPop = false
+      this.selectPop = false
+    },
+
+    chooseEditor: function(item){
+      if (item.title === "Profession")
+        this.selectPop = true
+      else
+        this.editorPop = true
     },
     
   },
@@ -202,3 +305,4 @@ export default defineComponent({
   width: 100%
   max-width: 600px
 </style>
+
