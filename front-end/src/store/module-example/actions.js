@@ -33,4 +33,8 @@ export default {
     async postPost({ commit, getters, dispatch }, post) {
         commit("POST_POST", post)
     },
+
+    async editPersonalData({ commit, getters, dispatch }, personalData) {
+        commit("EDIT_PERSONAL_DATA", personalData)
+    },
 }

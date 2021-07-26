@@ -3,6 +3,25 @@ var userTest = {
   avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
   firstName: "Andreas",
   lastName: "Giannoutsos",
+	email: "andreas.giannoutsos@gmail.com",
+
+  personalData: [
+		{
+			title: "Professional Experience",
+			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+			visibility: true
+		},
+	]
 }
 
 var postsTest = [
@@ -82,10 +101,372 @@ var postsTest = [
   },
 ]
 
+var connectedUsersTest = [
+  {
+    id: "12312312",
+    avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+    firstName: "Andreas",
+    lastName: "Giannoutsos",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+  {
+    id: "566612312",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Smaragda",
+    lastName: "Reppa",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom ",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom ",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepomnai ",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "423423",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "34634",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Ioannis",
+    lastName: "Xamodrakas",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "12312",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User1",
+    lastName: "Xamodrakas",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "34632342334",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User2",
+    lastName: "Xamodrakas",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "5453",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User5",
+    lastName: "Xamodrakas",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "4564576",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User23432",
+    lastName: "Xamodrakas",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+  {
+    id: "4234434323",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+		email: "andreas.giannoutsos@gmail.com",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		]
+  },
+]
+
+var searchUserResultsTest = [
+  {
+    id: "4564576ad",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User23432",
+    lastName: "Xamodrakas",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+  {
+    id: "4asd234434323",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+  {
+    id: "4564asd576ad",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User23431112",
+    lastName: "Xamodrakas",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+  {
+    id: "4234434as323",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+  {
+    id: "45ass64576ad",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "User23432",
+    lastName: "Xamodrakas",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+  {
+    id: "42344asa34323",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+		personalData: [
+			{
+				title: "Professional Experience",
+				content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Education",
+				content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+				visibility: true
+			},
+			{
+				title: "Skills",
+				content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+				visibility: true
+			},
+		],
+  },
+]
+
 var testing = true
 
 
 export default  {
   user: testing ? userTest : null,
   posts: testing ? postsTest : [],
+  connectedUsers: testing ? connectedUsersTest : [],
+  searchUserResults: testing ? searchUserResultsTest : [],
 }
