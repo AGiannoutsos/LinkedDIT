@@ -41,9 +41,9 @@
 
     <!-- <div class="column wrap items-center"> -->
       <q-infinite-scroll @load="onLoad" :offset="250">
-        <div v-for="(item, index) in items" :key="index" class="q-pa-xl">
+        <div v-for="(item, index) in posts" :key="index" class="q-pa-lg">
           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</p> -->
-          <Post/>
+          <Post :post="item"></Post>
         </div>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">
@@ -58,7 +58,7 @@
 <script>
 import Post from 'src/components/Post.vue';
 import { defineComponent, ref } from 'vue';
-
+import { mapActions, mapGetters } from "vuex"
 
 export default defineComponent({
   components: { Post },
@@ -85,14 +85,37 @@ export default defineComponent({
       }
     }
   },
+  created() {
+    console.log("WALL PAGE", this.posts)
+  },
 
   methods: {
+    ...mapActions(["postPost"]),
     postSubmit: function() {
       console.log("POST FORM", this.text, this.file)
 
+
+      let post = {
+          id: Math.random().toString(),
+          user: this.user,
+          content: {
+              text: this.text,
+              file: this.file,
+          },
+          comments: [],
+      }
+
+      this.postPost(post)
       this.text = ""
       this.file = null
     },
+  },
+
+  computed:{
+        ...mapGetters({
+		    posts: "posts",
+        user: "user"
+	    }),
   },
 
 })
