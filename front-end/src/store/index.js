@@ -1,6 +1,9 @@
 import { store } from 'quasar/wrappers'
-import { createStore } from 'vuex'
-
+import { Vuex, createStore } from 'vuex'
+import state from './module-example/state'
+import getters from './module-example/getters'
+import mutations from './module-example/mutations'
+import actions from './module-example/actions'
 // import example from './module-example'
 
 /*
@@ -12,15 +15,16 @@ import { createStore } from 'vuex'
  * with the Store instance.
  */
 
+// export default new Vuex.Store({
+  
+// })
+
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
-    modules: {
-      // example
-    },
-
-    // enable strict mode (adds overhead!)
-    // for dev mode and --debug builds only
-    strict: process.env.DEBUGGING
+    state,
+    getters,
+    mutations,
+    actions,
   })
 
   return Store
