@@ -30,12 +30,13 @@ export default {
         commit("POST_COMMENT", comment)
     },
 
-    async postPost({ commit, getters, dispatch }, post) {
-        commit("POST_POST", post)
-    },
-
+    
     async editPersonalData({ commit, getters, dispatch }, personalData) {
         commit("EDIT_PERSONAL_DATA", personalData)
+    },
+    
+    async postPost({ commit, getters, dispatch }, post) {
+        commit("POST_POST", post)
     },
 
     async thumbsUp({ commit, getters, dispatch }, postId) {
@@ -44,5 +45,17 @@ export default {
 
     async thumbsDown({ commit, getters, dispatch }, postId) {
         commit("THUMBS_DOWN", postId)
+    },
+
+    async postProposal({ commit, getters, dispatch }, proposal) {
+        commit("POST_PROPOSAL", proposal)
+    },
+    
+    async applyUp({ commit, getters, dispatch }, proposalId) {
+        commit("APPLY_UP", proposalId)
+    },
+
+    async applyDown({ commit, getters, dispatch }, proposalId) {
+        commit("APPLY_DOWN", proposalId)
     },
 }

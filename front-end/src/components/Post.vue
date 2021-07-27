@@ -29,8 +29,11 @@
           />
       </q-card-section>
 
-      <q-card-actions align="left">
-        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
+      <!-- POST -->
+
+      <q-card-actions align="left" class="q-pa-sm" v-if="isPost">
+        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" 
+                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Liked by '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -47,38 +50,63 @@
         </q-dialog>
       </q-card-actions>
 
-      <q-separator />
+      <!-- JOB PROPOSAL -->
 
-      <q-card-section class="q-pa-md" v-if="post.comments.length != 0">
-        <q-scroll-area style="height: 200px; max-width: 600px;">
-          <div class="q-pa-md row justify-center items-stretch">
-            <div style="width: 100%; max-width: 500px">
-              <div v-for="(item, index) in post.comments" :key="index">
-                <q-chat-message
-                  :name="item.user.firstName+' '+item.user.lastName"
-                  :avatar="item.user.avatar"
-                  :text="[item.content.text]"
-                  :sent="user.id===item.user.id"
-                />
+      <q-card-actions align="left" class="q-pa-sm" v-else>
+        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? applyDown(post.id) : applyUp(post.id)" 
+                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" />
+        <div class="text-capitalize">
+          <q-btn flat class="text-caption" :label="'Applicants '+post.likes.length" @click="likedPop = true"/>
+        </div>
+
+        <q-dialog v-model="likedPop">
+          <q-card>
+            <q-card-section style="max-height: 50vh" class="scroll">
+              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-lg">
+                <UserCard :user="item" ></UserCard>
+              </div>
+            </q-card-section>
+
+          </q-card>
+        </q-dialog>
+      </q-card-actions>
+
+      <q-card-section class="q-pa-none" v-if="isPost">
+
+        <q-separator />
+
+        <q-card-section class="q-pa-md" v-if="post.comments.length != 0">
+          <q-scroll-area style="height: 200px; max-width: 600px;">
+            <div class="q-pa-md row justify-center items-stretch">
+              <div style="width: 100%; max-width: 500px">
+                <div v-for="(item, index) in post.comments" :key="index">
+                  <q-chat-message
+                    :name="item.user.firstName+' '+item.user.lastName"
+                    :avatar="item.user.avatar"
+                    :text="[item.content.text]"
+                    :sent="user.id===item.user.id"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </q-scroll-area>
+          </q-scroll-area>
+        </q-card-section>
+
+        <q-separator />
+
+        <q-input v-model="commentText" label="Post a Comment here" autogrow class="q-pa-sm">
+          <template v-slot:append>
+            <q-btn
+              type="submit"
+              label="Comment"
+              color="teal"
+              @click="postComment_"
+              :disable="commentText===''"
+            ></q-btn>
+          </template>
+        </q-input>
+
       </q-card-section>
-
-      <q-separator />
-
-      <q-input v-model="commentText" label="Post a Comment here" autogrow class="q-pa-sm">
-        <template v-slot:append>
-          <q-btn
-            type="submit"
-            label="Post"
-            color="teal"
-            @click="postComment_"
-            :disable="commentText===''"
-          ></q-btn>
-        </template>
-      </q-input>
 
 
     </q-card>
@@ -99,6 +127,10 @@ export default defineComponent({
       type: Object,
       required: true
     },
+    isPost: {
+      type: Boolean,
+      default: true
+    },
   },
 
   data(){
@@ -117,7 +149,7 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["postComment", "thumbsUp", "thumbsDown"]),
+    ...mapActions(["postComment", "thumbsUp", "thumbsDown", "applyUp", "applyDown"]),
     postComment_: function() {
       console.log("POST COMMENT", this.commentText)
 

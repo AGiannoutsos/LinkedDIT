@@ -1,0 +1,142 @@
+<template>
+  <q-page class="column wrap items-stretch justify-start content-center">
+    
+      <form @submit.prevent="proposalSubmit" class="q-pa-xl">
+        <!-- <div class="row q-rcol-gutter-y-md"> -->
+
+        <!-- <div class="column wrap items-stretch justify-center content-center"> -->
+          <q-input
+            v-model="text"
+            filled
+            label="Write your Job Proposal here"
+            autogrow
+            class="q-pa-sm"
+          />
+        <!-- </div> -->
+
+        <div class="row wrap items-center justify-center content-center">
+          <q-file
+            v-model="file"
+            label="Upload file"
+            filled
+            class="q-pa-sm"
+            style="max-width: 200px"
+          >
+            <template v-slot:prepend>
+              <q-icon name="attach_file" />
+            </template>
+          </q-file>
+
+        <q-btn
+          type="submit"
+          label="Post"
+          color="teal"
+          :disable="text==='' && file===null"
+        >
+        </q-btn>
+        </div>
+      </form>
+
+
+    <q-btn-toggle
+        v-model="proposalsToggle"
+        spread
+        no-caps
+        flat
+        toggle-color="blue"
+        color="white"
+        text-color="grey"
+        :options="[
+          {label: 'Other Proposals', value: 'Other Proposals'},
+          {label: 'My Proposals', value: 'My Proposals'}
+        ]"
+      />
+
+    <q-separator size="2px" />
+
+    <!-- <div class="column wrap items-center"> -->
+      <q-infinite-scroll @load="onLoad" :offset="250">
+        <div v-for="(item, index) in proposalsToggle === 'Other Proposals' ? proposals : myProposals" :key="index" class="q-pa-lg">
+          <Post :post="item" :isPost="false"></Post>
+        </div>
+        <template v-slot:loading>
+          <div class="row justify-center q-my-md">
+            <q-spinner-dots color="primary" size="40px" />
+          </div>
+        </template>
+      </q-infinite-scroll>
+    <!-- </div> -->
+  </q-page>
+</template>
+
+<script>
+import { defineComponent, ref } from 'vue';
+import { mapActions, mapGetters } from "vuex"
+import Post from 'src/components/Post.vue';
+
+
+
+export default defineComponent({
+  name: 'ProposalsPage',
+  components: { Post },
+   setup () {
+    const items = ref([ {},
+                        {}, 
+                        {}, 
+                        {}, 
+                        {}, 
+                        {}, 
+                        {} ])
+    
+    return {
+      items,
+      onLoad (index, done) {
+        setTimeout(() => {
+          items.value.push({}, {}, {}, {}, {}, {}, {})
+          done()
+        }, 2000)
+      }
+    }
+  },
+
+  data() {
+    return {
+      adSubmit: false,
+      text: "",
+      file: null,
+      proposalsToggle: "Other Proposals",
+    }
+  },
+
+  methods: {
+    ...mapActions(["postProposal"]),
+    proposalSubmit: function() {
+      console.log("ADVERT FORM", this.text, this.file)
+
+
+      let proposal = {
+          id: Math.random().toString(),
+          user: this.user,
+          content: {
+              text: this.text,
+              file: this.file,
+          },
+          likes: [],
+      }
+
+      this.postProposal(proposal)
+      this.text = ""
+      this.file = null
+    },
+  },
+
+  computed:{
+      ...mapGetters({
+      proposals: "proposals",
+      myProposals: "myProposals",
+      user: "user"
+    }),
+  },
+
+})
+</script>
