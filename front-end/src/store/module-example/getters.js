@@ -10,4 +10,5 @@ export default {
     myProposals: state => (state.myProposals),
     connectedUsers: state => (state.connectedUsers),
     searchUserResults: state => (state.searchUserResults),
+    connectionRequests: state => (state.connectionRequests),
 }

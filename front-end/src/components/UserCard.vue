@@ -1,7 +1,7 @@
 <template>
  <div class="user-card">
-  <q-card class="user-card">
-    <q-card-section horizontal>
+  <q-card square class="user-card">
+    <q-card-section horizontal class="justify-between">
       <q-item>
         <q-item-section avatar horizontal>
             <q-avatar>
@@ -25,7 +25,7 @@
             </q-card-actions>
           </q-item-section> -->
 
-        <q-card-actions horizontal class="justify-around">
+        <q-card-actions align="right" >
             <q-btn flat round color="blue" icon="visibility" @click="personalDataPop = true; "> 
               <q-tooltip :delay="500" class="bg-accent">View User's profile</q-tooltip> 
             </q-btn>

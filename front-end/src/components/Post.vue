@@ -41,7 +41,7 @@
         <q-dialog v-model="likedPop">
           <q-card>
             <q-card-section style="max-height: 50vh" class="scroll">
-              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-lg">
+              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-md">
                 <UserCard :user="item" :connected="false"></UserCard>
               </div>
             </q-card-section>
@@ -62,7 +62,7 @@
         <q-dialog v-model="likedPop">
           <q-card>
             <q-card-section style="max-height: 50vh" class="scroll">
-              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-lg">
+              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-md">
                 <UserCard :user="item" ></UserCard>
               </div>
             </q-card-section>

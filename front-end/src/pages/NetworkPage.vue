@@ -24,7 +24,7 @@
         <q-separator />
 
         <q-card-section style="max-height: 50vh" class="scroll">
-          <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-lg">
+          <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-md">
             <UserCard :user="item" ></UserCard>
           </div>
         </q-card-section>
@@ -34,7 +34,7 @@
 
     <div class="fit row wrap items-start justify-center content-center">
 
-      <div v-for="(item, index) in connectedUsers" :key="index" class="q-pa-lg">
+      <div v-for="(item, index) in connectedUsers" :key="index" class="q-pa-md">
         <UserCard :user="item"> {{item}}</UserCard>
       </div>
     </div>
