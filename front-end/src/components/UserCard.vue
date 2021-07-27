@@ -35,8 +35,14 @@
             <q-btn flat round color="blue" icon="chat" v-if="!admin">
               <q-tooltip :delay="500" class="bg-accent">Start a Conversation</q-tooltip>
             </q-btn>
-            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin">
+            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin && !acceptConnection">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
+            </q-btn>
+            <q-btn flat round color="green" icon="person_add" v-if="!user.connected && !admin && acceptConnection">
+              <q-tooltip :delay="500" class="bg-accent">Accept Connection to your Network</q-tooltip>
+            </q-btn>
+            <q-btn flat round color="red" icon="person_remove" v-if="!user.connected && !admin && acceptConnection">
+              <q-tooltip :delay="500" class="bg-accent">Reject Connection to your Network</q-tooltip>
             </q-btn>
           </q-card-actions>
         </q-card-section>
@@ -66,6 +72,10 @@ export default defineComponent({
       required: true
     },
     admin: {
+      type: Boolean,
+      default: false
+    },
+    acceptConnection: {
       type: Boolean,
       default: false
     },
