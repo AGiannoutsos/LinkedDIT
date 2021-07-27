@@ -2,38 +2,41 @@
   <q-page class="fit column wrap justify-start items-center content-center">
     <div class="q-pa-lg">
     <div class="text-h6">Reset Settings</div>
-    <q-form @submit.prevent="submitSettings" @reset="onReset" class="q-gutter-md">
-      <q-input v-model="user.email" filled label="Email" type="email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type an email']"/>
-      <q-input v-model="password" filled label="Password" :type="isPwd ? 'password' : 'text'" >
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
-          />
-        </template>
-      </q-input>
-      <q-input v-model="password2" filled label="New Password" :type="isPwd ? 'password' : 'text'" >
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
-          />
-        </template>
-      </q-input>
-      <q-input v-model="password3" filled label="Confirm Password" :type="isPwd ? 'password' : 'text'" >
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
-          />
-        </template>
-      </q-input>
-    <q-btn type="submit" flat label="Reset" color="primary"  />
-    <q-btn type="reset" flat label="Cancel" v-close-popup />
-    </q-form>
+      <q-form @submit.prevent="submitSettings" @reset="onReset" class="q-gutter-md">
+        <q-input v-model="user.email" filled label="Email" type="email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type an email']"/>
+        <q-input v-model="password" filled label="Password" :type="isPwd ? 'password' : 'text'" >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+          </template>
+        </q-input>
+        <q-input v-model="password2" filled label="New Password" :type="isPwd ? 'password' : 'text'" >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+          </template>
+        </q-input>
+        <q-input v-model="password3" filled label="Confirm Password" :type="isPwd ? 'password' : 'text'" >
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+          </template>
+        </q-input>
+      <q-btn type="submit" flat label="Reset" color="primary"  />
+      <q-btn type="reset" flat label="Cancel" v-close-popup />
+      </q-form>
+      <div class="q-pa-lg">
+        <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
+      </div>
     </div>
   </q-page>
 </template>
@@ -64,6 +67,10 @@ export default defineComponent({
       } else {
         alert("Passwords are not the same")
       }
+    },
+
+    logOut_: function() {
+      console.log("LOG OUT")
     },
 
     onReset: function() {

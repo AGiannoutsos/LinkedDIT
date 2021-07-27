@@ -76,6 +76,22 @@
                   <q-input v-model="firstName"  filled label="First Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a First Name']"/>
                   <q-input v-model="lastName"  filled label="Last Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a Last Name']"/>
                   <q-input v-model="email" filled label="Email" type="email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type an email']"/>
+                  <q-input
+                    filled
+                    v-model="phone"
+                    label="Phone"
+                    mask="### ## ## ###"
+                  />
+                  <!-- <q-uploader
+                    url="http://localhost:4444/upload"
+                  /> -->
+                  <q-file
+                    v-model="file"
+                    label="Upaload avatar image"
+                    accept=".jpg, .png, image/*"
+                    filled
+                    class="q-pa-sm"
+                  />
                   <q-input v-model="password" filled label="Password" :type="isPwd ? 'password' : 'text'" >
                     <template v-slot:append>
                       <q-icon
@@ -130,6 +146,8 @@ export default defineComponent({
       firstName: ref(''),
       lastName: ref(''),
       email: ref(''),
+      phone: ref(''),
+      file: ref(null),
       
 
 
@@ -156,7 +174,7 @@ export default defineComponent({
 
     signupSubmit: function() {
       if (this.password === this.password2) {
-        console.log("SIGNUP FORM", this.username, this.firstName, this.lastName, this.password, this.password2)
+        console.log("SIGNUP FORM", this.username, this.firstName, this.lastName, this.password, this.password2, this.phone, this.file)
       } else {
         alert("Passwords are not the same")
       }
@@ -169,6 +187,8 @@ export default defineComponent({
       this.firstName = ""
       this.lastName = ""
       this.email = ""
+      this.phone = ""
+      this.file = null
     },
 
   },
