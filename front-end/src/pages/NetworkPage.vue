@@ -25,7 +25,7 @@
 
         <q-card-section style="max-height: 50vh" class="scroll">
           <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-lg">
-            <UserCard :user="item" :connected="false"></UserCard>
+            <UserCard :user="item" ></UserCard>
           </div>
         </q-card-section>
 

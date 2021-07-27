@@ -32,7 +32,7 @@
             <q-btn flat round color="blue" icon="chat">
               <q-tooltip :delay="500" class="bg-accent">Start a Conversation</q-tooltip>
             </q-btn>
-            <q-btn flat round color="blue" icon="person_add" v-if="!connected">
+            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
             </q-btn>
           </q-card-actions>
@@ -61,10 +61,6 @@ export default defineComponent({
     user: {
       type: Object,
       required: true
-    },
-    connected: {
-      type: Boolean,
-      default: true
     },
   },
 

@@ -98,6 +98,7 @@ export default defineComponent({
       let post = {
           id: Math.random().toString(),
           user: this.user,
+          likes: [],
           content: {
               text: this.text,
               file: this.file,
