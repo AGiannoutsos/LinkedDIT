@@ -1,18 +1,16 @@
 <template>
   <q-page class="fit column wrap justify-start items-center content-center">
-    <h3> Personal Data Page </h3>
-      <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+    <PersonalData :personalData="user.personalData" :ownUser="true"></PersonalData>
   </q-page>
 </template>
 
 <script>
+import PersonalData from 'src/components/PersonalData.vue';
 import { defineComponent, ref } from 'vue';
+import { mapActions, mapGetters } from "vuex"
 
 export default defineComponent({
+  components: { PersonalData },
   name: 'PersonalDataPage',
 
    setup () {
@@ -22,8 +20,10 @@ export default defineComponent({
     }
   },
 
-  methods: {
-
+  computed:{
+      ...mapGetters({
+      user: "user",
+    }),
   },
 
 })

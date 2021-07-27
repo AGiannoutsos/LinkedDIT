@@ -1,14 +1,14 @@
 <template>
   <q-page class="column wrap items-stretch justify-start content-center">
     
-      <form @submit.prevent="postSubmit" class="q-pa-xl">
+      <form @submit.prevent="proposalSubmit" class="q-pa-xl">
         <!-- <div class="row q-rcol-gutter-y-md"> -->
 
         <!-- <div class="column wrap items-stretch justify-center content-center"> -->
           <q-input
             v-model="text"
             filled
-            label="Write your thoughts here"
+            label="Write your Job Proposal here"
             autogrow
             class="q-pa-sm"
           />
@@ -37,13 +37,27 @@
         </div>
       </form>
 
+
+    <q-btn-toggle
+        v-model="proposalsToggle"
+        spread
+        no-caps
+        flat
+        toggle-color="blue"
+        color="white"
+        text-color="grey"
+        :options="[
+          {label: 'Other Proposals', value: 'Other Proposals'},
+          {label: 'My Proposals', value: 'My Proposals'}
+        ]"
+      />
+
     <q-separator size="2px" />
 
     <!-- <div class="column wrap items-center"> -->
       <q-infinite-scroll @load="onLoad" :offset="250">
-        <div v-for="(item, index) in posts" :key="index" class="q-pa-lg">
-          <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</p> -->
-          <Post :post="item"></Post>
+        <div v-for="(item, index) in proposalsToggle === 'Other Proposals' ? proposals : myProposals" :key="index" class="q-pa-lg">
+          <Post :post="item" :isPost="false"></Post>
         </div>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">
@@ -56,15 +70,16 @@
 </template>
 
 <script>
-import Post from 'src/components/Post.vue';
 import { defineComponent, ref } from 'vue';
 import { mapActions, mapGetters } from "vuex"
+import Post from 'src/components/Post.vue';
+
+
 
 export default defineComponent({
+  name: 'ProposalsPage',
   components: { Post },
-  name: 'WallPage',
-
-    setup () {
+   setup () {
     const items = ref([ {},
                         {}, 
                         {}, 
@@ -74,8 +89,6 @@ export default defineComponent({
                         {} ])
     
     return {
-      text: ref(""),
-      file: ref(null),
       items,
       onLoad (index, done) {
         setTimeout(() => {
@@ -85,38 +98,44 @@ export default defineComponent({
       }
     }
   },
-  created() {
-    console.log("WALL PAGE", this.posts)
+
+  data() {
+    return {
+      adSubmit: false,
+      text: "",
+      file: null,
+      proposalsToggle: "Other Proposals",
+    }
   },
 
   methods: {
-    ...mapActions(["postPost"]),
-    postSubmit: function() {
-      console.log("POST FORM", this.text, this.file)
+    ...mapActions(["postProposal"]),
+    proposalSubmit: function() {
+      console.log("ADVERT FORM", this.text, this.file)
 
 
-      let post = {
+      let proposal = {
           id: Math.random().toString(),
           user: this.user,
-          likes: [],
           content: {
               text: this.text,
               file: this.file,
           },
-          comments: [],
+          likes: [],
       }
 
-      this.postPost(post)
+      this.postProposal(proposal)
       this.text = ""
       this.file = null
     },
   },
 
   computed:{
-        ...mapGetters({
-		    posts: "posts",
-        user: "user"
-	    }),
+      ...mapGetters({
+      proposals: "proposals",
+      myProposals: "myProposals",
+      user: "user"
+    }),
   },
 
 })
