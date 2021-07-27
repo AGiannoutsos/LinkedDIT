@@ -45,4 +45,13 @@ export default {
             state.proposals[proposalIdx].likes.splice(userIdx, 1)
         }
 	},
+
+    STORE_ADMIN_ALL_USERS(state, payload) {
+        state.adminAllUsers = payload
+	},
+
+    SELECT_USER(state, payload) {
+        const userIdx = state.adminAllUsers.findIndex(u => u.id === payload)
+        state.adminAllUsers[userIdx].selected = !state.adminAllUsers[userIdx].selected 
+	},
 }

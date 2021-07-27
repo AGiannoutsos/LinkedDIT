@@ -143,7 +143,11 @@ export default defineComponent({
       // login request
 
       // if succes route to the app
-      this.$router.push({ name: 'app front page' })
+      if (this.username === "admin") {
+        this.$router.push({ name: 'admin page' })
+      } else {
+        this.$router.push({ name: 'app front page' })
+      }
     },
 
     forgotPasswordSubmit: function() {

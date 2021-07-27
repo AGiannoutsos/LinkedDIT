@@ -11,4 +11,16 @@ export default {
     connectedUsers: state => (state.connectedUsers),
     searchUserResults: state => (state.searchUserResults),
     connectionRequests: state => (state.connectionRequests),
+    adminAllUsers: state => (state.adminAllUsers),
+    adminAllUsersSelected: (state, getters) => () => {
+        var selectedUsers = []
+        for (let user of getters.adminAllUsers){
+            if (user.selected) {
+                selectedUsers.push(user)
+            }
+        }
+        return selectedUsers
+    },
+    
+
 }

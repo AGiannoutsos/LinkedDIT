@@ -1,37 +1,36 @@
 var userTest = {
-  id: "12312312",
-  avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-  firstName: "Andreas",
-  lastName: "Giannoutsos",
-  connected: true,
-email: "andreas.giannoutsos@gmail.com",
-personalData: [
-	{
-		title: "Profession",
-		content: "KOroideuo KOsmo",
-		visibility: true
-	},
-	{
-		title: "Current Job Position",
-		content: "KOroideuo KOsmo",
-		visibility: true
-	},
-	{
-		title: "Professional Experience",
-		content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-		visibility: true
-	},
-	{
-		title: "Education",
-		content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-		visibility: true
-	},
-	{
-		title: "Skills",
-		content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-		visibility: true
-	},
-]
+	id: "12312312",
+	avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+	firstName: "Andreas",
+	lastName: "Giannoutsos",
+	email: "andreas.giannoutsos@gmail.com",
+	personalData: [
+		{
+			title: "Profession",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+			visibility: true
+		},
+	]
 }
 
 
@@ -43,7 +42,6 @@ var connectedUsersTest = [
     firstName: "Andreas",
     lastName: "Giannoutsos",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -78,7 +76,6 @@ var connectedUsersTest = [
     firstName: "Smaragda",
     lastName: "Reppa",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -113,7 +110,6 @@ var connectedUsersTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -148,7 +144,6 @@ var connectedUsersTest = [
     firstName: "Ioannis",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -183,7 +178,6 @@ var connectedUsersTest = [
     firstName: "User1",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -218,7 +212,6 @@ var connectedUsersTest = [
     firstName: "User5",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -253,7 +246,6 @@ var connectedUsersTest = [
     firstName: "User23432",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -288,7 +280,6 @@ var connectedUsersTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -326,7 +317,6 @@ var searchUserResultsTest = [
     firstName: "User23432",
     lastName: "Xamodrakas",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -361,7 +351,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -396,7 +385,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -431,7 +419,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -466,7 +453,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -501,7 +487,6 @@ var searchUserResultsTest = [
     firstName: "User234311121111111111111",
     lastName: "Xamodrakas",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -536,7 +521,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -571,7 +555,6 @@ var searchUserResultsTest = [
     firstName: "User23432",
     lastName: "Xamodrakas",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -606,7 +589,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -795,4 +777,5 @@ export default  {
   connectedUsers: testing ? connectedUsersTest : [],
   searchUserResults: testing ? searchUserResultsTest : [],
   connectionRequests: testing ? connectionRequestsTest : [],
+  adminAllUsers: [],
 }

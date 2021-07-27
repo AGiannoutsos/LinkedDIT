@@ -7,7 +7,7 @@
           <q-avatar>
             <img src="../../public/icons/logo_LinkedDit.svg">
           </q-avatar>
-          LinkedDIT
+          LinkedDIT Administrator Control Panel
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -21,13 +21,12 @@
 
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
 
 
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  name: 'LoginLayout',
+  name: 'AdminLayout',
 
   components: {
     

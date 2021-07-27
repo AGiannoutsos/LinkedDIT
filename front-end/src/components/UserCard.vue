@@ -1,21 +1,24 @@
 <template>
  <div class="user-card">
   <q-card square class="user-card">
-    <q-card-section horizontal class="justify-between">
-      <q-item>
-        <q-item-section avatar horizontal>
-            <q-avatar>
-              <img :src="user.avatar">
-            </q-avatar>
-          </q-item-section>
+    <q-card-section horizontal class="justify-between items-center">
+      <q-card-section horizontal class="justify-left items-center q-pa-none">
+        <q-checkbox v-if="admin" v-model="val" @click="checkSelected" />
+          <q-item>
+            <q-item-section avatar horizontal>
+                <q-avatar>
+                  <img :src="user.avatar">
+                </q-avatar>
+              </q-item-section>
 
-          <q-item-section horizontal>
-            <q-item-label>{{ user.firstName+' '+user.lastName }}</q-item-label>
-            <q-item-label caption>
-            {{user.personalData[0].content}}
-          </q-item-label>
-          </q-item-section>
-        </q-item>
+              <q-item-section horizontal>
+                <q-item-label>{{ user.firstName+' '+user.lastName }}</q-item-label>
+                <q-item-label caption>
+                {{user.personalData[0].content}}
+              </q-item-label>
+              </q-item-section>
+            </q-item>
+        </q-card-section>
 
         <!-- <q-separator vertical />
           <q-item-section vertical>
@@ -29,10 +32,10 @@
             <q-btn flat round color="blue" icon="visibility" @click="personalDataPop = true; "> 
               <q-tooltip :delay="500" class="bg-accent">View User's profile</q-tooltip> 
             </q-btn>
-            <q-btn flat round color="blue" icon="chat">
+            <q-btn flat round color="blue" icon="chat" v-if="!admin">
               <q-tooltip :delay="500" class="bg-accent">Start a Conversation</q-tooltip>
             </q-btn>
-            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected">
+            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
             </q-btn>
           </q-card-actions>
@@ -62,12 +65,17 @@ export default defineComponent({
       type: Object,
       required: true
     },
+    admin: {
+      type: Boolean,
+      default: false
+    },
   },
 
   data(){
     return{
       personalDataPop: false,
       currentUser: {},
+      val: false,
     }
   },
 
@@ -79,7 +87,10 @@ export default defineComponent({
   },
 
   methods: {
-
+    ...mapActions(["selectUser"]),
+    checkSelected: function () {
+      this.selectUser(this.user.id)
+    }
     
   },
 
@@ -87,6 +98,7 @@ export default defineComponent({
     ...mapGetters({
       // user: "user",
     }),
+
   },
 
 })
