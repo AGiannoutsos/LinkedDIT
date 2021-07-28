@@ -13,14 +13,14 @@
         <q-btn color="blue" icon="logout" class="q-pa-sm q-ma-sm" label="Log out" @click="logOut_" />
       </q-toolbar>
 
-      <q-tabs align="center">
-        <q-route-tab to="/app/wall" label="Wall" />
-        <q-route-tab to="/app/network" label="Network" />
-        <q-route-tab to="/app/proposals" label="Proposals" />
-        <q-route-tab to="/app/discussions/*" label="Discussions" />
-        <q-route-tab to="/app/notifications" label="Notifications" />
-        <q-route-tab to="/app/personal_data" label="Personal Data" />
-        <q-route-tab to="/app/settings" label="Settings" />
+      <q-tabs align="center" v-model="tab">
+        <q-route-tab name="wall" to="/app/wall" label="Wall" />
+        <q-route-tab name="network" to="/app/network" label="Network" />
+        <q-route-tab name="proposals" to="/app/proposals" label="Proposals" />
+        <q-route-tab name="discussions" to="/app/discussions/*" label="Discussions" />
+        <q-route-tab name="notifications" to="/app/notifications" label="Notifications" />
+        <q-route-tab name="personal_data" to="/app/personal_data" label="Personal Data" />
+        <q-route-tab name="settings" to="/app/settings" label="Settings" />
         <!-- Aρχική Σελίδα / Δίκτυο / Αγγελίες  /  Συζητήσεις  /  Ειδοποιήσεις  /  Προσωπικά  Στοιχεία  /  Ρυθ μίσεις -->
       </q-tabs>
     </q-header>
@@ -78,6 +78,13 @@ export default defineComponent({
       
     }
   },
+
+  data() {
+    return{
+      tab: "wall"
+    }
+  },
+
   methods: {
     logOut_: function() {
       console.log("LOG OUT")

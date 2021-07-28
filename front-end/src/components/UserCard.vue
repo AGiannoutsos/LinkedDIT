@@ -17,6 +17,20 @@
                 {{user.personalData[0].content}}
               </q-item-label>
               </q-item-section>
+
+
+              <q-item-section v-if="interactions !== '' " >
+                <q-btn disabled flat round color="teal" icon="thumb_up" v-if="interactions === 'like'"> 
+                  <q-tooltip :delay="500" class="bg-accent">User liked your post</q-tooltip> 
+                </q-btn>
+                <q-btn disabled flat round color="teal" icon="comment" v-if="interactions === 'comment'">
+                  <q-tooltip :delay="500" class="bg-accent">User commented to your post</q-tooltip>
+                </q-btn>
+                <q-btn disabled flat round color="teal" icon="work" v-if="interactions === 'apply'">
+                  <q-tooltip :delay="500" class="bg-accent">User applied for a job proposal</q-tooltip>
+                </q-btn>
+              </q-item-section>
+
             </q-item>
         </q-card-section>
 
@@ -84,9 +98,13 @@ export default defineComponent({
       type: Boolean,
       default: false
     },
+    interactions: {
+      type: String,
+      default: ""
+      },
   },
 
-  data(){
+  data() {
     return{
       personalDataPop: false,
       currentUser: {},

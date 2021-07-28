@@ -7,12 +7,18 @@ export default {
     myUserId: state => ("12312312"),
     user: state => (state.user),
     posts: state => (state.posts),
+
     proposals: state => (state.proposals),
     myProposals: state => (state.myProposals),
+
     connectedUsers: state => (state.connectedUsers),
     searchUserResults: state => (state.searchUserResults),
+
     connectionRequests: state => (state.connectionRequests),
+    interactions: state => (state.interactions),
+
     adminAllUsers: state => (state.adminAllUsers),
+    
     discussions: state => (state.discussions),
     discussionOtherUsers: (state,getters) => () => {
         var discussionOtherUsers = []

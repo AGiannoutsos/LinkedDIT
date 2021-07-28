@@ -23,8 +23,8 @@
         <q-separator />
 
         <q-card-section style="max-height: 400px" class="scroll">
-          <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-none">
-            <UserCard :user="item" ></UserCard>
+          <div v-for="(item, index) in interactions" :key="index" class="q-pa-none">
+            <UserCard :user="item.user" :interactions="item.interaction" ></UserCard>
           </div>
         </q-card-section>
 
@@ -66,6 +66,7 @@ export default defineComponent({
       ...mapGetters({
       connectedUsers: "connectedUsers",
       searchUserResults: "searchUserResults",
+      interactions: "interactions",
     }),
   },
 

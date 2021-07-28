@@ -621,6 +621,21 @@ var searchUserResultsTest = [
   },
 ]
 
+var interactionsTest = [
+	{
+		user: searchUserResultsTest[0],
+		interaction: "like",
+	},
+	{
+		user: searchUserResultsTest[0],
+		interaction: "apply",
+	},
+	{
+		user: searchUserResultsTest[0],
+		interaction: "comment",
+	},
+]
+
 var postsTest = [
 	{
 		id: "10000",
@@ -838,6 +853,7 @@ export default  {
   connectedUsers: testing ? connectedUsersTest : [],
   searchUserResults: testing ? searchUserResultsTest : [],
   connectionRequests: testing ? connectionRequestsTest : [],
+  interactions: testing ? interactionsTest : [],
   discussions: [],
   adminAllUsers: [],
 }
