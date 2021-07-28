@@ -76,7 +76,6 @@ export default defineComponent({
   computed:{
       ...mapGetters({
       connectedUsers: "connectedUsers",
-      user: "user",
       searchUserResults: "searchUserResults",
     }),
   },

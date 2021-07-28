@@ -486,7 +486,7 @@ var searchUserResultsTest = [
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
     firstName: "User234311121111111111111",
     lastName: "Xamodrakas",
-	connected: false,
+	connected: true,
 	personalData: [
 		{
 			title: "Profession",
@@ -836,5 +836,6 @@ export default  {
   connectedUsers: testing ? connectedUsersTest : [],
   searchUserResults: testing ? searchUserResultsTest : [],
   connectionRequests: testing ? connectionRequestsTest : [],
+  discussions: [],
   adminAllUsers: [],
 }

@@ -50,6 +50,15 @@ export default {
         state.adminAllUsers = payload
 	},
 
+    STORE_DISCUSSIONS(state, payload) {
+        state.discussions = payload
+	},
+
+    SEND_MESSAGE(state, payload) {
+        const discussionIdx = state.discussions.findIndex(d => d.id = payload.id)
+        state.discussions[discussionIdx].messages.push(payload.message)
+	},
+
     SELECT_USER(state, payload) {
         const userIdx = state.adminAllUsers.findIndex(u => u.id === payload)
         state.adminAllUsers[userIdx].selected = !state.adminAllUsers[userIdx].selected 

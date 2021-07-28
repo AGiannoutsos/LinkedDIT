@@ -15,7 +15,7 @@ const routes = [
       { path: 'proposals',
         component: () => import('src/pages/ProposalsPage.vue'),
         name: "proposals" },
-      { path: 'discussions',
+      { path: 'discussions/:id',
         component: () => import('pages/DiscussionsPage.vue'),
         name: "discussions" },
       { path: 'notifications',

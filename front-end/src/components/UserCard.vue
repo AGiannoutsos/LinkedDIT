@@ -32,8 +32,8 @@
             <q-btn flat round color="blue" icon="visibility" @click="personalDataPop = true; "> 
               <q-tooltip :delay="500" class="bg-accent">View User's profile</q-tooltip> 
             </q-btn>
-            <q-btn flat round color="blue" icon="chat" v-if="!admin">
-              <q-tooltip :delay="500" class="bg-accent">Start a Conversation</q-tooltip>
+            <q-btn flat round color="blue" icon="chat" v-if="!admin" @click="startDiscussion(user.id)">
+              <q-tooltip :delay="500" class="bg-accent">Start a Discussion</q-tooltip>
             </q-btn>
             <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin && !acceptConnection">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
@@ -97,16 +97,22 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["selectUser"]),
+    ...mapActions(["selectUser", "getDiscussionId"]),
     checkSelected: function () {
       this.selectUser(this.user.id)
+    },
+
+    startDiscussion: function(otherUserId){
+      var discussionId = this.getDiscussionId(otherUserId)
+      console.log(discussionId)
+      discussionId = "100021"
+      this.$router.push({name:"discussions", params:{id:"100021"}})
     }
     
   },
 
   computed:{
     ...mapGetters({
-      // user: "user",
     }),
 
   },

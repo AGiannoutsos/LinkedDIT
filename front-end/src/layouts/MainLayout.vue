@@ -16,7 +16,7 @@
         <q-route-tab to="/app/wall" label="Wall" />
         <q-route-tab to="/app/network" label="Network" />
         <q-route-tab to="/app/proposals" label="Proposals" />
-        <q-route-tab to="/app/discussions" label="Discussions" />
+        <q-route-tab to="/app/discussions/1" label="Discussions" />
         <q-route-tab to="/app/notifications" label="Notifications" />
         <q-route-tab to="/app/personal_data" label="Personal Data" />
         <q-route-tab to="/app/settings" label="Settings" />

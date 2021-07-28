@@ -50,8 +50,8 @@
       <!-- POST -->
 
       <q-card-actions align="left" class="q-pa-sm" v-if="isPost">
-        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" 
-                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
+        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === myUserId) ? thumbsDown(post.id) : thumbsUp(post.id)" 
+                                        :icon="post.likes.find(u => u.id === myUserId) ? 'thumb_up' : 'thumb_up_off_alt'" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Liked by '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -71,8 +71,8 @@
       <!-- JOB PROPOSAL -->
 
       <q-card-actions align="left" class="q-pa-sm" v-else>
-        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? applyDown(post.id) : applyUp(post.id)" 
-                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" />
+        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === myUserId) ? applyDown(post.id) : applyUp(post.id)" 
+                                                :icon="post.likes.find(u => u.id === myUserId) ? 'work' : 'work_outline'" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Applicants '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -102,7 +102,7 @@
                     :name="item.user.firstName+' '+item.user.lastName"
                     :avatar="item.user.avatar"
                     :text="[item.content.text]"
-                    :sent="user.id===item.user.id"
+                    :sent="myUserId===item.user.id"
                   />
                 </div>
               </div>
@@ -202,6 +202,7 @@ export default defineComponent({
       //   })
       // }
 
+      // taken from https://morioh.com/p/f4d331b62cda
       axios({
           url: this.post.content.file.url,
           method: 'GET',
@@ -221,7 +222,7 @@ export default defineComponent({
 
     computed:{
         ...mapGetters({
-		    user: "user",
+        myUserId: "myUserId"
 	    }),
   },
 
