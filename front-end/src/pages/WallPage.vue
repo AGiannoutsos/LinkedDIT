@@ -100,8 +100,11 @@ export default defineComponent({
           user: this.user,
           likes: [],
           content: {
-              text: this.text,
-              file: this.file,
+            text: this.text,
+            file: {
+              type: "",
+              url: "",
+            },
           },
           comments: [],
       }

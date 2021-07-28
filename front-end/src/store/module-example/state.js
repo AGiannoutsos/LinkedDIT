@@ -630,7 +630,51 @@ var postsTest = [
 		},
 		content: {
 			text: "lorpon this is a tsting post",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
+		},
+		likes: connectedUsersTest.slice(1), //....
+		comments: [
+			{
+				user: {
+					id: "12312312",
+					avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+					firstName: "Andreas",
+					lastName: "Giannoutsos",
+				},      
+				content: {
+					text: "lorpon this is a tsting comment",
+				},
+			},
+			{
+				user: {
+					id: "566612312",
+					avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+					firstName: "Smaragda",
+					lastName: "Reppa",
+				},      
+				content: {
+					text: "yees lorpon this is another testing comment",
+				},
+			},
+		]
+	},
+	{
+		id: "10002340",
+		user: {
+			id: "12312312",
+			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+			firstName: "Andreas",
+			lastName: "Giannoutsos",
+		},
+		content: {
+			text: "lorpon this is a tsting post",
+			file: {
+				type: "video",
+				url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+			},
 		},
 		likes: connectedUsersTest.slice(1), //....
 		comments: [
@@ -668,7 +712,10 @@ var postsTest = [
 		},
 		content: {
 			text: "ok yess this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
-			file: "",
+			file: {
+				type: "file",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: connectedUsersTest, //....
 		comments: [
@@ -709,7 +756,10 @@ var postsTest = [
 		},
 		content: {
 			text: "lorpon this is a jonb proposaaalll post",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest.slice(1)], //....
 		
@@ -724,7 +774,10 @@ var postsTest = [
 		},
 		content: {
 			text: "ok yess JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest], //....
 		
@@ -742,7 +795,10 @@ var postsTest = [
 		},
 		content: {
 			text: "lorpon this is MYYYYYYYYYY a jonb proposaaalll post",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest.slice(1)], //....
 		
@@ -757,7 +813,10 @@ var postsTest = [
 		},
 		content: {
 			text: "ok yess MYYYYYYYYY JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest], //....
 		

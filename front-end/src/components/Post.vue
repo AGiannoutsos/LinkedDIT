@@ -19,15 +19,33 @@
         {{ post.content.text }}
       </q-card-section>
 
-      <q-card-section v-if="post.content.file" class="q-pa-md">
+      <q-card-section v-if="post.content.file.type === 'file'" class="q-pa-md">
         <q-btn
             color="primary"
             icon-right="archive"
-            :label="post.content.file.name"
+            :label="post.content.file.url.split('/').pop()"
             no-caps
             @click="downloadFile"
           />
       </q-card-section>
+
+      <q-card-section v-else-if="post.content.file.type === 'image'" class="q-pa-md" align="center">
+        <q-img
+        :src="post.content.file.url"
+        spinner-color="white"
+        style="max-height: 300px; max-width: 550px"
+        />
+      </q-card-section>
+
+      <q-card-section v-else-if="post.content.file.type === 'video'" class="q-pa-md" align="center">
+        <q-video
+        :ratio="16/9"
+        :src="post.content.file.url"
+        spinner-color="white"
+        style="max-height: 300px; max-width: 550px"
+        />
+      </q-card-section>
+
 
       <!-- POST -->
 
@@ -118,6 +136,7 @@ import { defineComponent, ref } from 'vue'
 import { mapActions, mapGetters } from "vuex"
 import { exportFile, useQuasar } from 'quasar'
 import UserCard from './UserCard.vue'
+import axios from 'axios'
 
 export default defineComponent({
   components: { UserCard },
@@ -171,21 +190,32 @@ export default defineComponent({
     downloadFile: function () {
       const $q = useQuasar()
       // naive encoding to csv format
-      const content = ["aa"]
+      // const content = ["aa"]
 
-      const status = exportFile(
-        this.post.content.file.name,
-        content,
-        'text/csv'
-      )
+      // const status = exportFile(this.post.content.file.url.split('/').pop(), content)
 
-      if (status !== true) {
-        $q.notify({
-          message: 'Browser denied file download...',
-          color: 'negative',
-          icon: 'warning'
-        })
-      }
+      // if (status !== true) {
+      //   $q.notify({
+      //     message: 'Browser denied file download...',
+      //     color: 'negative',
+      //     icon: 'warning'
+      //   })
+      // }
+
+      axios({
+          url: this.post.content.file.url,
+          method: 'GET',
+          responseType: 'blob',
+      }).then((response) => {
+            var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+            var fileLink = document.createElement('a');
+
+            fileLink.href = fileURL;
+            fileLink.setAttribute('download', this.post.content.file.url.split('/').pop());
+            document.body.appendChild(fileLink);
+
+            fileLink.click();
+      });
     }
   },
 

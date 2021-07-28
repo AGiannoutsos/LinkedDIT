@@ -118,8 +118,11 @@ export default defineComponent({
           id: Math.random().toString(),
           user: this.user,
           content: {
-              text: this.text,
-              file: this.file,
+            text: this.text,
+            file: {
+              type: "",
+              url: "",
+            },
           },
           likes: [],
       }
