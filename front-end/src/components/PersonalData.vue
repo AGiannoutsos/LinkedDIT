@@ -2,8 +2,8 @@
   <div class="personal-card">
 
     <div v-for="(item, index) in personalData" :key="index" class="q-pa-md">
-      <q-card flat bordered  >
-          <q-card-section>
+      <q-card flat bordered v-if="item.visibility || ownUser" >
+          <q-card-section >
             <div class="row justify-between">
               <div class="text-h6">{{ item.title }}</div>
               <q-btn v-if="ownUser" color="secondary" icon="edit" label="Edit" @click="chooseEditor(item); currentItem = JSON.parse(JSON.stringify(item));"/>

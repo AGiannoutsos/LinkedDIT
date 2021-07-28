@@ -14,7 +14,7 @@ export default {
     },
 
     POST_POST(state, payload) {
-        state.posts.push(payload)
+        state.posts.unshift(payload)
 	},
 
     THUMBS_UP(state, payload) {
@@ -29,7 +29,7 @@ export default {
 	},
 
     POST_PROPOSAL(state, payload) {
-        state.myProposals.push(payload)
+        state.myProposals.unshift(payload)
 	},
 
     APPLY_UP(state, payload) {

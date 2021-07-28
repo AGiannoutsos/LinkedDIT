@@ -1,9 +1,11 @@
 var userTest = {
 	id: "12312312",
+	username: "superandreas",
 	avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
 	firstName: "Andreas",
 	lastName: "Giannoutsos",
 	email: "andreas.giannoutsos@gmail.com",
+	phone: "6912345678",
 	personalData: [
 		{
 			title: "Profession",
@@ -85,7 +87,7 @@ var connectedUsersTest = [
 		{
 			title: "Current Job Position",
 			content: "KOroideuo KOsmo",
-			visibility: true
+			visibility: false
 		},
 		{
 			title: "Professional Experience",
@@ -100,7 +102,7 @@ var connectedUsersTest = [
 		{
 			title: "Skills",
 			content: "Lorepomnai ",
-			visibility: true
+			visibility: false
 		},
 	]
   },
@@ -114,7 +116,7 @@ var connectedUsersTest = [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
-			visibility: true
+			visibility: false
 		},
 		{
 			title: "Current Job Position",

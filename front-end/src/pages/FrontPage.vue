@@ -33,9 +33,9 @@
                       />
                     </template>
                   </q-input>
-                <q-btn type="submit" flat label="Login" color="primary"  />
-                <q-btn type="reset" flat label="Cancel" v-close-popup />
                 <q-btn type="reset" flat label="Forgot Password" @click="forgotPasswordPrompt = true" v-close-popup />
+                <q-btn type="reset" flat label="Cancel" v-close-popup />
+                <q-btn type="submit" flat label="Login" color="primary"  />
                 </q-form>
               </q-card-section>
             </q-card>
@@ -67,7 +67,7 @@
             <q-dialog v-model="signupPrompt" >
             <q-card style="min-width: 350px">
               <q-card-section>
-                <div class="text-h6">Login</div>
+                <div class="text-h6">Sign Up</div>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
@@ -110,8 +110,8 @@
                       />
                     </template>
                   </q-input>
-                <q-btn type="submit" flat label="Sign Up" color="primary"  />
                 <q-btn type="reset" flat label="Cancel" v-close-popup />
+                <q-btn type="submit" flat label="Sign Up" color="primary"  />
                 </q-form>
               </q-card-section>
             </q-card>

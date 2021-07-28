@@ -17,8 +17,10 @@
 
     <q-dialog v-model="fixed">
       <q-card>
-        <q-card-section>
+        <q-card-section class="row items-center q-pb-md">
           <div class="text-h6">Search Results</div>
+          <q-space />
+          <q-btn icon="close" flat round dense v-close-popup />
         </q-card-section>
 
         <q-separator />

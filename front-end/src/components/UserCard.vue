@@ -49,6 +49,11 @@
 
         <q-dialog v-model="personalDataPop" >
           <q-card>
+            <q-card-section class="row items-center q-pb-none">
+              <div class="text-h6">Personal Data</div>
+              <q-space />
+              <q-btn icon="close" flat round dense v-close-popup />
+            </q-card-section>
             <PersonalData :ownUser="false" :personalData="user.personalData"> </PersonalData>
           </q-card>
         </q-dialog>

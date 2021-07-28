@@ -10,13 +10,14 @@
           </q-avatar>
           LinkedDIT
         </q-toolbar-title>
+        <q-btn color="blue" icon="logout" class="q-pa-sm q-ma-sm" label="Log out" @click="logOut_" />
       </q-toolbar>
 
       <q-tabs align="center">
         <q-route-tab to="/app/wall" label="Wall" />
         <q-route-tab to="/app/network" label="Network" />
         <q-route-tab to="/app/proposals" label="Proposals" />
-        <q-route-tab to="/app/discussions/1" label="Discussions" />
+        <q-route-tab to="/app/discussions/*" label="Discussions" />
         <q-route-tab to="/app/notifications" label="Notifications" />
         <q-route-tab to="/app/personal_data" label="Personal Data" />
         <q-route-tab to="/app/settings" label="Settings" />
@@ -76,6 +77,11 @@ export default defineComponent({
       }
       
     }
-  }
+  },
+  methods: {
+    logOut_: function() {
+      console.log("LOG OUT")
+    },
+  },
 })
 </script>

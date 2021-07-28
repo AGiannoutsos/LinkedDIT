@@ -9,6 +9,7 @@
           </q-avatar>
           LinkedDIT Administrator Control Panel
         </q-toolbar-title>
+        <q-btn color="blue" icon="logout" class="q-pa-sm q-ma-sm" label="Log out" @click="logOut_" />
       </q-toolbar>
     </q-header>
 
@@ -36,6 +37,10 @@ export default defineComponent({
 
   },
 
-
+  methods: {
+    logOut_: function() {
+      console.log("LOG OUT")
+    },
+  },
 })
 </script>
