@@ -95,13 +95,13 @@ export default defineComponent({
   },
 
   created() {
+    this.getUser()
     this.getDiscussions()
     console.log(this.$route.params.id)
-
   },
 
   methods: {
-    ...mapActions(["getDiscussions", "sendMessage"]),
+    ...mapActions(["getDiscussions", "sendMessage", "getUser"]),
     sendMessage_: function() {
       console.log("SEND MESSAGE", this.textMessage)
 
@@ -145,11 +145,8 @@ export default defineComponent({
       user: "user",
       myUserId: "myUserId",
       discussionOtherUsers: "discussionOtherUsers",
-      searchUserResults: "searchUserResults",
-
     }),
     thisDiscussion: function() {
-      console.log(this.user)
       var disc = this.discussions.find(d => d.id === this.$route.params.id) 
       return  disc ? disc : {messages: []}
     },

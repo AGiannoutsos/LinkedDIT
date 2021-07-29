@@ -8,7 +8,7 @@
         <q-separator />
 
         <q-card-section style="max-height: 400px" class="scroll">
-          <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-none">
+          <div v-for="(item, index) in connectionRequests" :key="index" class="q-pa-none">
             <UserCard :user="item" :acceptConnection="true"></UserCard>
           </div>
         </q-card-section>
@@ -55,17 +55,18 @@ export default defineComponent({
   },
 
   methods: {
-    searchSubmit: function() {
-      console.log("SEARCH FORM", this.searchText)
-      this.fixed = true
-      this.searchText = ""
-    },
+    ...mapActions(["getConnectionRequests", "getInteractions"]),
+
+  },
+
+  created() {
+    this.getConnectionRequests()
+    this.getInteractions()
   },
 
   computed:{
       ...mapGetters({
-      connectedUsers: "connectedUsers",
-      searchUserResults: "searchUserResults",
+      connectionRequests: "connectionRequests",
       interactions: "interactions",
     }),
   },

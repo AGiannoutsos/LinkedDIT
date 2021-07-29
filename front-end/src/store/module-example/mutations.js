@@ -1,6 +1,30 @@
 // import Vue from "vue"
 
 export default {
+
+    STORE_USER(state, payload) {
+        state.user = payload
+    },
+
+    STORE_CONNECTION_REQUESTS(state, payload) {
+        state.connectionRequests = payload
+    },
+
+    STORE_INTERACTIONS(state, payload) {
+        state.interactions = payload
+    },
+
+    STORE_DISCUSSIONS(state, payload) {
+        state.discussions = payload
+	},
+
+    STORE_CONNECTED_USERS(state, payload) {
+        state.connectedUsers = payload
+	},
+
+    STORE_RECOMMENDED_POSTS(state, payload) {
+        state.posts = payload
+	},
     
     EDIT_PERSONAL_DATA(state, payload) {
         const personalDataItemIdx = state.user.personalData.findIndex(d => d.title === payload.title)
@@ -50,9 +74,7 @@ export default {
         state.adminAllUsers = payload
 	},
 
-    STORE_DISCUSSIONS(state, payload) {
-        state.discussions = payload
-	},
+    
 
     SEND_MESSAGE(state, payload) {
         const discussionIdx = state.discussions.findIndex(d => d.id = payload.id)

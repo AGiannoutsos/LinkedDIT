@@ -20,6 +20,14 @@ export default defineComponent({
     }
   },
 
+  created() {
+    this.getUser()
+  },
+
+  methods: {
+    ...mapActions(["getUser"]),
+  },
+
   computed:{
       ...mapGetters({
       user: "user",

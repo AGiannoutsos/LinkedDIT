@@ -19,12 +19,12 @@ var userTest = {
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -57,12 +57,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -125,12 +125,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -159,12 +159,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -193,12 +193,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -227,12 +227,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -261,12 +261,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -295,12 +295,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -311,6 +311,19 @@ var connectedUsersTest = [
 	]
   },
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var searchUserResultsTest = [
   {
@@ -332,12 +345,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -366,12 +379,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -400,12 +413,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -434,12 +447,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -468,12 +481,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -502,12 +515,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -536,12 +549,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -570,12 +583,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -604,12 +617,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -639,6 +652,7 @@ var interactionsTest = [
 var postsTest = [
 	{
 		id: "10000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -680,6 +694,7 @@ var postsTest = [
 	},
 	{
 		id: "10002340",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -721,6 +736,7 @@ var postsTest = [
 	},
 	{
 		id: "20000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -765,6 +781,7 @@ var postsTest = [
   var proposalsTest = [
 	{
 		id: "10000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -783,6 +800,7 @@ var postsTest = [
 	},
 	{
 		id: "20000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -804,6 +822,7 @@ var postsTest = [
   var myProposalsTest = [
 	{
 		id: "60000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -822,6 +841,7 @@ var postsTest = [
 	},
 	{
 		id: "50000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -842,11 +862,47 @@ var postsTest = [
 
 var connectionRequestsTest = [...searchUserResultsTest]
 
-var testing = true
+var testing = false
 
+var userEmpty = {
+	id: "",
+	username: "",
+	avatar: "",
+	firstName: "",
+	lastName: "",
+	email: "",
+	phone: "",
+	personalData: [
+		{
+			title: "Profession",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "",
+			visibility: true
+		},
+	]
+}
 
 export default  {
-  user: testing ? userTest : null,
+  user: testing ? userTest : userEmpty,
   posts: testing ? postsTest : [],
   proposals: testing ? proposalsTest : [],
   myProposals: testing ? myProposalsTest : [],

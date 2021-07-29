@@ -68,11 +68,16 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["getConnectedUsers"]),
     searchSubmit: function() {
       console.log("SEARCH FORM", this.searchText)
       this.fixed = true
       this.searchText = ""
     },
+  },
+
+  created() {
+    this.getConnectedUsers()
   },
 
   computed:{

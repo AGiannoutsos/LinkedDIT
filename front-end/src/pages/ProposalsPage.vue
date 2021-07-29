@@ -80,23 +80,10 @@ export default defineComponent({
   name: 'ProposalsPage',
   components: { Post },
    setup () {
-    const items = ref([ {},
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {} ])
     
     return {
-      items,
-      onLoad (index, done) {
-        setTimeout(() => {
-          items.value.push({}, {}, {}, {}, {}, {}, {})
-          done()
-        }, 2000)
-      }
     }
+      
   },
 
   data() {
@@ -105,11 +92,24 @@ export default defineComponent({
       text: "",
       file: null,
       proposalsToggle: "Other Proposals",
+      itema: [],
     }
   },
 
   methods: {
     ...mapActions(["postProposal"]),
+
+
+    onLoad: function (index, done) {
+        setTimeout(() => {
+        this.getRecommendedPosts()
+        this.items.push(...this.posts)
+
+        done()
+       }, 2000)
+    },
+
+
     proposalSubmit: function() {
       console.log("ADVERT FORM", this.text, this.file)
 

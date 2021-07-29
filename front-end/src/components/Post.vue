@@ -10,6 +10,9 @@
 
         <q-item-section>
           <q-item-label>{{ post.user.firstName+' '+post.user.lastName }}</q-item-label>
+          <q-item-label caption>
+            {{post.date}}
+          </q-item-label>
         </q-item-section>
       </q-item>
 
@@ -38,12 +41,29 @@
       </q-card-section>
 
       <q-card-section v-else-if="post.content.file.type === 'video'" class="q-pa-md" align="center">
-        <q-video
+        <!-- <q-video
         :ratio="16/9"
         :src="post.content.file.url"
         spinner-color="white"
         style="max-height: 300px; max-width: 550px"
-        />
+        /> -->
+
+        <video width="550" height="300" controls autoplay="0">
+          <source :src="post.content.file.url" type="video/mp4"> Your browser does not support the video tag.
+        </video>
+
+        <!-- <q-media-player
+        type="video"
+        background-color="black"
+        :muted="true"
+        radius="1rem"
+        :autoplay="true"
+        :show-big-play-button="true"
+        :sources="{src: post.content.file.url, type: 'video/mp4'}">
+        </q-media-player> -->
+
+        
+
       </q-card-section>
 
 

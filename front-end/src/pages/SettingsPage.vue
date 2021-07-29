@@ -112,6 +112,7 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["getUser"]),
     submitPersonal: function() {
       console.log("CHANGE SETTINGS FORM", this.user.email, this.user.username, this.user.firstName, this.user.lastName, this.user.phone)
     },
@@ -140,7 +141,11 @@ export default defineComponent({
     },
   },
 
-    computed:{
+  created() {
+    this.getUser()
+  },
+
+  computed:{
     ...mapGetters({
       user: "user",
     }),

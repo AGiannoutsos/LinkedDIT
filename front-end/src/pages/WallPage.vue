@@ -41,7 +41,7 @@
 
     <!-- <div class="column wrap items-center"> -->
       <q-infinite-scroll @load="onLoad" :offset="250">
-        <div v-for="(item, index) in posts" :key="index" class="q-pa-lg">
+        <div v-for="(item, index) in items" :key="index" class="q-pa-lg">
           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</p> -->
           <Post :post="item"></Post>
         </div>
@@ -65,38 +65,44 @@ export default defineComponent({
   name: 'WallPage',
 
     setup () {
-    const items = ref([ {},
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {} ])
     
     return {
       text: ref(""),
       file: ref(null),
-      items,
-      onLoad (index, done) {
-        setTimeout(() => {
-          items.value.push({}, {}, {}, {}, {}, {}, {})
-          done()
-        }, 2000)
-      }
+      
     }
   },
+
+  data() {
+    return {
+      items: []
+    }
+  },
+
   created() {
-    console.log("WALL PAGE", this.posts)
+    this.getRecommendedPosts()
   },
 
   methods: {
-    ...mapActions(["postPost"]),
+    ...mapActions(["postPost", "getRecommendedPosts"]),
+
+    onLoad: function (index, done) {
+        setTimeout(() => {
+        this.getRecommendedPosts()
+        this.items.push(...this.posts)
+
+        done()
+       }, 2000)
+    },
+
+
     postSubmit: function() {
       console.log("POST FORM", this.text, this.file)
 
 
       let post = {
           id: Math.random().toString(),
+          date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
           user: this.user,
           likes: [],
           content: {
