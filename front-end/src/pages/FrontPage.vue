@@ -125,11 +125,15 @@
 
 <script>
 import { defineComponent, ref } from 'vue';
+import { mapActions, mapGetters } from "vuex"
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'FrontPage',
 
    setup () {
+      const $q = useQuasar()
+
     return {
       alert: ref(false),
       confirm: ref(false),
@@ -148,6 +152,22 @@ export default defineComponent({
       email: ref(''),
       phone: ref(''),
       file: ref(null),
+
+      showNotifBad (msg) {
+        $q.notify({ 
+          type: 'negative', 
+          message: msg, 
+          icon: 'report_problem',
+          position: "top" })
+      },
+
+      showNotifInfo (msg) {
+        $q.notify({ 
+          type: 'info', 
+          message: msg, 
+          icon: 'info',
+          position: "top" })
+      }
       
 
 
@@ -155,28 +175,67 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["postLogin", "postForgotPassword", "postSignUp"]),
+
+
     loginSubmit: function() {
       console.log("LOGIN FORM", this.username, this.password)
 
-      // login request
+      var postLoginForm = {
+        username: this.username,
+        password: this.password 
+      }
 
       // if succes route to the app
       if (this.username === "admin") {
-        this.$router.push({ name: 'admin page' })
+
+        this.postLogin(postLoginForm)
+        .then(response => {          
+          this.$router.push({ name: 'admin page' })
+        })
+        .catch(error => {
+        })
+
       } else {
-        this.$router.push({ name: 'app front page' })
+
+        this.postLogin(postLoginForm)
+        .then(response => {
+          this.$router.push({ name: 'app front page' })
+        })
+        .catch(error => {
+        })
+
       }
     },
 
     forgotPasswordSubmit: function() {
       console.log("FORGOT PASS FORM", this.email)
+
+      var postForgotPasswordForm = {
+        email: this.email
+      }
+      this.postForgotPassword(postForgotPasswordForm)
     },
 
     signupSubmit: function() {
       if (this.password === this.password2) {
         console.log("SIGNUP FORM", this.username, this.firstName, this.lastName, this.password, this.password2, this.phone, this.file)
+
+        
+        var postSignUpForm = {
+          username: this.username, 
+          firstName: this.firstName, 
+          lastName: this.lastName, 
+          email: this.email,
+          phone: this.phone.replace(/\s/g, ''), 
+          file: this.file,
+          password: this.password, 
+        }
+
+        this.postSignUp(postSignUpForm)
+
       } else {
-        alert("Passwords are not the same")
+        this.showNotifBad("Passwords are not the same")
       }
     },
 

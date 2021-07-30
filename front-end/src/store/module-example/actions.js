@@ -1,6 +1,7 @@
 
 
 import testResponses from './testResponses';
+import { Notify } from 'quasar'
 
 const axios = require('axios');
 // const https = require('https');
@@ -273,6 +274,142 @@ export default {
 				commit("STORE_MY_PROPOSALS", response.data)
 			})
 			.catch(error => { 
+				throw error
+			})
+		}
+    },
+
+    async postLogin({ commit, getters, dispatch }, postLogin) {
+
+		var token = "Bearer token12"
+        var url = "/login"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postLoginTESTING", testResponses.myProposalsTest)
+				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postLogin, { headers: headers })
+			.then(response => {
+				console.log("postLogin", response.data)
+                // should return a token
+				commit("STORE_TOKEN", response.data)
+			})
+			.catch(error => { 
+				Notify.create({ 
+						type: 'negative', 
+						message: "User not Found", 
+						icon: 'report_problem',
+						position: "top" })
+				throw error
+			})
+		}
+    },
+
+	async postLogout({ commit, getters, dispatch }) {
+
+		var token = "Bearer token12"
+        var url = "/logout"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postLogoutTESTING", testResponses.myProposalsTest)
+				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, {}, { headers: headers })
+			.then(response => {
+				console.log("postLogout", response.data)
+				Notify.create({ 
+					type: 'positive', 
+					message: "You have been successfully loged out.", 
+					position: "top" })
+				commit("DELETE_TOKEN", response.data)
+			})
+			.catch(error => { 
+				Notify.create({ 
+						type: 'negative', 
+						message: "User not Found", 
+						icon: 'report_problem',
+						position: "top" })
+				throw error
+			})
+		}
+    },
+
+
+	async postForgotPassword({ commit, getters, dispatch }, postForgotPasswordForm) {
+
+		var token = "Bearer token12"
+        var url = "/login/forgot_password"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postForgotPasswordTESTING", testResponses.myProposalsTest)
+				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postForgotPasswordForm, { headers: headers })
+			.then(response => {
+				console.log("postForgotPassword", response.data)
+				Notify.create({ 
+						type: 'positive', 
+						message: "A new password has been sent to your email", 
+						position: "top" })
+                // should return a token
+				// commit("STORE_MY_PROPOSALS", response.data)
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'negative', 
+					message: "Email not Found", 
+					icon: 'report_problem',
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
+	async postSignUp({ commit, getters, dispatch }, postSignUpForm) {
+
+		var token = "Bearer token12"
+        var url = "/sign_up"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postSignUpTESTING", testResponses.myProposalsTest)
+				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postSignUpForm, { headers: headers })
+			.then(response => {
+				console.log("postSignUp", response.data)
+				Notify.create({ 
+						type: 'positive', 
+						message: "Your account has been created. Please verify email to log in.", 
+						position: "top" })
+                // should return a token
+				// commit("STORE_MY_PROPOSALS", response.data)
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'negative', 
+					message: "Error during Sign Up", 
+					icon: 'report_problem',
+					position: "top" })
 				throw error
 			})
 		}

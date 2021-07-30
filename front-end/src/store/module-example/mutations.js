@@ -1,6 +1,14 @@
-// import Vue from "vue"
+import { Cookies } from 'quasar'
 
 export default {
+
+    STORE_TOKEN(state, payload) {
+        Cookies.set("token", payload.token)
+    },
+
+    DELETE_TOKEN(state, payload) {
+        Cookies.remove("token")
+    },
 
     STORE_USER(state, payload) {
         state.user = payload
