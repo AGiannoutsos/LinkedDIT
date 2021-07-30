@@ -781,7 +781,7 @@ var postsTest = [
   var proposalsTest = [
 	{
 		id: "10000",
-		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
+		date: "30 Jul 2021",
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -800,7 +800,7 @@ var postsTest = [
 	},
 	{
 		id: "20000",
-		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
+		date: "30 Jul 2021",
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -822,7 +822,7 @@ var postsTest = [
   var myProposalsTest = [
 	{
 		id: "60000",
-		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
+		date: "30 Jul 2021",
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -841,7 +841,7 @@ var postsTest = [
 	},
 	{
 		id: "50000",
-		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
+		date: "30 Jul 2021",
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -904,6 +904,7 @@ var userEmpty = {
 export default  {
   user: testing ? userTest : userEmpty,
   posts: testing ? postsTest : [],
+  myPosts: [],
   proposals: testing ? proposalsTest : [],
   myProposals: testing ? myProposalsTest : [],
   connectedUsers: testing ? connectedUsersTest : [],

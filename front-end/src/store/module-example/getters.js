@@ -7,6 +7,7 @@ export default {
     myUserId: state => ("12312312"),
     user: state => (state.user),
     posts: state => (state.posts),
+    myPosts: state => (state.myPosts),
 
     proposals: state => (state.proposals),
     myProposals: state => (state.myProposals),

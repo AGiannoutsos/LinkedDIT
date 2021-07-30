@@ -48,8 +48,8 @@
         style="max-height: 300px; max-width: 550px"
         /> -->
 
-        <video width="550" height="300" controls autoplay="0">
-          <source :src="post.content.file.url" type="video/mp4"> Your browser does not support the video tag.
+        <video width="550" height="300" controls  preload="none">
+          <source :src="post.content.file.url" type="video/mp4" autostart="0"> Your browser does not support the video tag.
         </video>
 
         <!-- <q-media-player
@@ -70,8 +70,8 @@
       <!-- POST -->
 
       <q-card-actions align="left" class="q-pa-sm" v-if="isPost">
-        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === myUserId) ? thumbsDown(post.id) : thumbsUp(post.id)" 
-                                        :icon="post.likes.find(u => u.id === myUserId) ? 'thumb_up' : 'thumb_up_off_alt'" />
+        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" 
+                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Liked by '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -80,7 +80,7 @@
           <q-card>
             <q-card-section style="max-height: 50vh" class="scroll">
               <div v-for="(item, index) in post.likes" :key="index" class="q-pa-md">
-                <UserCard :user="item" :connected="false"></UserCard>
+                <UserCard :user="item" ></UserCard>
               </div>
             </q-card-section>
 
@@ -91,8 +91,8 @@
       <!-- JOB PROPOSAL -->
 
       <q-card-actions align="left" class="q-pa-sm" v-else>
-        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === myUserId) ? applyDown(post.id) : applyUp(post.id)" 
-                                                :icon="post.likes.find(u => u.id === myUserId) ? 'work' : 'work_outline'" />
+        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? applyDown(post.id) : applyUp(post.id)" 
+                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Applicants '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -188,7 +188,7 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["postComment", "thumbsUp", "thumbsDown", "applyUp", "applyDown"]),
+    ...mapActions(["getUser", "postComment", "thumbsUp", "thumbsDown", "applyUp", "applyDown"]),
     postComment_: function() {
       console.log("POST COMMENT", this.commentText)
 
@@ -240,9 +240,14 @@ export default defineComponent({
     }
   },
 
-    computed:{
+  // created() {
+  //   this.getUser()
+  // },
+
+  computed:{
         ...mapGetters({
-        myUserId: "myUserId"
+        myUserId: "myUserId",
+        user: "user"
 	    }),
   },
 

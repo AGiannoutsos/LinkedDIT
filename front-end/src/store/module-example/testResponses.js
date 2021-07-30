@@ -50,6 +50,165 @@ export default {
         ]
     },
 
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////ADMIN ALL USERS//////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    adminAllUsersTest: [
+        {
+            id: "12312312",
+            username: "superandreas1",
+            avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+            firstName: "Andreas",
+            lastName: "Giannoutsos1",
+            email: "andreas.giannoutsos@gmail.com",
+            phone: "6912345678",
+            personalData: [
+                {
+                    title: "Profession",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Current Job Position",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Professional Experience",
+                    content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Education",
+                    content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Skills",
+                    content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                    visibility: true
+                },
+            ]
+        },
+        {
+            id: "12312sdfd312",
+            username: "superandreas2",
+            avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+            firstName: "Andreas",
+            lastName: "Giannoutsos2",
+            email: "andreas.giannoutsos@gmail.com",
+            phone: "6912345678",
+            personalData: [
+                {
+                    title: "Profession",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Current Job Position",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Professional Experience",
+                    content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Education",
+                    content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Skills",
+                    content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                    visibility: true
+                },
+            ]
+        },
+        {
+            id: "1231s1232dfsd2312",
+            username: "superandreas3",
+            avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+            firstName: "Andreas",
+            lastName: "Giannoutsos3",
+            email: "andreas.giannoutsos@gmail.com",
+            phone: "6912345678",
+            personalData: [
+                {
+                    title: "Profession",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Current Job Position",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Professional Experience",
+                    content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Education",
+                    content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Skills",
+                    content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                    visibility: true
+                },
+            ]
+        },
+        {
+            id: "12312g4333fgs312",
+            username: "superandreas4",
+            avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+            firstName: "Andreas",
+            lastName: "Giannoutsos4",
+            email: "andreas.giannoutsos@gmail.com",
+            phone: "6912345678",
+            personalData: [
+                {
+                    title: "Profession",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Current Job Position",
+                    content: "KOroideuo KOsmo",
+                    visibility: true
+                },
+                {
+                    title: "Professional Experience",
+                    content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Education",
+                    content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+                    visibility: true
+                },
+                {
+                    title: "Skills",
+                    content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                    visibility: true
+                },
+            ]
+        }
+    ],
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1659,8 +1818,8 @@ export default {
             user: {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                firstName: "Pipis",
+                lastName: "Papa",
             },
             content: {
                 text: "lorpon this is a tsting post",
@@ -1768,10 +1927,10 @@ export default {
             id: "10002340",
             date: "29 Jul 2021",
             user: {
-                id: "12312312",
+                id: "3343453453",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                firstName: "User3242",
+                lastName: "Userpaa",
             },
             content: {
                 text: "lorpon this is a tsting post",
@@ -1988,6 +2147,626 @@ export default {
         },
       ],
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////MY POSTS/////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+      myPostsTest: [
+        {
+            id: "10000",
+            date: "29 Jul 2021",
+            user: {
+                id: "12312312",
+                avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+                firstName: "Andreas",
+                lastName: "Giannoutsos",
+            },
+            content: {
+                text: "lorpon this is a tsting post",
+                file: {
+                    type: "image",
+                    url: "https://cdn.quasar.dev/img/mountains.jpg",
+                },
+            },
+            likes: [
+                {
+                    id: "566612312",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Smaragda",
+                    lastName: "Reppa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepomnai ",
+                            visibility: false
+                        },
+                    ]
+                  },
+                  {
+                    id: "423423",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Pipis",
+                    lastName: "Pipa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                            visibility: true
+                        },
+                    ]
+                  },
+            ],
+            comments: [
+                {
+                    user: {
+                        id: "12312312",
+                        avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+                        firstName: "Andreas",
+                        lastName: "Giannoutsos",
+                    },      
+                    content: {
+                        text: "lorpon this is a tsting comment",
+                    },
+                },
+                {
+                    user: {
+                        id: "566612312",
+                        avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                        firstName: "Smaragda",
+                        lastName: "Reppa",
+                    },      
+                    content: {
+                        text: "yees lorpon this is another testing comment",
+                    },
+                },
+            ]
+        },
+        {
+            id: "10002340",
+            date: "29 Jul 2021",
+            user: {
+                id: "12312312",
+                avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+                firstName: "Andreas",
+                lastName: "Giannoutsos",
+            },
+            content: {
+                text: "lorpon this is a tsting post",
+                file: {
+                    type: "video",
+                    url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                },
+            },
+            likes: [
+                {
+                    id: "566612312",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Smaragda",
+                    lastName: "Reppa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepomnai ",
+                            visibility: false
+                        },
+                    ]
+                  },
+                  {
+                    id: "423423",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Pipis",
+                    lastName: "Pipa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                            visibility: true
+                        },
+                    ]
+                  },
+            ],
+            comments: [
+                {
+                    user: {
+                        id: "12312312",
+                        avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+                        firstName: "Andreas",
+                        lastName: "Giannoutsos",
+                    },      
+                    content: {
+                        text: "lorpon this is a tsting comment",
+                    },
+                },
+                {
+                    user: {
+                        id: "566612312",
+                        avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                        firstName: "Smaragda",
+                        lastName: "Reppa",
+                    },      
+                    content: {
+                        text: "yees lorpon this is another testing comment",
+                    },
+                },
+            ]
+        },
+      ],
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////PROPOSALS////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+      proposalsTest: [
+        {
+            id: "10000",
+            date: "30 Jul 2021",
+            user: {
+                id: "12312312",
+                avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+                firstName: "Andreas",
+                lastName: "Giannoutsos",
+            },
+            content: {
+                text: "lorpon this is a jonb proposaaalll post",
+                file: {
+                    type: "image",
+                    url: "https://cdn.quasar.dev/img/mountains.jpg",
+                },
+            },
+            likes: [
+                {
+                    id: "566612312",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Smaragda",
+                    lastName: "Reppa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepomnai ",
+                            visibility: false
+                        },
+                    ]
+                  },
+                  {
+                    id: "423423",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Pipis",
+                    lastName: "Pipa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                            visibility: true
+                        },
+                    ]
+                  },
+            ],
+            
+        },
+        {
+            id: "20000",
+            date: "30 Jul 2021",
+            user: {
+                id: "566612312",
+                avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                firstName: "Smaragda",
+                lastName: "Reppa",
+            },
+            content: {
+                text: "ok yess JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
+                file: {
+                    type: "image",
+                    url: "https://cdn.quasar.dev/img/mountains.jpg",
+                },
+            },
+            likes: [
+                {
+                    id: "56661231sad2",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Smaragda2",
+                    lastName: "Reppa2",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepomnai ",
+                            visibility: false
+                        },
+                    ]
+                  },
+                  {
+                    id: "423423",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Pipis",
+                    lastName: "Pipa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                            visibility: true
+                        },
+                    ]
+                  },
+            ],
+            
+        },
+    ],
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////MY PROPOSALS/////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    myProposalsTest: [
+        {
+            id: "60000",
+            date: "30 Jul 2021",
+            user: {
+                id: "12312312",
+                avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+                firstName: "Andreas",
+                lastName: "Giannoutsos",
+            },
+            content: {
+                text: "lorpon this is MYYYYYYYYYY a jonb proposaaalll post",
+                file: {
+                    type: "image",
+                    url: "https://cdn.quasar.dev/img/mountains.jpg",
+                },
+            },
+            likes: [
+                {
+                    id: "566612312",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Smaragda",
+                    lastName: "Reppa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepomnai ",
+                            visibility: false
+                        },
+                    ]
+                  },
+                  {
+                    id: "423423",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Pipis",
+                    lastName: "Pipa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                            visibility: true
+                        },
+                    ]
+                  },
+            ],
+            
+        },
+        {
+            id: "50000",
+            date: "30 Jul 2021",
+            user: {
+                id: "566612312",
+                avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                firstName: "Smaragda",
+                lastName: "Reppa",
+            },
+            content: {
+                text: "ok yess MYYYYYYYYY JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
+                file: {
+                    type: "image",
+                    url: "https://cdn.quasar.dev/img/mountains.jpg",
+                },
+            },
+            likes: [
+                {
+                    id: "56661231SDF2",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Smaragda2",
+                    lastName: "Reppa2",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom ",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepomnai ",
+                            visibility: false
+                        },
+                    ]
+                  },
+                  {
+                    id: "423423",
+                    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+                    firstName: "Pipis",
+                    lastName: "Pipa",
+                    connected: true,
+                    personalData: [
+                        {
+                            title: "Profession",
+                            content: "KOroideuo KOsmo",
+                            visibility: false
+                        },
+                        {
+                            title: "Current Job Position",
+                            content: "KOroideuo KOsmo",
+                            visibility: true
+                        },
+                        {
+                            title: "Professional Experience",
+                            content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Education",
+                            content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                            visibility: true
+                        },
+                        {
+                            title: "Skills",
+                            content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                            visibility: true
+                        },
+                    ]
+                  },
+            ],
+            
+        },
+    ],
 
 
 }

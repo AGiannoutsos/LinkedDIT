@@ -97,13 +97,14 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["postProposal"]),
+    ...mapActions(["postProposal", "getUser", "getMyProposals", "getProposals"]),
 
 
     onLoad: function (index, done) {
         setTimeout(() => {
-        this.getRecommendedPosts()
-        this.items.push(...this.posts)
+        if (this.proposalsToggle === "Other Proposals")
+          this.getProposals()
+        
 
         done()
        }, 2000)
@@ -116,6 +117,7 @@ export default defineComponent({
 
       let proposal = {
           id: Math.random().toString(),
+          date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
           user: this.user,
           content: {
             text: this.text,
@@ -131,6 +133,12 @@ export default defineComponent({
       this.text = ""
       this.file = null
     },
+  },
+
+  created() {
+    this.getUser()
+    this.getProposals()
+    this.getMyProposals()
   },
 
   computed:{

@@ -23,7 +23,24 @@ export default {
 	},
 
     STORE_RECOMMENDED_POSTS(state, payload) {
-        state.posts = payload
+        state.posts.push(...payload)
+	},
+
+    STORE_MY_POSTS(state, payload) {
+        state.myPosts = payload
+	},
+
+    STORE_PROPOSALS(state, payload) {
+        state.proposals.push(...payload)
+	},
+
+    STORE_MY_PROPOSALS(state, payload) {
+        state.myProposals = payload
+	},
+
+    RESPOND_CONNECTION_REQUEST(state, payload) {
+        const requestIdx = state.connectionRequests.findIndex(r => r.id === payload.id)
+        state.connectionRequests.splice(requestIdx, 1)
 	},
     
     EDIT_PERSONAL_DATA(state, payload) {

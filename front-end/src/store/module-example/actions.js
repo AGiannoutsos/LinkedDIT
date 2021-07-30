@@ -1,146 +1,3 @@
-var testAdminAllUsers = [
-    {
-        id: "12312312",
-        avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-        firstName: "Andreas",
-        lastName: "Giannoutsos1",
-        email: "andreas.giannoutsos@gmail.com",
-        phone: "6912345678",
-        personalData: [
-            {
-                title: "Profession",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Current Job Position",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Professional Experience",
-                content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Education",
-                content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Skills",
-                content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-                visibility: true
-            },
-        ]
-	},
-    {
-        id: "12312sdfd312",
-        avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-        firstName: "Andreas",
-        lastName: "Giannoutsos2",
-        email: "andreas.giannoutsos@gmail.com",
-        phone: "6912345678",
-        personalData: [
-            {
-                title: "Profession",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Current Job Position",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Professional Experience",
-                content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Education",
-                content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Skills",
-                content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-                visibility: true
-            },
-        ]
-    },
-    {
-        id: "1231s1232dfsd2312",
-        avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-        firstName: "Andreas",
-        lastName: "Giannoutsos3",
-        email: "andreas.giannoutsos@gmail.com",
-        phone: "6912345678",
-        personalData: [
-            {
-                title: "Profession",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Current Job Position",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Professional Experience",
-                content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Education",
-                content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Skills",
-                content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-                visibility: true
-            },
-        ]
-    },
-    {
-        id: "12312g4333fgs312",
-        avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-        firstName: "Andreas",
-        lastName: "Giannoutsos4",
-        email: "andreas.giannoutsos@gmail.com",
-        phone: "6912345678",
-        personalData: [
-            {
-                title: "Profession",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Current Job Position",
-                content: "KOroideuo KOsmo",
-                visibility: true
-            },
-            {
-                title: "Professional Experience",
-                content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Education",
-                content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-                visibility: true
-            },
-            {
-                title: "Skills",
-                content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-                visibility: true
-            },
-        ]
-    }
-]
-
 
 
 import testResponses from './testResponses';
@@ -167,6 +24,35 @@ const apiUrl = 'https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io';
 var TESTING = false
 
 export default {
+
+    async getAdminAllUsers({ commit, getters, dispatch }) {
+
+        var token = "token123"
+        var url = "/admin/users"
+
+        let headers = { "Authorization": `${token}` };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("getAdminAllUsersTESTING", testResponses.adminAllUsersTest)
+                var allUsers = testResponses.adminAllUsersTest
+                allUsers.forEach(element => {element.selected = false});
+				commit("STORE_ADMIN_ALL_USERS", testResponses.adminAllUsersTest)
+			})
+		} else {
+			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			.then(response => {
+				console.log("getUser", response.data)
+                var allUsers = response.data
+                allUsers.forEach(element => {element.selected = false});
+				commit("STORE_ADMIN_ALL_USERS", allUsers)
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
+    },
 
     async getUser({ commit, getters, dispatch }) {
         var token = "token123"
@@ -295,7 +181,7 @@ export default {
 	async getRecommendedPosts({ commit, getters, dispatch }) {
 
 		var token = "token123"
-        var url = "/app/recommended_posts"
+        var url = "/app/posts/recommended"
 
         let headers = { "Authorization": `${token}` };
 
@@ -316,7 +202,87 @@ export default {
 			})
 		}
     },
-	
+
+    async getMyPosts({ commit, getters, dispatch }) {
+
+		var token = "token123"
+        var url = "/app/posts/my"
+
+        let headers = { "Authorization": `${token}` };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("getMyPostsTESTING", testResponses.myPostsTest)
+				commit("STORE_MY_POSTS", testResponses.myPostsTest)
+			})
+		} else {
+			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			.then(response => {
+				console.log("getMyPosts", response.data)
+				commit("STORE_MY_POSTS", response.data)
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
+    },
+
+    async getProposals({ commit, getters, dispatch }) {
+
+		var token = "token123"
+        var url = "/app/proposals/recommended"
+
+        let headers = { "Authorization": `${token}` };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("getProposalsTESTING", testResponses.proposalsTest)
+				commit("STORE_PROPOSALS", testResponses.proposalsTest)
+			})
+		} else {
+			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			.then(response => {
+				console.log("getProposals", response.data)
+				commit("STORE_PROPOSALS", response.data)
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
+    },
+
+    async getMyProposals({ commit, getters, dispatch }) {
+
+		var token = "token123"
+        var url = "/app/proposals/my"
+
+        let headers = { "Authorization": `${token}` };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("getMyProposalsTESTING", testResponses.myProposalsTest)
+				commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			.then(response => {
+				console.log("getMyProposals", response.data)
+				commit("STORE_MY_PROPOSALS", response.data)
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
+    },
+
+
+    async respondConnectionRequest({ commit, getters, dispatch }, answer) {
+        commit("RESPOND_CONNECTION_REQUEST", answer)
+    },
+
 
     async postComment({ commit, getters, dispatch }, comment) {
         commit("POST_COMMENT", comment)
@@ -351,14 +317,6 @@ export default {
         commit("APPLY_DOWN", proposalId)
     },
 
-    async adminGetAllUsers({ commit, getters, dispatch }) {
-
-        var allUsers = testAdminAllUsers
-        // add selected attribute
-        allUsers.forEach(element => {element.selected = false});
-
-        commit("STORE_ADMIN_ALL_USERS", allUsers)
-    },
 
     async selectUser({ commit, getters, dispatch }, userId) {
         commit("SELECT_USER", userId)

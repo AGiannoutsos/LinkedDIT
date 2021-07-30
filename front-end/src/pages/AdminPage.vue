@@ -63,11 +63,11 @@ export default defineComponent({
   },
 
   created() {
-    this.adminGetAllUsers()
+    this.getAdminAllUsers()
   },
 
   methods: {
-    ...mapActions(["adminGetAllUsers"]),
+    ...mapActions(["getAdminAllUsers"]),
 
     exportUsers: function(type) {
       console.log("EXPORT TYPE", type)

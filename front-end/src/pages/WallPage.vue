@@ -37,11 +37,26 @@
         </div>
       </form>
 
+
+    <q-btn-toggle
+      v-model="postsToggle"
+      spread
+      no-caps
+      flat
+      toggle-color="blue"
+      color="white"
+      text-color="grey"
+      :options="[
+        {label: 'Recommended Posts', value: 'Other Posts'},
+        {label: 'Mine Posts', value: 'My Posts'}
+      ]"
+    />
+
     <q-separator size="2px" />
 
     <!-- <div class="column wrap items-center"> -->
       <q-infinite-scroll @load="onLoad" :offset="250">
-        <div v-for="(item, index) in items" :key="index" class="q-pa-lg">
+        <div v-for="(item, index) in postsToggle === 'Other Posts' ? posts : myPosts" :key="index" class="q-pa-lg">
           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</p> -->
           <Post :post="item"></Post>
         </div>
@@ -75,24 +90,30 @@ export default defineComponent({
 
   data() {
     return {
-      items: []
+      items: [],
+      postsToggle: "Other Posts",
     }
   },
 
   created() {
-    this.getRecommendedPosts()
+    // this.getRecommendedPosts()
+    this.getMyPosts()
+    this.getUser()
   },
 
   methods: {
-    ...mapActions(["postPost", "getRecommendedPosts"]),
+    ...mapActions(["getUser", "postPost", "getRecommendedPosts", "getMyPosts"]),
 
     onLoad: function (index, done) {
         setTimeout(() => {
-        this.getRecommendedPosts()
-        this.items.push(...this.posts)
+        if (this.postsToggle === "Other Posts")
+          this.getRecommendedPosts()
+        // else
+        //   this.getMyPosts()
+        // this.items.push(...this.posts)
 
         done()
-       }, 2000)
+       }, 2500)
     },
 
 
@@ -124,6 +145,7 @@ export default defineComponent({
   computed:{
         ...mapGetters({
 		    posts: "posts",
+		    myPosts: "myPosts",
         user: "user"
 	    }),
   },

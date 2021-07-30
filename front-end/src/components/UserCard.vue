@@ -52,10 +52,10 @@
             <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin && !acceptConnection">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
             </q-btn>
-            <q-btn flat round color="green" icon="person_add" v-if="!user.connected && !admin && acceptConnection">
+            <q-btn flat round color="green" icon="person_add" v-if="!user.connected && !admin && acceptConnection" @click="respondConnectionRequest({id:user.id, answer:'accept'})">
               <q-tooltip :delay="500" class="bg-accent">Accept Connection to your Network</q-tooltip>
             </q-btn>
-            <q-btn flat round color="red" icon="person_remove" v-if="!user.connected && !admin && acceptConnection">
+            <q-btn flat round color="red" icon="person_remove" v-if="!user.connected && !admin && acceptConnection" @click="respondConnectionRequest({id:user.id, answer:'reject'})">
               <q-tooltip :delay="500" class="bg-accent">Reject Connection to your Network</q-tooltip>
             </q-btn>
           </q-card-actions>
@@ -120,7 +120,7 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["selectUser", "getDiscussionId"]),
+    ...mapActions(["selectUser", "getDiscussionId", "respondConnectionRequest"]),
     checkSelected: function () {
       this.selectUser(this.user.id)
     },
