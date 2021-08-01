@@ -46,16 +46,16 @@
             <q-btn flat round color="blue" icon="visibility" @click="personalDataPop = true; "> 
               <q-tooltip :delay="500" class="bg-accent">View User's profile</q-tooltip> 
             </q-btn>
-            <q-btn flat round color="blue" icon="chat" v-if="!admin" @click="startDiscussion(user.id)">
+            <q-btn flat round color="blue" icon="chat" v-if="!admin" @click="startDiscussion({otherUserId:user.id})">
               <q-tooltip :delay="500" class="bg-accent">Start a Discussion</q-tooltip>
             </q-btn>
             <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin && !acceptConnection">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
             </q-btn>
-            <q-btn flat round color="green" icon="person_add" v-if="!user.connected && !admin && acceptConnection" @click="respondConnectionRequest({id:user.id, answer:'accept'})">
+            <q-btn flat round color="green" icon="person_add" v-if="!user.connected && !admin && acceptConnection" @click="postConnectionRequest({id:user.id, answer:'accept'})">
               <q-tooltip :delay="500" class="bg-accent">Accept Connection to your Network</q-tooltip>
             </q-btn>
-            <q-btn flat round color="red" icon="person_remove" v-if="!user.connected && !admin && acceptConnection" @click="respondConnectionRequest({id:user.id, answer:'reject'})">
+            <q-btn flat round color="red" icon="person_remove" v-if="!user.connected && !admin && acceptConnection" @click="postConnectionRequest({id:user.id, answer:'reject'})">
               <q-tooltip :delay="500" class="bg-accent">Reject Connection to your Network</q-tooltip>
             </q-btn>
           </q-card-actions>
@@ -120,23 +120,20 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["selectUser", "getDiscussionId", "respondConnectionRequest"]),
+    ...mapActions(["selectUser", "postDiscussion", "postConnectionRequest"]),
     checkSelected: function () {
       this.selectUser(this.user.id)
     },
 
     startDiscussion: function(otherUserId){
-      var discussionId = this.getDiscussionId(otherUserId)
-      console.log(discussionId)
-      discussionId = "100021"
-      this.$router.push({name:"discussions", params:{id:"100021"}})
+      this.postDiscussion(otherUserId)
+      this.$router.push({name:"discussions"})
     }
     
   },
 
   computed:{
-    ...mapGetters({
-    }),
+    ...mapGetters({ }),
 
   },
 

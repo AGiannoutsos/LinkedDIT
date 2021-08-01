@@ -17,7 +17,7 @@
         <q-route-tab name="wall" to="/app/wall" label="Wall" />
         <q-route-tab name="network" to="/app/network" label="Network" />
         <q-route-tab name="proposals" to="/app/proposals" label="Proposals" />
-        <q-route-tab name="discussions" to="/app/discussions/*" label="Discussions" />
+        <q-route-tab name="discussions" to="/app/discussions" label="Discussions" />
         <q-route-tab name="notifications" to="/app/notifications" label="Notifications" />
         <q-route-tab name="personal_data" to="/app/personal_data" label="Personal Data" />
         <q-route-tab name="settings" to="/app/settings" label="Settings" />
@@ -59,6 +59,7 @@
 
 
 import { defineComponent, ref } from 'vue'
+import { mapActions, mapGetters } from "vuex"
 
 export default defineComponent({
   name: 'MainLayout',
@@ -86,9 +87,13 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["postLogout"]),
     logOut_: function() {
       console.log("LOG OUT")
+      this.postLogout()
+      this.$router.push({ name: 'front page' })
     },
   },
+  
 })
 </script>

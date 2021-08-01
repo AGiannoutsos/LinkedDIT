@@ -4,6 +4,7 @@ const routes = [
     path: '/app',
     name: "app front page",
     redirect: { name: 'wall' },
+    meta: { auth: true },
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: 'wall',
@@ -15,7 +16,7 @@ const routes = [
       { path: 'proposals',
         component: () => import('src/pages/ProposalsPage.vue'),
         name: "proposals" },
-      { path: 'discussions/:id',
+      { path: 'discussions',
         component: () => import('pages/DiscussionsPage.vue'),
         name: "discussions" },
       { path: 'notifications',
@@ -40,6 +41,7 @@ const routes = [
   },
   {
     path: '/admin',
+    meta: { authAdmin: true },
     component: () => import('layouts/AdminLayout.vue'),
     children: [
       { path: '', 
@@ -52,6 +54,7 @@ const routes = [
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
+    name: "error",
     component: () => import('pages/Error404.vue')
   }
 ]

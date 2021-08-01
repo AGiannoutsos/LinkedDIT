@@ -48,7 +48,7 @@
         </q-card-section>
 
         <!-- <q-separator /> -->
-      <q-form @submit.prevent="sendMessage_">
+      <q-form @submit.prevent="postMessage_">
         <q-input flat v-model="textMessage" label="Message" class="q-pa-md">
           <template v-slot:append>
             <q-btn
@@ -56,7 +56,7 @@
               type="submit"
               color="blue"
               round
-              @click="sendMessage_"
+              @click="postMessage_"
               :disable="textMessage===''"
             ></q-btn>
           </template>
@@ -97,25 +97,25 @@ export default defineComponent({
   created() {
     this.getUser()
     this.getDiscussions()
-    console.log(this.$route.params.id)
+    console.log(this.currentDiscussionId)
   },
 
   methods: {
-    ...mapActions(["getDiscussions", "sendMessage", "getUser"]),
-    sendMessage_: function() {
+    ...mapActions(["getDiscussions", "postMessage", "getUser"]),
+    postMessage_: function() {
       console.log("SEND MESSAGE", this.textMessage)
 
       let message = {
-        id: this.$route.params.id,
+        id: this.currentDiscussionId,
         message: {
-          user: this.user,
+          user: this.userLight,
           content: {
             text: this.textMessage,
           }
         }
       }
 
-      this.sendMessage(message)
+      this.postMessage(message)
 
       this.textMessage = ""
 
@@ -143,11 +143,14 @@ export default defineComponent({
       ...mapGetters({
       discussions: "discussions",
       user: "user",
+      userLight: "userLight",
       myUserId: "myUserId",
       discussionOtherUsers: "discussionOtherUsers",
+      currentDiscussionId: "currentDiscussionId",
     }),
+    
     thisDiscussion: function() {
-      var disc = this.discussions.find(d => d.id === this.$route.params.id) 
+      var disc = this.discussions.find(d => d.id === this.currentDiscussionId) 
       return  disc ? disc : {messages: []}
     },
     thisDiscussionName: function() {

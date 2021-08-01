@@ -55,10 +55,10 @@
     <q-separator size="2px" />
 
     <!-- <div class="column wrap items-center"> -->
-      <q-infinite-scroll @load="onLoad" :offset="250">
+      <q-infinite-scroll @load="onLoad" :offset="20">
         <div v-for="(item, index) in postsToggle === 'Other Posts' ? posts : myPosts" :key="index" class="q-pa-lg">
           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</p> -->
-          <Post :post="item"></Post>
+          <Post :post="item" :mine="postsToggle === 'My Posts'"></Post>
         </div>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">
@@ -96,7 +96,7 @@ export default defineComponent({
   },
 
   created() {
-    // this.getRecommendedPosts()
+    // // this.getRecommendedPosts()
     this.getMyPosts()
     this.getUser()
   },

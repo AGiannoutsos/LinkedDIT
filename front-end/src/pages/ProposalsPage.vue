@@ -55,9 +55,9 @@
     <q-separator size="2px" />
 
     <!-- <div class="column wrap items-center"> -->
-      <q-infinite-scroll @load="onLoad" :offset="250">
+      <q-infinite-scroll @load="onLoad" :offset="20">
         <div v-for="(item, index) in proposalsToggle === 'Other Proposals' ? proposals : myProposals" :key="index" class="q-pa-lg">
-          <Post :post="item" :isPost="false"></Post>
+          <Post :post="item" :isPost="false" :mine="proposalsToggle === 'My Proposals' "></Post>
         </div>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">

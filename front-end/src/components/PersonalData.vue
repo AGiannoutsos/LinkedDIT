@@ -263,11 +263,11 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["editPersonalData"]),
+    ...mapActions(["postPersonalData"]),
     submitPersonalInfo: function(item) {
-      console.log("PERSONAL FORM", item.content, item.visibility)
+      console.log("PERSONAL FORM", item)
       
-      this.editPersonalData(item)
+      this.postPersonalData(item)
 
       this.editor = ""
       this.toggleVisibility = false

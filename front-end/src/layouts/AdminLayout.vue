@@ -25,6 +25,7 @@
 
 
 import { defineComponent, ref } from 'vue'
+import { mapActions, mapGetters } from "vuex"
 
 export default defineComponent({
   name: 'AdminLayout',
@@ -38,9 +39,13 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["postLogout"]),
     logOut_: function() {
       console.log("LOG OUT")
+      this.postLogout()
+      this.$router.push({ name: 'front page' })
     },
   },
+
 })
 </script>

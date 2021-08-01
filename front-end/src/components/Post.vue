@@ -70,8 +70,8 @@
       <!-- POST -->
 
       <q-card-actions align="left" class="q-pa-sm" v-if="isPost">
-        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" 
-                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
+        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? postThumbsUp({id:post.id, thumbs:'down'}) : postThumbsUp({id:post.id, thumbs:'up'})" 
+                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" :disable="mine"/>
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Liked by '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -91,8 +91,8 @@
       <!-- JOB PROPOSAL -->
 
       <q-card-actions align="left" class="q-pa-sm" v-else>
-        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? applyDown(post.id) : applyUp(post.id)" 
-                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" />
+        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? postApplyUp({id:post.id, apply:'down'}) : postApplyUp({id:post.id, apply:'up'})" 
+                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" :disable="mine" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Applicants '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -170,6 +170,10 @@ export default defineComponent({
       type: Boolean,
       default: true
     },
+    mine: {
+      type: Boolean,
+      default: false
+    },
   },
 
   data(){
@@ -188,14 +192,14 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["getUser", "postComment", "thumbsUp", "thumbsDown", "applyUp", "applyDown"]),
+    ...mapActions(["getUser", "postComment", "postThumbsUp", "postApplyUp"]),
     postComment_: function() {
       console.log("POST COMMENT", this.commentText)
 
       let comment = {
         id: this.post.id,
         comment: {
-          user: this.user,
+          user: this.userLight,
           content: {
             text: this.commentText,
           }
@@ -247,7 +251,8 @@ export default defineComponent({
   computed:{
         ...mapGetters({
         myUserId: "myUserId",
-        user: "user"
+        user: "user",
+        userLight: "userLight",
 	    }),
   },
 

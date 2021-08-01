@@ -9,7 +9,12 @@ const axios = require('axios');
 
 // https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io//test
 
-const apiUrl = 'https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io';
+var apiUrl = '';
+// apiUrl = 'https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io';
+apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
+
+
+
 
 
 // const agent = new http.Agent({
@@ -28,7 +33,7 @@ export default {
 
     async getAdminAllUsers({ commit, getters, dispatch }) {
 
-        var token = "token123"
+        var token = getters.token
         var url = "/admin/users"
 
         let headers = { "Authorization": `${token}` };
@@ -56,7 +61,7 @@ export default {
     },
 
     async getUser({ commit, getters, dispatch }) {
-        var token = "token123"
+        var token = getters.token
         var url = "/app/user"
 
         let headers = { "Authorization": `${token}` };
@@ -80,7 +85,7 @@ export default {
     },
 
 	async getConnectionRequests({ commit, getters, dispatch }) {
-        var token = "token123"
+        var token = getters.token
         var url = "/app/notifications/requests"
 
         let headers = { "Authorization": `${token}` };
@@ -105,7 +110,7 @@ export default {
 
 	
 	async getInteractions({ commit, getters, dispatch }) {
-        var token = "token123"
+        var token = getters.token
         var url = "/app/notifications/interactions"
 
         let headers = { "Authorization": `${token}` };
@@ -131,7 +136,7 @@ export default {
 
 	async getDiscussions({ commit, getters, dispatch }) {
 
-		var token = "token123"
+		var token = getters.token
         var url = "/app/discussions"
 
         let headers = { "Authorization": `${token}` };
@@ -156,7 +161,7 @@ export default {
 
 	async getConnectedUsers({ commit, getters, dispatch }) {
 
-		var token = "token123"
+		var token = getters.token
         var url = "/app/connected_users"
 
         let headers = { "Authorization": `${token}` };
@@ -181,7 +186,7 @@ export default {
 
 	async getRecommendedPosts({ commit, getters, dispatch }) {
 
-		var token = "token123"
+		var token = getters.token
         var url = "/app/posts/recommended"
 
         let headers = { "Authorization": `${token}` };
@@ -206,7 +211,7 @@ export default {
 
     async getMyPosts({ commit, getters, dispatch }) {
 
-		var token = "token123"
+		var token = getters.token
         var url = "/app/posts/my"
 
         let headers = { "Authorization": `${token}` };
@@ -231,7 +236,7 @@ export default {
 
     async getProposals({ commit, getters, dispatch }) {
 
-		var token = "token123"
+		var token = getters.token
         var url = "/app/proposals/recommended"
 
         let headers = { "Authorization": `${token}` };
@@ -256,7 +261,7 @@ export default {
 
     async getMyProposals({ commit, getters, dispatch }) {
 
-		var token = "token123"
+		var token = getters.token
         var url = "/app/proposals/my"
 
         let headers = { "Authorization": `${token}` };
@@ -279,9 +284,9 @@ export default {
 		}
     },
 
-    async postLogin({ commit, getters, dispatch }, postLogin) {
+    async postLogin({ commit, getters, dispatch }, postLoginForm) {
 
-		var token = "Bearer token12"
+		var token = getters.token
         var url = "/login"
 
         let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
@@ -289,15 +294,23 @@ export default {
 		if (TESTING){
 			return Promise.resolve()
 			.then( response => {
-				console.log("postLoginTESTING", testResponses.myProposalsTest)
-				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+				console.log("postLoginTESTING", postLoginForm)
+				if (postLoginForm.username === "admin"){
+					commit("STORE_TOKEN_ADMIN", "123")
+				} else {
+					commit("STORE_TOKEN", "admin123")
+				}
 			})
 		} else {
-			return axios.post(`${apiUrl}/${url}`, postLogin, { headers: headers })
+			return axios.post(`${apiUrl}/${url}`, postLoginForm, { headers: headers })
 			.then(response => {
 				console.log("postLogin", response.data)
                 // should return a token
-				commit("STORE_TOKEN", response.data)
+				if (postLoginForm.username === "admin"){
+					commit("STORE_TOKEN_ADMIN", response.data)
+				} else {
+					commit("STORE_TOKEN", response.data)
+				}
 			})
 			.catch(error => { 
 				Notify.create({ 
@@ -312,16 +325,16 @@ export default {
 
 	async postLogout({ commit, getters, dispatch }) {
 
-		var token = "Bearer token12"
+		var token = getters.token
         var url = "/logout"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        let headers = { "Authorization": `${token}` ,  "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
 			.then( response => {
-				console.log("postLogoutTESTING", testResponses.myProposalsTest)
-				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+				console.log("postLogoutTESTING")
+				commit("DELETE_TOKEN")
 			})
 		} else {
 			return axios.post(`${apiUrl}/${url}`, {}, { headers: headers })
@@ -331,7 +344,7 @@ export default {
 					type: 'positive', 
 					message: "You have been successfully loged out.", 
 					position: "top" })
-				commit("DELETE_TOKEN", response.data)
+				commit("DELETE_TOKEN")
 			})
 			.catch(error => { 
 				Notify.create({ 
@@ -347,7 +360,7 @@ export default {
 
 	async postForgotPassword({ commit, getters, dispatch }, postForgotPasswordForm) {
 
-		var token = "Bearer token12"
+		var token = getters.token
         var url = "/login/forgot_password"
 
         let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
@@ -355,8 +368,7 @@ export default {
 		if (TESTING){
 			return Promise.resolve()
 			.then( response => {
-				console.log("postForgotPasswordTESTING", testResponses.myProposalsTest)
-				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+				console.log("postForgotPasswordTESTING", postForgotPasswordForm)
 			})
 		} else {
 			return axios.post(`${apiUrl}/${url}`, postForgotPasswordForm, { headers: headers })
@@ -366,8 +378,6 @@ export default {
 						type: 'positive', 
 						message: "A new password has been sent to your email", 
 						position: "top" })
-                // should return a token
-				// commit("STORE_MY_PROPOSALS", response.data)
 			})
 			.catch(error => { 
 				Notify.create({ 
@@ -382,7 +392,7 @@ export default {
 
 	async postSignUp({ commit, getters, dispatch }, postSignUpForm) {
 
-		var token = "Bearer token12"
+		var token = getters.token
         var url = "/sign_up"
 
         let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
@@ -390,8 +400,7 @@ export default {
 		if (TESTING){
 			return Promise.resolve()
 			.then( response => {
-				console.log("postSignUpTESTING", testResponses.myProposalsTest)
-				// commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
+				console.log("postSignUpTESTING", postSignUpForm)
 			})
 		} else {
 			return axios.post(`${apiUrl}/${url}`, postSignUpForm, { headers: headers })
@@ -401,8 +410,6 @@ export default {
 						type: 'positive', 
 						message: "Your account has been created. Please verify email to log in.", 
 						position: "top" })
-                // should return a token
-				// commit("STORE_MY_PROPOSALS", response.data)
 			})
 			.catch(error => { 
 				Notify.create({ 
@@ -416,58 +423,231 @@ export default {
     },
 
 
-    async respondConnectionRequest({ commit, getters, dispatch }, answer) {
-        commit("RESPOND_CONNECTION_REQUEST", answer)
+    async postConnectionRequest({ commit, getters, dispatch }, answer) {
+
+		var token = getters.token
+        var url = "/app/notifications/requests/respond"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postConnectionRequestTESTING", answer)
+				commit("POST_CONNECTION_REQUEST", answer)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, answer, { headers: headers })
+			.then(response => {
+				console.log("postConnectionRequest", response.data)
+				commit("POST_CONNECTION_REQUEST", answer)
+
+				Notify.create({ 
+						type: 'positive', 
+						message: answer.answer === "accept" ? "User has been added to your connections." : "Connection has been rejected", 
+						position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'negative', 
+					message: "Error in connection of users.", 
+					icon: 'report_problem',
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
+	async postDiscussion({ commit, getters, dispatch }, otherUserId) {
+		
+		var token = getters.token
+        var url = "/app/discussions/id"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postDiscussionTESTING")
+				commit("STORE_CURRENT_DISCUSSION", "*")
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, otherUserId, { headers: headers })
+			.then(response => {
+				console.log("postDiscussion", response.data)
+				commit("STORE_CURRENT_DISCUSSION", response.data)
+
+			})
+			.catch(error => { 
+				commit("STORE_CURRENT_DISCUSSION", "*")
+				throw error
+			})
+		}
+    },
+
+	async postMessage({ commit, getters, dispatch }, message) {   
+
+		var token = getters.token
+        var url = "/app/discussions/message"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postMessageTESTING", message)
+				commit("POST_MESSAGE", message)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, message, { headers: headers })
+			.then(response => {
+				console.log("postMessage", response.data)
+				commit("POST_MESSAGE", message)
+
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
     },
 
 
     async postComment({ commit, getters, dispatch }, comment) {
-        commit("POST_COMMENT", comment)
+
+		var token = getters.token
+        var url = "/app/posts/comment"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postCommentTESTING", comment)
+				commit("POST_COMMENT", comment)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, comment, { headers: headers })
+			.then(response => {
+				console.log("postComment", response.data)
+				commit("POST_COMMENT", comment)
+
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
     },
 
     
-    async editPersonalData({ commit, getters, dispatch }, personalData) {
-        commit("EDIT_PERSONAL_DATA", personalData)
+    async postPersonalData({ commit, getters, dispatch }, personalData) {
+
+		var token = getters.token
+        var url = "/app/personal_data"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postPersonalDataTESTING", personalData)
+				commit("POST_PERSONAL_DATA", personalData)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, personalData, { headers: headers })
+			.then(response => {
+				console.log("postPersonalData", response.data)
+				commit("POST_PERSONAL_DATA", personalData)
+				Notify.create({ 
+					type: 'positive', 
+					message: "Peronal data updated successfully.", 
+					position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'error', 
+					message: "Error in peronal data update.", 
+					position: "top" })
+				throw error
+			})
+		}
     },
     
     async postPost({ commit, getters, dispatch }, post) {
         commit("POST_POST", post)
     },
 
-    async thumbsUp({ commit, getters, dispatch }, postId) {
-        commit("THUMBS_UP", postId)
+    async postThumbsUp({ commit, getters, dispatch }, postThumbsUpForm) {
+
+		var token = getters.token
+        var url = "/app/posts/thumbs"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postThumbsUpTESTING", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postThumbsUpForm, { headers: headers })
+			.then(response => {
+				console.log("postThumbsUp", response.data)
+				if (postThumbsUpForm.thumbs === "up")
+					commit("THUMBS_UP", postThumbsUpForm.id)
+				else
+					commit("THUMBS_DOWN", postThumbsUpForm.id)
+
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
     },
 
-    async thumbsDown({ commit, getters, dispatch }, postId) {
-        commit("THUMBS_DOWN", postId)
-    },
 
     async postProposal({ commit, getters, dispatch }, proposal) {
         commit("POST_PROPOSAL", proposal)
     },
     
-    async applyUp({ commit, getters, dispatch }, proposalId) {
-        commit("APPLY_UP", proposalId)
-    },
+    async postApplyUp({ commit, getters, dispatch }, postApplyUpForm) {
 
-    async applyDown({ commit, getters, dispatch }, proposalId) {
-        commit("APPLY_DOWN", proposalId)
+		var token = getters.token
+        var url = "/app/proposals/apply"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postApplyUpTESTING", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postApplyUpForm, { headers: headers })
+			.then(response => {
+				console.log("postApplyUp", response.data)
+				if (postApplyUpForm.apply === "up")
+					commit("APPLY_UP", postApplyUpForm.id)
+				else
+					commit("APPLY_DOWN", postApplyUpForm.id)
+
+			})
+			.catch(error => { 
+				throw error
+			})
+		}
     },
 
 
     async selectUser({ commit, getters, dispatch }, userId) {
         commit("SELECT_USER", userId)
     },
+  
 
     
 
-    async sendMessage({ commit, getters, dispatch }, message) {
-        commit("SEND_MESSAGE", message)
-    },
 
-    async getDiscussionId({ commit, getters, dispatch }) {
-        return "100021"
-    },
+
+    
     
 }
 

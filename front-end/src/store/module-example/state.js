@@ -912,5 +912,6 @@ export default  {
   connectionRequests: testing ? connectionRequestsTest : [],
   interactions: testing ? interactionsTest : [],
   discussions: [],
+  currentDiscussionId: "",
   adminAllUsers: [],
 }
