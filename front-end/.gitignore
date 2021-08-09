@@ -34,4 +34,4 @@ yarn-error.log*
 *.sln
 
 # mock servers
-mock1.postman*
+# mock1.postman*
