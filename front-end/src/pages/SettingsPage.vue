@@ -16,32 +16,9 @@
       <q-btn type="submit" flat label="Reset" color="primary"  />
       <q-btn type="reset" flat label="Cancel" v-close-popup />
       </q-form>
-      <!-- <div class="q-pa-lg">
-        <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
-      </div> -->
     </div>
 
-    <div class="q-pa-lg">
-    <div class="text-h6">Reset Image</div>
-      <q-form @submit.prevent="submitImage" @reset="onReset" class="q-gutter-md">
-
-        <!-- <q-uploader
-          url="http://localhost:4444/upload"
-        /> -->
-        <q-file
-          v-model="user.avatar"
-          label="Upaload avatar image"
-          accept=".jpg, .png, image/*"
-          filled
-          class="q-pa-sm"
-        />
-      <q-btn type="submit" flat label="Reset" color="primary"  />
-      <q-btn type="reset" flat label="Cancel" v-close-popup />
-      </q-form>
-      <!-- <div class="q-pa-lg">
-        <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
-      </div> -->
-    </div>
+    
 
     <div class="q-pa-lg">
     <div class="text-h6">Reset Password</div>
@@ -76,9 +53,6 @@
       <q-btn type="submit" flat label="Reset" color="primary"  />
       <q-btn type="reset" flat label="Cancel" v-close-popup />
       </q-form>
-      <!-- <div class="q-pa-lg">
-        <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
-      </div> -->
     </div>
   </q-page>
 </template>
@@ -112,26 +86,38 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["getUser"]),
+    ...mapActions(["getUser", "postUserSettings", "postUserSettingsPassword"]),
     submitPersonal: function() {
       console.log("CHANGE SETTINGS FORM", this.user.email, this.user.username, this.user.firstName, this.user.lastName, this.user.phone)
+
+      var postUserSettingsForm = {
+        username: this.user.username, 
+        firstName: this.user.firstName, 
+        lastName: this.user.lastName, 
+        email: this.user.email, 
+        phone: this.user.phone, 
+      }
+
+      this.postUserSettings(postUserSettingsForm)
     },
 
-    submitImage: function() {
-      console.log("CHANGE IMAGE", this.user.avatar)
-    },
 
     submitPassword: function() {
       if (this.password2 === this.password3) {
         console.log("CHANGE PASSWORD FORM", this.password, this.password2, this.password3)
+
+        var postUserSettingsPasswordForm = {
+          old: this.password,
+          new: this.password3
+        }
+
+        this.postUserSettingsPassword(postUserSettingsPasswordForm)
+        
       } else {
         alert("Passwords are not the same")
       }
     },
 
-    logOut_: function() {
-      console.log("LOG OUT")
-    },
 
     onReset: function() {
       this.password = ""

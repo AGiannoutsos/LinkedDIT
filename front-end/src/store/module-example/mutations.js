@@ -27,6 +27,12 @@ export default {
         state.user = payload
     },
 
+    STORE_USER_SETTINGS(state, payload) {
+        // stoped here
+        
+        state.user
+    },
+
     STORE_CONNECTION_REQUESTS(state, payload) {
         state.connectionRequests = payload
     },

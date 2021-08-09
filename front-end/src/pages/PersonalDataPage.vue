@@ -1,5 +1,31 @@
 <template>
-  <q-page class="fit column wrap justify-start items-center content-center">
+<div class="q-pa-md fit column wrap justify-start items-center content-center">
+<div class="text-h5">{{user.firstName + " " + user.lastName}}</div>
+  <q-img :src="user.avatar" style="max-height: 140px; max-width: 150px"/>
+</div>
+  <q-page class="fit column wrap justify-start items-stretch content-center">
+    
+    <div class="q-pa-md">
+      
+    <div class="text-h6">Profile Image</div>
+      <q-form @submit.prevent="submitImage" class="q-gutter-md">
+
+        <!-- <q-uploader
+          url="http://localhost:4444/upload"
+        /> -->
+        <q-file
+          v-model="user.avatar"
+          label="Upaload Profile Image"
+          accept=".jpg, .png, image/*"
+          filled
+          class="q-pa-sm"
+        />
+      <q-btn type="submit" flat label="Upaload" color="primary"  />
+      </q-form>
+      <!-- <div class="q-pa-lg">
+        <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
+      </div> -->
+    </div>
     <PersonalData :personalData="user.personalData" :ownUser="true"></PersonalData>
   </q-page>
 </template>
@@ -26,6 +52,11 @@ export default defineComponent({
 
   methods: {
     ...mapActions(["getUser"]),
+
+    submitImage: function() {
+      console.log("CHANGE IMAGE", this.user.avatar)
+    },
+
   },
 
   computed:{

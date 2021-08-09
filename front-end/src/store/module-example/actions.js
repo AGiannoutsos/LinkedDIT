@@ -422,6 +422,72 @@ export default {
 		}
     },
 
+	async postUserSettings({ commit, getters, dispatch }, postUserSettingsForm) {
+
+		var token = getters.token
+        var url = "/app/settings/user_data"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postUserSettingsTESTING", postUserSettingsForm)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postUserSettingsForm, { headers: headers })
+			.then(response => {
+				console.log("postUserSettings", response.data)
+				commit("STORE_USER_SETTINGS", postUserSettingsForm)
+				Notify.create({ 
+						type: 'positive', 
+						message: "Your account settings have been updated", 
+						position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'negative', 
+					message: "Error during account settings", 
+					icon: 'report_problem',
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
+	async postUserSettingsPassword({ commit, getters, dispatch }, postUserSettingsPasswordForm) {
+
+		var token = getters.token
+        var url = "/app/settings/change_password"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postUserSettingsPasswordTESTING", postUserSettingsPasswordForm)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postUserSettingsPasswordForm, { headers: headers })
+			.then(response => {
+				console.log("postUserSettingsPassword", response.data)
+				Notify.create({ 
+						type: 'positive', 
+						message: "Your Password has changed", 
+						position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'negative', 
+					message: "Error during Password change", 
+					icon: 'report_problem',
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
+
 
     async postConnectionRequest({ commit, getters, dispatch }, answer) {
 

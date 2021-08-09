@@ -85,13 +85,6 @@
                   <!-- <q-uploader
                     url="http://localhost:4444/upload"
                   /> -->
-                  <q-file
-                    v-model="file"
-                    label="Upaload avatar image"
-                    accept=".jpg, .png, image/*"
-                    filled
-                    class="q-pa-sm"
-                  />
                   <q-input v-model="password" filled label="Password" :type="isPwd ? 'password' : 'text'" >
                     <template v-slot:append>
                       <q-icon
@@ -228,7 +221,7 @@ export default defineComponent({
           lastName: this.lastName, 
           email: this.email,
           phone: this.phone.replace(/\s/g, ''), 
-          file: this.file,
+          // file: this.file,
           password: this.password, 
         }
 
