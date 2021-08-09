@@ -17,14 +17,16 @@
 
     <q-dialog v-model="fixed">
       <q-card>
-        <q-card-section>
+        <q-card-section class="row items-center q-pb-md">
           <div class="text-h6">Search Results</div>
+          <q-space />
+          <q-btn icon="close" flat round dense v-close-popup />
         </q-card-section>
 
         <q-separator />
 
         <q-card-section style="max-height: 50vh" class="scroll">
-          <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-lg">
+          <div v-for="(item, index) in searchUserResults" :key="index" class="q-pa-md">
             <UserCard :user="item" ></UserCard>
           </div>
         </q-card-section>
@@ -34,7 +36,7 @@
 
     <div class="fit row wrap items-start justify-center content-center">
 
-      <div v-for="(item, index) in connectedUsers" :key="index" class="q-pa-lg">
+      <div v-for="(item, index) in connectedUsers" :key="index" class="q-pa-md">
         <UserCard :user="item"> {{item}}</UserCard>
       </div>
     </div>
@@ -66,6 +68,7 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["getConnectedUsers"]),
     searchSubmit: function() {
       console.log("SEARCH FORM", this.searchText)
       this.fixed = true
@@ -73,10 +76,13 @@ export default defineComponent({
     },
   },
 
+  created() {
+    this.getConnectedUsers()
+  },
+
   computed:{
       ...mapGetters({
       connectedUsers: "connectedUsers",
-      user: "user",
       searchUserResults: "searchUserResults",
     }),
   },

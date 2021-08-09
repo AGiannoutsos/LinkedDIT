@@ -1,49 +1,11 @@
 var userTest = {
-  id: "12312312",
-  avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-  firstName: "Andreas",
-  lastName: "Giannoutsos",
-  connected: true,
-email: "andreas.giannoutsos@gmail.com",
-personalData: [
-	{
-		title: "Profession",
-		content: "KOroideuo KOsmo",
-		visibility: true
-	},
-	{
-		title: "Current Job Position",
-		content: "KOroideuo KOsmo",
-		visibility: true
-	},
-	{
-		title: "Professional Experience",
-		content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-		visibility: true
-	},
-	{
-		title: "Education",
-		content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-		visibility: true
-	},
-	{
-		title: "Skills",
-		content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-		visibility: true
-	},
-]
-}
-
-
-
-var connectedUsersTest = [
-  {
-    id: "12312312",
-    avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-    firstName: "Andreas",
-    lastName: "Giannoutsos",
-	connected: true,
+	id: "12312312",
+	username: "superandreas",
+	avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+	firstName: "Andreas",
+	lastName: "Giannoutsos",
 	email: "andreas.giannoutsos@gmail.com",
+	phone: "6912345678",
 	personalData: [
 		{
 			title: "Profession",
@@ -57,12 +19,50 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+			visibility: true
+		},
+	]
+}
+
+
+
+var connectedUsersTest = [
+  {
+    id: "12312312",
+    avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+    firstName: "Andreas",
+    lastName: "Giannoutsos",
+	connected: true,
+	personalData: [
+		{
+			title: "Profession",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -78,7 +78,6 @@ var connectedUsersTest = [
     firstName: "Smaragda",
     lastName: "Reppa",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -88,7 +87,7 @@ var connectedUsersTest = [
 		{
 			title: "Current Job Position",
 			content: "KOroideuo KOsmo",
-			visibility: true
+			visibility: false
 		},
 		{
 			title: "Professional Experience",
@@ -103,7 +102,7 @@ var connectedUsersTest = [
 		{
 			title: "Skills",
 			content: "Lorepomnai ",
-			visibility: true
+			visibility: false
 		},
 	]
   },
@@ -113,12 +112,11 @@ var connectedUsersTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
-			visibility: true
+			visibility: false
 		},
 		{
 			title: "Current Job Position",
@@ -127,12 +125,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -148,7 +146,6 @@ var connectedUsersTest = [
     firstName: "Ioannis",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -162,12 +159,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -183,7 +180,6 @@ var connectedUsersTest = [
     firstName: "User1",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -197,47 +193,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
-			visibility: true
-		},
-		{
-			title: "Skills",
-			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
-			visibility: true
-		},
-	]
-  },
-  {
-    id: "34632342334",
-    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User2",
-    lastName: "Xamodrakas",
-	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
-	personalData: [
-		{
-			title: "Profession",
-			content: "KOroideuo KOsmo",
-			visibility: true
-		},
-		{
-			title: "Current Job Position",
-			content: "KOroideuo KOsmo",
-			visibility: true
-		},
-		{
-			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
-			visibility: true
-		},
-		{
-			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -253,7 +214,6 @@ var connectedUsersTest = [
     firstName: "User5",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -267,12 +227,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -288,7 +248,6 @@ var connectedUsersTest = [
     firstName: "User23432",
     lastName: "Xamodrakas",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -302,12 +261,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -323,7 +282,6 @@ var connectedUsersTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: true,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -337,12 +295,12 @@ var connectedUsersTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -354,6 +312,19 @@ var connectedUsersTest = [
   },
 ]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 var searchUserResultsTest = [
   {
     id: "4564576ad",
@@ -361,7 +332,6 @@ var searchUserResultsTest = [
     firstName: "User23432",
     lastName: "Xamodrakas",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -375,12 +345,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -391,12 +361,11 @@ var searchUserResultsTest = [
 	],
   },
   {
-    id: "4asd234434323",
+    id: "4asd234etyr434323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -410,12 +379,114 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+			visibility: true
+		},
+	],
+  },
+  {
+    id: "4asd2344sds34323",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+	connected: false,
+	personalData: [
+		{
+			title: "Profession",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+			visibility: true
+		},
+	],
+  },
+  {
+    id: "4asd2344343dfgdf23",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+	connected: false,
+	personalData: [
+		{
+			title: "Profession",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+			visibility: true
+		},
+	],
+  },
+  {
+    id: "4asd234dfg434323",
+    avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+    firstName: "Pipis",
+    lastName: "Pipa",
+	connected: false,
+	personalData: [
+		{
+			title: "Profession",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "KOroideuo KOsmo",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -428,10 +499,9 @@ var searchUserResultsTest = [
   {
     id: "4564asd576ad",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User23431112",
+    firstName: "User234311121111111111111",
     lastName: "Xamodrakas",
-	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
+	connected: true,
 	personalData: [
 		{
 			title: "Profession",
@@ -445,12 +515,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -466,7 +536,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -480,12 +549,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -501,7 +570,6 @@ var searchUserResultsTest = [
     firstName: "User23432",
     lastName: "Xamodrakas",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -515,12 +583,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -536,7 +604,6 @@ var searchUserResultsTest = [
     firstName: "Pipis",
     lastName: "Pipa",
 	connected: false,
-	email: "andreas.giannoutsos@gmail.com",
 	personalData: [
 		{
 			title: "Profession",
@@ -550,12 +617,12 @@ var searchUserResultsTest = [
 		},
 		{
 			title: "Professional Experience",
-			content: "Lorepom den 8elo na kano auth th douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
 			title: "Education",
-			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare mporo kai gmtoxm den 8elo mia douleia gia 900 euro gmtxm kalytera na allajo kariera",
+			content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
 			visibility: true
 		},
 		{
@@ -567,9 +634,25 @@ var searchUserResultsTest = [
   },
 ]
 
+var interactionsTest = [
+	{
+		user: searchUserResultsTest[0],
+		interaction: "like",
+	},
+	{
+		user: searchUserResultsTest[0],
+		interaction: "apply",
+	},
+	{
+		user: searchUserResultsTest[0],
+		interaction: "comment",
+	},
+]
+
 var postsTest = [
 	{
 		id: "10000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -578,7 +661,52 @@ var postsTest = [
 		},
 		content: {
 			text: "lorpon this is a tsting post",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
+		},
+		likes: connectedUsersTest.slice(1), //....
+		comments: [
+			{
+				user: {
+					id: "12312312",
+					avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+					firstName: "Andreas",
+					lastName: "Giannoutsos",
+				},      
+				content: {
+					text: "lorpon this is a tsting comment",
+				},
+			},
+			{
+				user: {
+					id: "566612312",
+					avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+					firstName: "Smaragda",
+					lastName: "Reppa",
+				},      
+				content: {
+					text: "yees lorpon this is another testing comment",
+				},
+			},
+		]
+	},
+	{
+		id: "10002340",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
+		user: {
+			id: "12312312",
+			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
+			firstName: "Andreas",
+			lastName: "Giannoutsos",
+		},
+		content: {
+			text: "lorpon this is a tsting post",
+			file: {
+				type: "video",
+				url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+			},
 		},
 		likes: connectedUsersTest.slice(1), //....
 		comments: [
@@ -608,6 +736,7 @@ var postsTest = [
 	},
 	{
 		id: "20000",
+		date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -616,7 +745,10 @@ var postsTest = [
 		},
 		content: {
 			text: "ok yess this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
-			file: "",
+			file: {
+				type: "file",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: connectedUsersTest, //....
 		comments: [
@@ -649,6 +781,7 @@ var postsTest = [
   var proposalsTest = [
 	{
 		id: "10000",
+		date: "30 Jul 2021",
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -657,13 +790,17 @@ var postsTest = [
 		},
 		content: {
 			text: "lorpon this is a jonb proposaaalll post",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest.slice(1)], //....
 		
 	},
 	{
 		id: "20000",
+		date: "30 Jul 2021",
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -672,7 +809,10 @@ var postsTest = [
 		},
 		content: {
 			text: "ok yess JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest], //....
 		
@@ -682,6 +822,7 @@ var postsTest = [
   var myProposalsTest = [
 	{
 		id: "60000",
+		date: "30 Jul 2021",
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
@@ -690,13 +831,17 @@ var postsTest = [
 		},
 		content: {
 			text: "lorpon this is MYYYYYYYYYY a jonb proposaaalll post",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest.slice(1)], //....
 		
 	},
 	{
 		id: "50000",
+		date: "30 Jul 2021",
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
@@ -705,7 +850,10 @@ var postsTest = [
 		},
 		content: {
 			text: "ok yess MYYYYYYYYY JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
-			file: "",
+			file: {
+				type: "image",
+				url: "https://cdn.quasar.dev/img/mountains.jpg",
+			},
 		},
 		likes: [...connectedUsersTest], //....
 		
@@ -714,15 +862,56 @@ var postsTest = [
 
 var connectionRequestsTest = [...searchUserResultsTest]
 
-var testing = true
+var testing = false
 
+var userEmpty = {
+	id: "",
+	username: "",
+	avatar: "",
+	firstName: "",
+	lastName: "",
+	email: "",
+	phone: "",
+	personalData: [
+		{
+			title: "Profession",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Current Job Position",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Professional Experience",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Education",
+			content: "",
+			visibility: true
+		},
+		{
+			title: "Skills",
+			content: "",
+			visibility: true
+		},
+	]
+}
 
 export default  {
-  user: testing ? userTest : null,
+  user: testing ? userTest : userEmpty,
   posts: testing ? postsTest : [],
+  myPosts: [],
   proposals: testing ? proposalsTest : [],
   myProposals: testing ? myProposalsTest : [],
   connectedUsers: testing ? connectedUsersTest : [],
   searchUserResults: testing ? searchUserResultsTest : [],
   connectionRequests: testing ? connectionRequestsTest : [],
+  interactions: testing ? interactionsTest : [],
+  discussions: [],
+  currentDiscussionId: "",
+  adminAllUsers: [],
 }

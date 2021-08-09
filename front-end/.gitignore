@@ -32,3 +32,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+# mock servers
+mock1.postman*

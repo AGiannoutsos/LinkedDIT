@@ -10,6 +10,9 @@
 
         <q-item-section>
           <q-item-label>{{ post.user.firstName+' '+post.user.lastName }}</q-item-label>
+          <q-item-label caption>
+            {{post.date}}
+          </q-item-label>
         </q-item-section>
       </q-item>
 
@@ -19,21 +22,56 @@
         {{ post.content.text }}
       </q-card-section>
 
-      <q-card-section v-if="post.content.file" class="q-pa-md">
+      <q-card-section v-if="post.content.file.type === 'file'" class="q-pa-md">
         <q-btn
             color="primary"
             icon-right="archive"
-            :label="post.content.file.name"
+            :label="post.content.file.url.split('/').pop()"
             no-caps
             @click="downloadFile"
           />
       </q-card-section>
 
+      <q-card-section v-else-if="post.content.file.type === 'image'" class="q-pa-md" align="center">
+        <q-img
+        :src="post.content.file.url"
+        spinner-color="white"
+        style="max-height: 300px; max-width: 550px"
+        />
+      </q-card-section>
+
+      <q-card-section v-else-if="post.content.file.type === 'video'" class="q-pa-md" align="center">
+        <!-- <q-video
+        :ratio="16/9"
+        :src="post.content.file.url"
+        spinner-color="white"
+        style="max-height: 300px; max-width: 550px"
+        /> -->
+
+        <video width="550" height="300" controls  preload="none">
+          <source :src="post.content.file.url" type="video/mp4" autostart="0"> Your browser does not support the video tag.
+        </video>
+
+        <!-- <q-media-player
+        type="video"
+        background-color="black"
+        :muted="true"
+        radius="1rem"
+        :autoplay="true"
+        :show-big-play-button="true"
+        :sources="{src: post.content.file.url, type: 'video/mp4'}">
+        </q-media-player> -->
+
+        
+
+      </q-card-section>
+
+
       <!-- POST -->
 
       <q-card-actions align="left" class="q-pa-sm" v-if="isPost">
-        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? thumbsDown(post.id) : thumbsUp(post.id)" 
-                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" />
+        <q-btn flat round color="blue" @click="post.likes.find(u => u.id === user.id) ? postThumbsUp({id:post.id, thumbs:'down'}) : postThumbsUp({id:post.id, thumbs:'up'})" 
+                                        :icon="post.likes.find(u => u.id === user.id) ? 'thumb_up' : 'thumb_up_off_alt'" :disable="mine"/>
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Liked by '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -41,8 +79,8 @@
         <q-dialog v-model="likedPop">
           <q-card>
             <q-card-section style="max-height: 50vh" class="scroll">
-              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-lg">
-                <UserCard :user="item" :connected="false"></UserCard>
+              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-md">
+                <UserCard :user="item" ></UserCard>
               </div>
             </q-card-section>
 
@@ -53,8 +91,8 @@
       <!-- JOB PROPOSAL -->
 
       <q-card-actions align="left" class="q-pa-sm" v-else>
-        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? applyDown(post.id) : applyUp(post.id)" 
-                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" />
+        <q-btn flat label="Apply" color="blue" @click="post.likes.find(u => u.id === user.id) ? postApplyUp({id:post.id, apply:'down'}) : postApplyUp({id:post.id, apply:'up'})" 
+                                                :icon="post.likes.find(u => u.id === user.id) ? 'work' : 'work_outline'" :disable="mine" />
         <div class="text-capitalize">
           <q-btn flat class="text-caption" :label="'Applicants '+post.likes.length" @click="likedPop = true"/>
         </div>
@@ -62,7 +100,7 @@
         <q-dialog v-model="likedPop">
           <q-card>
             <q-card-section style="max-height: 50vh" class="scroll">
-              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-lg">
+              <div v-for="(item, index) in post.likes" :key="index" class="q-pa-md">
                 <UserCard :user="item" ></UserCard>
               </div>
             </q-card-section>
@@ -84,7 +122,7 @@
                     :name="item.user.firstName+' '+item.user.lastName"
                     :avatar="item.user.avatar"
                     :text="[item.content.text]"
-                    :sent="user.id===item.user.id"
+                    :sent="myUserId===item.user.id"
                   />
                 </div>
               </div>
@@ -118,6 +156,7 @@ import { defineComponent, ref } from 'vue'
 import { mapActions, mapGetters } from "vuex"
 import { exportFile, useQuasar } from 'quasar'
 import UserCard from './UserCard.vue'
+import axios from 'axios'
 
 export default defineComponent({
   components: { UserCard },
@@ -130,6 +169,10 @@ export default defineComponent({
     isPost: {
       type: Boolean,
       default: true
+    },
+    mine: {
+      type: Boolean,
+      default: false
     },
   },
 
@@ -149,14 +192,14 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["postComment", "thumbsUp", "thumbsDown", "applyUp", "applyDown"]),
+    ...mapActions(["getUser", "postComment", "postThumbsUp", "postApplyUp"]),
     postComment_: function() {
       console.log("POST COMMENT", this.commentText)
 
       let comment = {
         id: this.post.id,
         comment: {
-          user: this.user,
+          user: this.userLight,
           content: {
             text: this.commentText,
           }
@@ -171,27 +214,45 @@ export default defineComponent({
     downloadFile: function () {
       const $q = useQuasar()
       // naive encoding to csv format
-      const content = ["aa"]
+      // const content = ["aa"]
 
-      const status = exportFile(
-        this.post.content.file.name,
-        content,
-        'text/csv'
-      )
+      // const status = exportFile(this.post.content.file.url.split('/').pop(), content)
 
-      if (status !== true) {
-        $q.notify({
-          message: 'Browser denied file download...',
-          color: 'negative',
-          icon: 'warning'
-        })
-      }
+      // if (status !== true) {
+      //   $q.notify({
+      //     message: 'Browser denied file download...',
+      //     color: 'negative',
+      //     icon: 'warning'
+      //   })
+      // }
+
+      // taken from https://morioh.com/p/f4d331b62cda
+      axios({
+          url: this.post.content.file.url,
+          method: 'GET',
+          responseType: 'blob',
+      }).then((response) => {
+            var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+            var fileLink = document.createElement('a');
+
+            fileLink.href = fileURL;
+            fileLink.setAttribute('download', this.post.content.file.url.split('/').pop());
+            document.body.appendChild(fileLink);
+
+            fileLink.click();
+      });
     }
   },
 
-    computed:{
+  // created() {
+  //   this.getUser()
+  // },
+
+  computed:{
         ...mapGetters({
-		    user: "user",
+        myUserId: "myUserId",
+        user: "user",
+        userLight: "userLight",
 	    }),
   },
 

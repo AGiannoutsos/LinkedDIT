@@ -7,8 +7,9 @@
           <q-avatar>
             <img src="../../public/icons/logo_LinkedDit.svg">
           </q-avatar>
-          LinkedDIT
+          LinkedDIT Administrator Control Panel
         </q-toolbar-title>
+        <q-btn color="blue" icon="logout" class="q-pa-sm q-ma-sm" label="Log out" @click="logOut_" />
       </q-toolbar>
     </q-header>
 
@@ -21,13 +22,13 @@
 
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
 
 
 import { defineComponent, ref } from 'vue'
+import { mapActions, mapGetters } from "vuex"
 
 export default defineComponent({
-  name: 'LoginLayout',
+  name: 'AdminLayout',
 
   components: {
     
@@ -37,6 +38,14 @@ export default defineComponent({
 
   },
 
+  methods: {
+    ...mapActions(["postLogout"]),
+    logOut_: function() {
+      console.log("LOG OUT")
+      this.postLogout()
+      this.$router.push({ name: 'front page' })
+    },
+  },
 
 })
 </script>

@@ -37,13 +37,28 @@
         </div>
       </form>
 
+
+    <q-btn-toggle
+      v-model="postsToggle"
+      spread
+      no-caps
+      flat
+      toggle-color="blue"
+      color="white"
+      text-color="grey"
+      :options="[
+        {label: 'Recommended Posts', value: 'Other Posts'},
+        {label: 'Mine Posts', value: 'My Posts'}
+      ]"
+    />
+
     <q-separator size="2px" />
 
     <!-- <div class="column wrap items-center"> -->
-      <q-infinite-scroll @load="onLoad" :offset="250">
-        <div v-for="(item, index) in posts" :key="index" class="q-pa-lg">
+      <q-infinite-scroll @load="onLoad" :offset="20">
+        <div v-for="(item, index) in postsToggle === 'Other Posts' ? posts : myPosts" :key="index" class="q-pa-lg">
           <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis perferendis totam, ea at omnis vel numquam exercitationem aut, natus minima, porro labore.</p> -->
-          <Post :post="item"></Post>
+          <Post :post="item" :mine="postsToggle === 'My Posts'"></Post>
         </div>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">
@@ -65,43 +80,58 @@ export default defineComponent({
   name: 'WallPage',
 
     setup () {
-    const items = ref([ {},
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {} ])
     
     return {
       text: ref(""),
       file: ref(null),
-      items,
-      onLoad (index, done) {
-        setTimeout(() => {
-          items.value.push({}, {}, {}, {}, {}, {}, {})
-          done()
-        }, 2000)
-      }
+      
     }
   },
+
+  data() {
+    return {
+      items: [],
+      postsToggle: "Other Posts",
+    }
+  },
+
   created() {
-    console.log("WALL PAGE", this.posts)
+    // // this.getRecommendedPosts()
+    this.getMyPosts()
+    this.getUser()
   },
 
   methods: {
-    ...mapActions(["postPost"]),
+    ...mapActions(["getUser", "postPost", "getRecommendedPosts", "getMyPosts"]),
+
+    onLoad: function (index, done) {
+        setTimeout(() => {
+        if (this.postsToggle === "Other Posts")
+          this.getRecommendedPosts()
+        // else
+        //   this.getMyPosts()
+        // this.items.push(...this.posts)
+
+        done()
+       }, 2500)
+    },
+
+
     postSubmit: function() {
       console.log("POST FORM", this.text, this.file)
 
 
       let post = {
           id: Math.random().toString(),
+          date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
           user: this.user,
           likes: [],
           content: {
-              text: this.text,
-              file: this.file,
+            text: this.text,
+            file: {
+              type: "",
+              url: "",
+            },
           },
           comments: [],
       }
@@ -115,6 +145,7 @@ export default defineComponent({
   computed:{
         ...mapGetters({
 		    posts: "posts",
+		    myPosts: "myPosts",
         user: "user"
 	    }),
   },

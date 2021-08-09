@@ -55,9 +55,9 @@
     <q-separator size="2px" />
 
     <!-- <div class="column wrap items-center"> -->
-      <q-infinite-scroll @load="onLoad" :offset="250">
+      <q-infinite-scroll @load="onLoad" :offset="20">
         <div v-for="(item, index) in proposalsToggle === 'Other Proposals' ? proposals : myProposals" :key="index" class="q-pa-lg">
-          <Post :post="item" :isPost="false"></Post>
+          <Post :post="item" :isPost="false" :mine="proposalsToggle === 'My Proposals' "></Post>
         </div>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">
@@ -80,23 +80,10 @@ export default defineComponent({
   name: 'ProposalsPage',
   components: { Post },
    setup () {
-    const items = ref([ {},
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {}, 
-                        {} ])
     
     return {
-      items,
-      onLoad (index, done) {
-        setTimeout(() => {
-          items.value.push({}, {}, {}, {}, {}, {}, {})
-          done()
-        }, 2000)
-      }
     }
+      
   },
 
   data() {
@@ -105,21 +92,39 @@ export default defineComponent({
       text: "",
       file: null,
       proposalsToggle: "Other Proposals",
+      itema: [],
     }
   },
 
   methods: {
-    ...mapActions(["postProposal"]),
+    ...mapActions(["postProposal", "getUser", "getMyProposals", "getProposals"]),
+
+
+    onLoad: function (index, done) {
+        setTimeout(() => {
+        if (this.proposalsToggle === "Other Proposals")
+          this.getProposals()
+        
+
+        done()
+       }, 2000)
+    },
+
+
     proposalSubmit: function() {
       console.log("ADVERT FORM", this.text, this.file)
 
 
       let proposal = {
           id: Math.random().toString(),
+          date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
           user: this.user,
           content: {
-              text: this.text,
-              file: this.file,
+            text: this.text,
+            file: {
+              type: "",
+              url: "",
+            },
           },
           likes: [],
       }
@@ -128,6 +133,12 @@ export default defineComponent({
       this.text = ""
       this.file = null
     },
+  },
+
+  created() {
+    this.getUser()
+    this.getProposals()
+    this.getMyProposals()
   },
 
   computed:{

@@ -4,6 +4,7 @@ const routes = [
     path: '/app',
     name: "app front page",
     redirect: { name: 'wall' },
+    meta: { auth: true },
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: 'wall',
@@ -29,15 +30,6 @@ const routes = [
         name: "settings" },
     ]
   },
-
-    // <q-route-tab to="/wall" label="Wall" />
-    // <q-route-tab to="/network" label="Network" />
-    // <q-route-tab to="/adverts" label="Adverts" />
-    // <q-route-tab to="/discussions" label="Discussions" />
-    // <q-route-tab to="/notifications" label="Notifications" />
-    // <q-route-tab to="/personal_data" label="Personam Data" />
-    // <q-route-tab to="/settings" label="Settings" />
-
   {
     path: '/',
     component: () => import('layouts/LoginLayout.vue'),
@@ -47,11 +39,22 @@ const routes = [
         name: "front page",  },
     ]
   },
+  {
+    path: '/admin',
+    meta: { authAdmin: true },
+    component: () => import('layouts/AdminLayout.vue'),
+    children: [
+      { path: '', 
+        component: () => import('pages/AdminPage.vue'),
+        name: "admin page",  },
+    ]
+  },
 
   // Always leave this as last one,
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
+    name: "error",
     component: () => import('pages/Error404.vue')
   }
 ]

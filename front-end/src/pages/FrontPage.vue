@@ -33,9 +33,9 @@
                       />
                     </template>
                   </q-input>
-                <q-btn type="submit" flat label="Login" color="primary"  />
-                <q-btn type="reset" flat label="Cancel" v-close-popup />
                 <q-btn type="reset" flat label="Forgot Password" @click="forgotPasswordPrompt = true" v-close-popup />
+                <q-btn type="reset" flat label="Cancel" v-close-popup />
+                <q-btn type="submit" flat label="Login" color="primary"  />
                 </q-form>
               </q-card-section>
             </q-card>
@@ -67,7 +67,7 @@
             <q-dialog v-model="signupPrompt" >
             <q-card style="min-width: 350px">
               <q-card-section>
-                <div class="text-h6">Login</div>
+                <div class="text-h6">Sign Up</div>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
@@ -76,6 +76,15 @@
                   <q-input v-model="firstName"  filled label="First Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a First Name']"/>
                   <q-input v-model="lastName"  filled label="Last Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a Last Name']"/>
                   <q-input v-model="email" filled label="Email" type="email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type an email']"/>
+                  <q-input
+                    filled
+                    v-model="phone"
+                    label="Phone"
+                    mask="### ## ## ###"
+                  />
+                  <!-- <q-uploader
+                    url="http://localhost:4444/upload"
+                  /> -->
                   <q-input v-model="password" filled label="Password" :type="isPwd ? 'password' : 'text'" >
                     <template v-slot:append>
                       <q-icon
@@ -94,8 +103,8 @@
                       />
                     </template>
                   </q-input>
-                <q-btn type="submit" flat label="Sign Up" color="primary"  />
                 <q-btn type="reset" flat label="Cancel" v-close-popup />
+                <q-btn type="submit" flat label="Sign Up" color="primary"  />
                 </q-form>
               </q-card-section>
             </q-card>
@@ -109,11 +118,15 @@
 
 <script>
 import { defineComponent, ref } from 'vue';
+import { mapActions, mapGetters } from "vuex"
+import { useQuasar } from 'quasar'
 
 export default defineComponent({
   name: 'FrontPage',
 
    setup () {
+      const $q = useQuasar()
+
     return {
       alert: ref(false),
       confirm: ref(false),
@@ -130,6 +143,24 @@ export default defineComponent({
       firstName: ref(''),
       lastName: ref(''),
       email: ref(''),
+      phone: ref(''),
+      file: ref(null),
+
+      showNotifBad (msg) {
+        $q.notify({ 
+          type: 'negative', 
+          message: msg, 
+          icon: 'report_problem',
+          position: "top" })
+      },
+
+      showNotifInfo (msg) {
+        $q.notify({ 
+          type: 'info', 
+          message: msg, 
+          icon: 'info',
+          position: "top" })
+      }
       
 
 
@@ -137,24 +168,67 @@ export default defineComponent({
   },
 
   methods: {
+    ...mapActions(["postLogin", "postForgotPassword", "postSignUp"]),
+
+
     loginSubmit: function() {
       console.log("LOGIN FORM", this.username, this.password)
 
-      // login request
+      var postLoginForm = {
+        username: this.username,
+        password: this.password 
+      }
 
       // if succes route to the app
-      this.$router.push({ name: 'app front page' })
+      if (this.username === "admin") {
+
+        this.postLogin(postLoginForm)
+        .then(response => {          
+          this.$router.push({ name: 'admin page' })
+        })
+        .catch(error => {
+        })
+
+      } else {
+
+        this.postLogin(postLoginForm)
+        .then(response => {
+          this.$router.push({ name: 'app front page' })
+        })
+        .catch(error => {
+        })
+
+      }
     },
 
     forgotPasswordSubmit: function() {
       console.log("FORGOT PASS FORM", this.email)
+
+      var postForgotPasswordForm = {
+        email: this.email
+      }
+      this.postForgotPassword(postForgotPasswordForm)
     },
 
     signupSubmit: function() {
       if (this.password === this.password2) {
-        console.log("SIGNUP FORM", this.username, this.firstName, this.lastName, this.password, this.password2)
+        console.log("SIGNUP FORM", this.username, this.firstName, this.lastName, this.password, this.password2, this.phone, this.file)
+
+        
+        var postSignUpForm = {
+          username: this.username, 
+          firstName: this.firstName, 
+          lastName: this.lastName, 
+          email: this.email,
+          phone: this.phone.replace(/\s/g, ''), 
+          // file: this.file,
+          password: this.password, 
+        }
+
+        this.postSignUp(postSignUpForm)
+
       } else {
-        alert("Passwords are not the same")
+        this.showNotifBad("Passwords are not the same")
       }
     },
 
@@ -165,6 +239,8 @@ export default defineComponent({
       this.firstName = ""
       this.lastName = ""
       this.email = ""
+      this.phone = ""
+      this.file = null
     },
 
   },
