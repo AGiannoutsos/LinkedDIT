@@ -2756,5 +2756,326 @@ export default {
         },
     ],
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////SEARCH RESULTS///////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
+
+    searchUserResultsTest: [
+        {
+          id: "4564576ad",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "User23432",
+          lastName: "Xamodrakas",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "4asd234etyr434323",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "Pipis",
+          lastName: "Pipa",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "4asd2344sds34323",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "Pipis",
+          lastName: "Pipa",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "4asd2344343dfgdf23",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "Pipis",
+          lastName: "Pipa",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "4asd234dfg434323",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "Pipis",
+          lastName: "Pipa",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "4564asd576ad",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "User234311121111111111111",
+          lastName: "Xamodrakas",
+          connected: true,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "4234434as323",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "Pipis",
+          lastName: "Pipa",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "45ass64576ad",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "User23432",
+          lastName: "Xamodrakas",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+        {
+          id: "42344asa34323",
+          avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
+          firstName: "Pipis",
+          lastName: "Pipa",
+          connected: false,
+          personalData: [
+              {
+                  title: "Profession",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Current Job Position",
+                  content: "KOroideuo KOsmo",
+                  visibility: true
+              },
+              {
+                  title: "Professional Experience",
+                  content: "Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Education",
+                  content: "Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera",
+                  visibility: true
+              },
+              {
+                  title: "Skills",
+                  content: "Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant",
+                  visibility: true
+              },
+          ],
+        },
+      ],
 
 }

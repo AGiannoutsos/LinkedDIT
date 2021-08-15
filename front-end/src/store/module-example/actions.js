@@ -11,7 +11,8 @@ const axios = require('axios');
 
 var apiUrl = '';
 // apiUrl = 'https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io';
-apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
+// apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
+apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
 
 
 
@@ -183,6 +184,31 @@ export default {
 			})
 		}
     },
+
+	// async postSearchResults({ commit, getters, dispatch }) {
+
+	// 	var token = getters.token
+    //     var url = "/app/search_results"
+
+    //     let headers = { "Authorization": `${token}` };
+
+	// 	if (TESTING){
+	// 		return Promise.resolve()
+	// 		.then( response => {
+	// 			console.log("getSearchResultsTESTING", testResponses.searchUserResultsTest)
+	// 			commit("STORE_SEARCH_RESULTS", testResponses.searchUserResultsTest)
+	// 		})
+	// 	} else {
+	// 		return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+	// 		.then(response => {
+	// 			console.log("getSearchResults", response.data)
+	// 			commit("STORE_SEARCH_RESULTS", response.data)
+	// 		})
+	// 		.catch(error => { 
+	// 			throw error
+	// 		})
+	// 	}
+    // },
 
 	async getRecommendedPosts({ commit, getters, dispatch }) {
 
@@ -524,6 +550,42 @@ export default {
 		}
     },
 
+	async postSearchResults({ commit, getters, dispatch }, postSearchResultsForm) {
+
+		var token = getters.token
+        var url = "/app/search_results"
+
+        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postSearchResultsTESTING", testResponses.searchUserResultsTest)
+				commit("STORE_SEARCH_RESULTS", testResponses.searchUserResultsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postSearchResultsForm, { headers: headers })
+			.then(response => {
+				console.log("postSearchResults", response.data)
+				commit("STORE_SEARCH_RESULTS", response.data)
+
+				Notify.create({ 
+						type: 'positive', 
+						message: "Search was successfull.", 
+						position: "top" })
+			})
+			.catch(error => { 
+				commit("DELETE_SEARCH_RESULTS")
+				Notify.create({ 
+					type: 'negative', 
+					message: "Error in Search.", 
+					icon: 'report_problem',
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
 	async postDiscussion({ commit, getters, dispatch }, otherUserId) {
 		
 		var token = getters.token
@@ -638,9 +700,9 @@ export default {
 		}
     },
     
-    async postPost({ commit, getters, dispatch }, post) {
-        commit("POST_POST", post)
-    },
+    // async postPost({ commit, getters, dispatch }, post) {
+    //     commit("POST_POST", post)
+    // },
 
     async postThumbsUp({ commit, getters, dispatch }, postThumbsUpForm) {
 
@@ -671,9 +733,9 @@ export default {
     },
 
 
-    async postProposal({ commit, getters, dispatch }, proposal) {
-        commit("POST_PROPOSAL", proposal)
-    },
+    // async postProposal({ commit, getters, dispatch }, proposal) {
+    //     commit("POST_PROPOSAL", proposal)
+    // },
     
     async postApplyUp({ commit, getters, dispatch }, postApplyUpForm) {
 
@@ -698,6 +760,105 @@ export default {
 
 			})
 			.catch(error => { 
+				throw error
+			})
+		}
+    },
+
+
+	async postProfileImage({ commit, getters, dispatch }, postProfileImageForm) {
+
+		var token = getters.token
+        var url = "/app/settings/profile_image"
+
+        let headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postProfileImageTESTING", testResponses.myProposalsTest)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postProfileImageForm, { headers: headers })
+			.then(response => {
+				console.log("postProfileImage", response.data)
+				Notify.create({ 
+					type: 'positive', 
+					message: "Profile image updated successfully.", 
+					position: "top" })
+				dispatch("getUser")
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'error', 
+					message: "Error in profile image.", 
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
+	async postPost({ commit, getters, dispatch }, postPostForm) {
+
+		var token = getters.token
+        var url = "/app/posts/upload"
+
+        let headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postPostTESTING")
+				commit("POST_POST", JSON.parse(postPostForm.get("json")))
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postPostForm, { headers: headers })
+			.then(response => {
+				console.log("postPost", response.data)
+				commit("POST_POST", JSON.parse(postPostForm.get("json")))
+				Notify.create({ 
+					type: 'positive', 
+					message: "Post was uploaded successfully.", 
+					position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'error', 
+					message: "Error in posting.", 
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
+	async postProposal({ commit, getters, dispatch }, postProposalForm) {
+
+		var token = getters.token
+        var url = "/app/proposals/upload"
+
+        let headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postProposalTESTING")
+				commit("POST_PROPOSAL", JSON.parse(postProposalForm.get("json")))
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, postProposalForm, { headers: headers })
+			.then(response => {
+				console.log("postProposal", response.data)
+				commit("POST_PROPOSAL", JSON.parse(postProposalForm.get("json")))
+				Notify.create({ 
+					type: 'positive', 
+					message: "Proposal was uploaded successfully.", 
+					position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'error', 
+					message: "Error in proposal upaloading.", 
+					position: "top" })
 				throw error
 			})
 		}

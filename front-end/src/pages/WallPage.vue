@@ -121,7 +121,7 @@ export default defineComponent({
       console.log("POST FORM", this.text, this.file)
 
 
-      let post = {
+      var post = {
           id: Math.random().toString(),
           date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
           user: this.user,
@@ -136,7 +136,13 @@ export default defineComponent({
           comments: [],
       }
 
-      this.postPost(post)
+      const formData = new FormData();
+      formData.append("file", this.file);
+      formData.append("json", JSON.stringify(post));
+      console.log(formData.get("file"))
+      console.log(formData.get("json"))
+
+      this.postPost(formData)
       this.text = ""
       this.file = null
     },

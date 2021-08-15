@@ -115,7 +115,7 @@ export default defineComponent({
       console.log("ADVERT FORM", this.text, this.file)
 
 
-      let proposal = {
+      var proposal = {
           id: Math.random().toString(),
           date: Date().toString().replace(/\w+ (\w+) (\d+) (\d+).*/,'$2 $1 $3'),
           user: this.user,
@@ -129,7 +129,13 @@ export default defineComponent({
           likes: [],
       }
 
-      this.postProposal(proposal)
+      const formData = new FormData();
+      formData.append("file", this.file);
+      formData.append("json", JSON.stringify(proposal));
+      console.log(formData.get("file"))
+      console.log(formData.get("json"))
+
+      this.postProposal(formData)
       this.text = ""
       this.file = null
     },

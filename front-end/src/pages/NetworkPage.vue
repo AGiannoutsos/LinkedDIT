@@ -68,9 +68,17 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["getConnectedUsers"]),
+    ...mapActions(["getConnectedUsers", "postSearchResults"]),
     searchSubmit: function() {
-      console.log("SEARCH FORM", this.searchText)
+      console.log("SEARCH FORM", this.searchText.split(" ")[1])
+
+      var postSearchResultsForm = {
+        firstName: this.searchText.split(" ")[0],
+        lastName: this.searchText.split(" ")[1] ? this.searchText.split(" ")[1] : ""
+      }
+
+      this.postSearchResults(postSearchResultsForm)
+
       this.fixed = true
       this.searchText = ""
     },
