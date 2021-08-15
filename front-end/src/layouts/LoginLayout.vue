@@ -12,6 +12,12 @@
       </q-toolbar>
     </q-header>
 
+    <q-footer elevated>
+      <q-toolbar>
+        <q-toolbar-title class="text-center text-caption">Andreas Giannoutsos - Smaragda Reppa</q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+
     <q-page-container>
       <router-view />
     </q-page-container>

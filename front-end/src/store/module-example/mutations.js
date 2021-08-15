@@ -33,6 +33,14 @@ export default {
         state.user
     },
 
+    STORE_SEARCH_RESULTS(state, payload) {
+        state.searchUserResults = payload
+    },
+
+    DELETE_SEARCH_RESULTS(state, payload) {
+        state.searchUserResults = []
+    },
+
     STORE_CONNECTION_REQUESTS(state, payload) {
         state.connectionRequests = payload
     },
@@ -117,7 +125,7 @@ export default {
     },
 
     POST_POST(state, payload) {
-        state.posts.unshift(payload)
+        state.myPosts.unshift(payload)
 	},
 
     THUMBS_UP(state, payload) {

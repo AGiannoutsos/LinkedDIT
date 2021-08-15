@@ -3,8 +3,8 @@
   <q-page class="column justify-center items-center content-center">
         <q-img
           src="../../public/icons/logo_LinkedDit.svg"
-          width="300px"
-          height="300px"
+          width="250px"
+          height="250px"
         />
         <h1> LinkedDIT </h1>
         <div class="q-gutter-x-md">

@@ -14,7 +14,7 @@
           url="http://localhost:4444/upload"
         /> -->
         <q-file
-          v-model="user.avatar"
+          v-model="imageFile"
           label="Upaload Profile Image"
           accept=".jpg, .png, image/*"
           filled
@@ -41,7 +41,13 @@ export default defineComponent({
 
    setup () {
     return {    
+      
+      }
+  },
 
+  data() {
+    return {
+      imageFile: null,
 
     }
   },
@@ -51,10 +57,16 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["getUser"]),
+    ...mapActions(["getUser", "postProfileImage"]),
 
     submitImage: function() {
-      console.log("CHANGE IMAGE", this.user.avatar)
+      console.log("CHANGE IMAGE", this.imageFile)
+
+      const formData = new FormData();
+      formData.append("image", this.imageFile, this.imageFile.name);
+      console.log(formData.getAll("image"))
+
+      this.postProfileImage(formData)
     },
 
   },
