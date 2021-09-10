@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bc4ec2d1-d39f-4ab3-b557-12f228d2b45b",
+		"_postman_id": "92bf037e-c732-4aed-b504-fa2b194b8716",
 		"name": "mock1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,16 +15,27 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "{{url}}/app/user",
+					"raw": "http://127.0.0.1:8000/app/user/",
+					"protocol": "http",
 					"host": [
-						"{{url}}"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
+					"port": "8000",
 					"path": [
 						"app",
-						"user"
+						"user",
+						""
 					]
 				}
 			},
@@ -439,22 +450,10 @@
 			"name": "login",
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "x-mock-match-request-body",
-						"value": "true",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text",
-						"disabled": true
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"username\":\"admin\",\"password\":\"admin\"}",
+					"raw": "{\n    \"username\":\"joey\",\n    \"password\":\"6joet\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -462,12 +461,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/login",
+					"raw": "http://127.0.0.1:8000/app/login/",
+					"protocol": "http",
 					"host": [
-						"{{url}}"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
+					"port": "8000",
 					"path": [
-						"login"
+						"app",
+						"login",
+						""
 					]
 				}
 			},
@@ -776,7 +782,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"username\":\"a\",\n  \"firstName\":\"a\",\n  \"lastName\":\"a\",\n  \"email\":\"a@a\",\n  \"phone\":\"6912345678\",\n  \"password\":\"123\"\n}",
+					"raw": "{\n  \"username\":\"joey\",\n  \"first_name\":\"Joey\",\n  \"last_name\":\"Tribianni\",\n  \"email\":\"bing@tedi.com\",\n  \"phone\":\"6944557788\",\n  \"password\":\"6joet\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -784,12 +790,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/sign_up",
+					"raw": "http://127.0.0.1:8000/app/sign_up/",
+					"protocol": "http",
 					"host": [
-						"{{url}}"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
+					"port": "8000",
 					"path": [
-						"sign_up"
+						"app",
+						"sign_up",
+						""
 					]
 				}
 			},
@@ -1008,6 +1021,166 @@
 					"header": [],
 					"cookie": [],
 					"body": "{\n    \"message\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get search results",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mock-match-request-body",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"aa\",\n    \"lastName\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/app/search_results",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"app",
+						"search_results"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Andreas\",\n    \"lastName\": \"Giannoutsos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/app/search_results",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"app",
+								"search_results"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\":\"4564576ad\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"User23432\",\n    \"lastName\":\"Xamodrakas\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd234etyr434323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd2344sds34323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd2344343dfgdf23\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd234dfg434323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4564asd576ad\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"User234311121111111111111\",\n    \"lastName\":\"Xamodrakas\",\n    \"connected\":true,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4234434as323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"45ass64576ad\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"User23432\",\n    \"lastName\":\"Xamodrakas\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"42344asa34323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  }\n]\n"
+				},
+				{
+					"name": "example 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Smaragda\",\n    \"lastName\": \"Reppa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/app/search_results",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"app",
+								"search_results"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\":\"4564576ad\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"User23432\",\n    \"lastName\":\"Xamodrakas\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd234etyr434323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd2344sds34323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd2344343dfgdf23\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd234dfg434323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4564asd576ad\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"User234311121111111111111\",\n    \"lastName\":\"Xamodrakas\",\n    \"connected\":true,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4234434as323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  }\n]\n"
+				},
+				{
+					"name": "example 3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"aa\",\n    \"lastName\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/app/search_results",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"app",
+								"search_results"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "[\n  {\n    \"id\":\"4564576ad\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"User23432\",\n    \"lastName\":\"Xamodrakas\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  },\n  {\n    \"id\":\"4asd234etyr434323\",\n    \"avatar\":\"https://cdn.quasar.dev/img/avatar2.jpg\",\n    \"firstName\":\"Pipis\",\n    \"lastName\":\"Pipa\",\n    \"connected\":false,\n    \"personalData\":[\n      {\n        \"title\":\"Profession\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Current Job Position\",\n        \"content\":\"KOroideuo KOsmo\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Professional Experience\",\n        \"content\":\"Lorepom den 8elo na kano auth th douleia  gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Education\",\n        \"content\":\"Lorepom panta eixa kalous ba8mous giati mou aresei to 8elo na epodioko oso perissotero kalutare gmtxm kalytera na allajo kariera\",\n        \"visibility\":true\n      },\n      {\n        \"title\":\"Skills\",\n        \"content\":\"Lorepom gnorizo pragmata pou se 3 xronia ua einai irrelevant\",\n        \"visibility\":true\n      }\n    ]\n  }\n]\n"
 				}
 			]
 		},
@@ -1284,7 +1457,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Professional Experience\",\n    \"content\": \"Lorepom 1\",\n    \"visibility\": true\n}",
+					"raw": "{\n    \"title\": \"Skills\",\n    \"content\": \"Gone to Charisma class\",\n    \"visibility\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1292,13 +1465,19 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/app/personal_data",
+					"raw": "http://127.0.0.1:8000/app/personal_data/",
+					"protocol": "http",
 					"host": [
-						"{{url}}"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
+					"port": "8000",
 					"path": [
 						"app",
-						"personal_data"
+						"personal_data",
+						""
 					]
 				}
 			},
@@ -1341,7 +1520,7 @@
 						}
 					},
 					"_postman_previewlanguage": "json",
-					"header": null,
+					"header": [],
 					"cookie": [],
 					"body": "{\n    \"message\": \"ok\"\n}"
 				},
@@ -1526,7 +1705,7 @@
 						}
 					},
 					"_postman_previewlanguage": "json",
-					"header": null,
+					"header": [],
 					"cookie": [],
 					"body": "{\n    \"message\": \"ok\"\n}"
 				},
@@ -1712,7 +1891,7 @@
 						}
 					},
 					"_postman_previewlanguage": "json",
-					"header": null,
+					"header": [],
 					"cookie": [],
 					"body": "{\n    \"message\": \"ok\"\n}"
 				},
@@ -2413,6 +2592,265 @@
 					"header": [],
 					"cookie": [],
 					"body": "{\n    \"message\":\"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "post profile image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mock-match-request-body",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/andreas/Desktop/mountains.jpg"
+						},
+						{
+							"key": "json",
+							"value": "bla bla",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/app/settings/profile_image",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"app",
+						"settings",
+						"profile_image"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/app/settings/profile_image",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"app",
+								"settings",
+								"profile_image"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "post a post, upload a post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mock-match-request-body",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/andreas/Desktop/mountains.jpg"
+						},
+						{
+							"key": "json",
+							"value": "look at the vue file for the json form that is upaload or at the getPost ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/app/posts/upload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"app",
+						"posts",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/app/posts/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"app",
+								"posts",
+								"upload"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "post a job proposal, upload a job proposal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-mock-match-request-body",
+						"value": "true",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/andreas/Desktop/mountains.jpg"
+						},
+						{
+							"key": "json",
+							"value": "look at the vue file for the json form that is upaload or at the getProposals\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/app/proposals/upload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"app",
+						"proposals",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "example 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/app/proposals/upload",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"app",
+								"proposals",
+								"upload"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"ok\"\n}"
 				}
 			]
 		}

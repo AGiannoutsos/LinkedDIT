@@ -185,30 +185,6 @@ export default {
 		}
     },
 
-	// async postSearchResults({ commit, getters, dispatch }) {
-
-	// 	var token = getters.token
-    //     var url = "/app/search_results"
-
-    //     let headers = { "Authorization": `${token}` };
-
-	// 	if (TESTING){
-	// 		return Promise.resolve()
-	// 		.then( response => {
-	// 			console.log("getSearchResultsTESTING", testResponses.searchUserResultsTest)
-	// 			commit("STORE_SEARCH_RESULTS", testResponses.searchUserResultsTest)
-	// 		})
-	// 	} else {
-	// 		return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
-	// 		.then(response => {
-	// 			console.log("getSearchResults", response.data)
-	// 			commit("STORE_SEARCH_RESULTS", response.data)
-	// 		})
-	// 		.catch(error => { 
-	// 			throw error
-	// 		})
-	// 	}
-    // },
 
 	async getRecommendedPosts({ commit, getters, dispatch }) {
 
