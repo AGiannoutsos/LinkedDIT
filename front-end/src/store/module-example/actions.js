@@ -13,7 +13,10 @@ var apiUrl = '';
 // apiUrl = 'https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io';
 // apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
 // apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
-apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
+// apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
+apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io';
+
+
 
 
 
@@ -644,7 +647,7 @@ export default {
     },
 
     
-    async postPersonalData({ commit, getters, dispatch }, personalData) {
+    async postpersonal_data({ commit, getters, dispatch }, personal_data) {
 
 		var token = getters.token
         var url = "/app/personal_data"
@@ -654,14 +657,14 @@ export default {
 		if (TESTING){
 			return Promise.resolve()
 			.then( response => {
-				console.log("postPersonalDataTESTING", personalData)
-				commit("POST_PERSONAL_DATA", personalData)
+				console.log("postpersonal_dataTESTING", personal_data)
+				commit("POST_PERSONAL_DATA", personal_data)
 			})
 		} else {
-			return axios.post(`${apiUrl}/${url}`, personalData, { headers: headers })
+			return axios.post(`${apiUrl}/${url}`, personal_data, { headers: headers })
 			.then(response => {
-				console.log("postPersonalData", response.data)
-				commit("POST_PERSONAL_DATA", personalData)
+				console.log("postpersonal_data", response.data)
+				commit("POST_PERSONAL_DATA", personal_data)
 				Notify.create({ 
 					type: 'positive', 
 					message: "Peronal data updated successfully.", 

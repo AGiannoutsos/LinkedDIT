@@ -14,7 +14,7 @@
               <q-item-section horizontal>
                 <q-item-label>{{ user.first_name+' '+user.last_name }}</q-item-label>
                 <q-item-label caption>
-                {{user.personalData[0].content}}
+                {{user.personal_data[0].content}}
               </q-item-label>
               </q-item-section>
 
@@ -43,7 +43,7 @@
           </q-item-section> -->
 
         <q-card-actions align="right" >
-            <q-btn flat round color="blue" icon="visibility" @click="personalDataPop = true; "> 
+            <q-btn flat round color="blue" icon="visibility" @click="personal_dataPop = true; "> 
               <q-tooltip :delay="500" class="bg-accent">View User's profile</q-tooltip> 
             </q-btn>
             <q-btn flat round color="blue" icon="chat" v-if="!admin" @click="startDiscussion({otherUserId:user.id})">
@@ -61,14 +61,14 @@
           </q-card-actions>
         </q-card-section>
 
-        <q-dialog v-model="personalDataPop" >
+        <q-dialog v-model="personal_dataPop" >
           <q-card>
             <q-card-section class="row items-center q-pb-none">
               <div class="text-h6">Personal Data</div>
               <q-space />
               <q-btn icon="close" flat round dense v-close-popup />
             </q-card-section>
-            <PersonalData :ownUser="false" :personalData="user.personalData"> </PersonalData>
+            <personal_data :ownUser="false" :personal_data="user.personal_data"> </personal_data>
           </q-card>
         </q-dialog>
 
@@ -79,11 +79,11 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import { mapActions, mapGetters } from "vuex"
-import PersonalData from './PersonalData.vue'
+import personal_data from './PersonalData.vue'
 
 
 export default defineComponent({
-  components: { PersonalData },
+  components: { personal_data },
   name: 'UserCard',
   props: {
     user: {
@@ -106,7 +106,7 @@ export default defineComponent({
 
   data() {
     return{
-      personalDataPop: false,
+      personal_dataPop: false,
       currentUser: {},
       val: false,
     }

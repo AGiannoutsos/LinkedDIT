@@ -1,7 +1,7 @@
 <template>
   <div class="personal-card">
 
-    <div v-for="(item, index) in personalData" :key="index" class="q-pa-md">
+    <div v-for="(item, index) in personal_data" :key="index" class="q-pa-md">
       <q-card flat bordered v-if="item.visibility || ownUser" >
           <q-card-section >
             <div class="row justify-between">
@@ -173,9 +173,9 @@ import { mapActions, mapGetters } from "vuex"
 
 
 export default defineComponent({
-  name: 'PersonalData',
+  name: 'personal_data',
   props: {
-    personalData: {
+    personal_data: {
       type: Object,
       required: true
     },
@@ -263,11 +263,11 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["postPersonalData"]),
+    ...mapActions(["postpersonal_data"]),
     submitPersonalInfo: function(item) {
       console.log("PERSONAL FORM", item)
       
-      this.postPersonalData(item)
+      this.postpersonal_data(item)
 
       this.editor = ""
       this.toggleVisibility = false
