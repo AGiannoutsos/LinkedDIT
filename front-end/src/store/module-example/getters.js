@@ -14,8 +14,8 @@ export default {
     userLight: state => ({
         id: state.user.id,
         avatar: state.user.avatar,
-        firstName: state.user.firstName,
-        lastName: state.user.lastName,
+        first_name: state.user.first_name,
+        last_name: state.user.last_name,
     }),
     
         

@@ -73,8 +73,8 @@ export default defineComponent({
       console.log("SEARCH FORM", this.searchText.split(" ")[1])
 
       var postSearchResultsForm = {
-        firstName: this.searchText.split(" ")[0],
-        lastName: this.searchText.split(" ")[1] ? this.searchText.split(" ")[1] : ""
+        first_name: this.searchText.split(" ")[0],
+        last_name: this.searchText.split(" ")[1] ? this.searchText.split(" ")[1] : ""
       }
 
       this.postSearchResults(postSearchResultsForm)

@@ -2,8 +2,8 @@ var userTest = {
 	id: "12312312",
 	username: "superandreas",
 	avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-	firstName: "Andreas",
-	lastName: "Giannoutsos",
+	first_name: "Andreas",
+	last_name: "Giannoutsos",
 	email: "andreas.giannoutsos@gmail.com",
 	phone: "6912345678",
 	personalData: [
@@ -41,8 +41,8 @@ var connectedUsersTest = [
   {
     id: "12312312",
     avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-    firstName: "Andreas",
-    lastName: "Giannoutsos",
+    first_name: "Andreas",
+    last_name: "Giannoutsos",
 	connected: true,
 	personalData: [
 		{
@@ -75,8 +75,8 @@ var connectedUsersTest = [
   {
     id: "566612312",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Smaragda",
-    lastName: "Reppa",
+    first_name: "Smaragda",
+    last_name: "Reppa",
 	connected: true,
 	personalData: [
 		{
@@ -109,8 +109,8 @@ var connectedUsersTest = [
   {
     id: "423423",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: true,
 	personalData: [
 		{
@@ -143,8 +143,8 @@ var connectedUsersTest = [
   {
     id: "34634",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Ioannis",
-    lastName: "Xamodrakas",
+    first_name: "Ioannis",
+    last_name: "Xamodrakas",
 	connected: true,
 	personalData: [
 		{
@@ -177,8 +177,8 @@ var connectedUsersTest = [
   {
     id: "12312",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User1",
-    lastName: "Xamodrakas",
+    first_name: "User1",
+    last_name: "Xamodrakas",
 	connected: true,
 	personalData: [
 		{
@@ -211,8 +211,8 @@ var connectedUsersTest = [
   {
     id: "5453",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User5",
-    lastName: "Xamodrakas",
+    first_name: "User5",
+    last_name: "Xamodrakas",
 	connected: true,
 	personalData: [
 		{
@@ -245,8 +245,8 @@ var connectedUsersTest = [
   {
     id: "4564576",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User23432",
-    lastName: "Xamodrakas",
+    first_name: "User23432",
+    last_name: "Xamodrakas",
 	connected: true,
 	personalData: [
 		{
@@ -279,8 +279,8 @@ var connectedUsersTest = [
   {
     id: "4234434323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: true,
 	personalData: [
 		{
@@ -329,8 +329,8 @@ var searchUserResultsTest = [
   {
     id: "4564576ad",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User23432",
-    lastName: "Xamodrakas",
+    first_name: "User23432",
+    last_name: "Xamodrakas",
 	connected: false,
 	personalData: [
 		{
@@ -363,8 +363,8 @@ var searchUserResultsTest = [
   {
     id: "4asd234etyr434323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: false,
 	personalData: [
 		{
@@ -397,8 +397,8 @@ var searchUserResultsTest = [
   {
     id: "4asd2344sds34323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: false,
 	personalData: [
 		{
@@ -431,8 +431,8 @@ var searchUserResultsTest = [
   {
     id: "4asd2344343dfgdf23",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: false,
 	personalData: [
 		{
@@ -465,8 +465,8 @@ var searchUserResultsTest = [
   {
     id: "4asd234dfg434323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: false,
 	personalData: [
 		{
@@ -499,8 +499,8 @@ var searchUserResultsTest = [
   {
     id: "4564asd576ad",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User234311121111111111111",
-    lastName: "Xamodrakas",
+    first_name: "User234311121111111111111",
+    last_name: "Xamodrakas",
 	connected: true,
 	personalData: [
 		{
@@ -533,8 +533,8 @@ var searchUserResultsTest = [
   {
     id: "4234434as323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: false,
 	personalData: [
 		{
@@ -567,8 +567,8 @@ var searchUserResultsTest = [
   {
     id: "45ass64576ad",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "User23432",
-    lastName: "Xamodrakas",
+    first_name: "User23432",
+    last_name: "Xamodrakas",
 	connected: false,
 	personalData: [
 		{
@@ -601,8 +601,8 @@ var searchUserResultsTest = [
   {
     id: "42344asa34323",
     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-    firstName: "Pipis",
-    lastName: "Pipa",
+    first_name: "Pipis",
+    last_name: "Pipa",
 	connected: false,
 	personalData: [
 		{
@@ -656,8 +656,8 @@ var postsTest = [
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-			firstName: "Andreas",
-			lastName: "Giannoutsos",
+			first_name: "Andreas",
+			last_name: "Giannoutsos",
 		},
 		content: {
 			text: "lorpon this is a tsting post",
@@ -672,8 +672,8 @@ var postsTest = [
 				user: {
 					id: "12312312",
 					avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-					firstName: "Andreas",
-					lastName: "Giannoutsos",
+					first_name: "Andreas",
+					last_name: "Giannoutsos",
 				},      
 				content: {
 					text: "lorpon this is a tsting comment",
@@ -683,8 +683,8 @@ var postsTest = [
 				user: {
 					id: "566612312",
 					avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-					firstName: "Smaragda",
-					lastName: "Reppa",
+					first_name: "Smaragda",
+					last_name: "Reppa",
 				},      
 				content: {
 					text: "yees lorpon this is another testing comment",
@@ -698,8 +698,8 @@ var postsTest = [
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-			firstName: "Andreas",
-			lastName: "Giannoutsos",
+			first_name: "Andreas",
+			last_name: "Giannoutsos",
 		},
 		content: {
 			text: "lorpon this is a tsting post",
@@ -714,8 +714,8 @@ var postsTest = [
 				user: {
 					id: "12312312",
 					avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-					firstName: "Andreas",
-					lastName: "Giannoutsos",
+					first_name: "Andreas",
+					last_name: "Giannoutsos",
 				},      
 				content: {
 					text: "lorpon this is a tsting comment",
@@ -725,8 +725,8 @@ var postsTest = [
 				user: {
 					id: "566612312",
 					avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-					firstName: "Smaragda",
-					lastName: "Reppa",
+					first_name: "Smaragda",
+					last_name: "Reppa",
 				},      
 				content: {
 					text: "yees lorpon this is another testing comment",
@@ -740,8 +740,8 @@ var postsTest = [
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-			firstName: "Smaragda",
-			lastName: "Reppa",
+			first_name: "Smaragda",
+			last_name: "Reppa",
 		},
 		content: {
 			text: "ok yess this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
@@ -756,8 +756,8 @@ var postsTest = [
 				user: {
 					id: "12312312",
 					avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-					firstName: "Andreas",
-					lastName: "Giannoutsos",
+					first_name: "Andreas",
+					last_name: "Giannoutsos",
 				},      
 				content: {
 					text: "123 another lorpon this is a tsting comment",
@@ -767,8 +767,8 @@ var postsTest = [
 				user: {
 					id: "566612312",
 					avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-					firstName: "Smaragda",
-					lastName: "Reppa",
+					first_name: "Smaragda",
+					last_name: "Reppa",
 				},      
 				content: {
 					text: "coment here yees it workss",
@@ -785,8 +785,8 @@ var postsTest = [
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-			firstName: "Andreas",
-			lastName: "Giannoutsos",
+			first_name: "Andreas",
+			last_name: "Giannoutsos",
 		},
 		content: {
 			text: "lorpon this is a jonb proposaaalll post",
@@ -804,8 +804,8 @@ var postsTest = [
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-			firstName: "Smaragda",
-			lastName: "Reppa",
+			first_name: "Smaragda",
+			last_name: "Reppa",
 		},
 		content: {
 			text: "ok yess JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
@@ -826,8 +826,8 @@ var postsTest = [
 		user: {
 			id: "12312312",
 			avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-			firstName: "Andreas",
-			lastName: "Giannoutsos",
+			first_name: "Andreas",
+			last_name: "Giannoutsos",
 		},
 		content: {
 			text: "lorpon this is MYYYYYYYYYY a jonb proposaaalll post",
@@ -845,8 +845,8 @@ var postsTest = [
 		user: {
 			id: "566612312",
 			avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-			firstName: "Smaragda",
-			lastName: "Reppa",
+			first_name: "Smaragda",
+			last_name: "Reppa",
 		},
 		content: {
 			text: "ok yess MYYYYYYYYY JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
@@ -868,8 +868,8 @@ var userEmpty = {
 	id: "",
 	username: "",
 	avatar: "",
-	firstName: "",
-	lastName: "",
+	first_name: "",
+	last_name: "",
 	email: "",
 	phone: "",
 	personalData: [
