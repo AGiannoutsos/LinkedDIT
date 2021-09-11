@@ -4,8 +4,8 @@
     <div class="text-h6">Reset Personal Info</div>
       <q-form @submit.prevent="submitPersonal" @reset="onReset" class="q-gutter-md">
         <q-input v-model="user.username"  filled label="Username" autofocus/>
-        <q-input v-model="user.firstName"  filled label="First Name"/>
-        <q-input v-model="user.lastName"  filled label="Last Name"/>
+        <q-input v-model="user.first_name"  filled label="First Name"/>
+        <q-input v-model="user.last_name"  filled label="Last Name"/>
         <q-input v-model="user.email" filled label="Email" type="email"/>
         <q-input
           filled
@@ -88,12 +88,12 @@ export default defineComponent({
   methods: {
     ...mapActions(["getUser", "postUserSettings", "postUserSettingsPassword"]),
     submitPersonal: function() {
-      console.log("CHANGE SETTINGS FORM", this.user.email, this.user.username, this.user.firstName, this.user.lastName, this.user.phone)
+      console.log("CHANGE SETTINGS FORM", this.user.email, this.user.username, this.user.first_name, this.user.last_name, this.user.phone)
 
       var postUserSettingsForm = {
         username: this.user.username, 
-        firstName: this.user.firstName, 
-        lastName: this.user.lastName, 
+        first_name: this.user.first_name, 
+        last_name: this.user.last_name, 
         email: this.user.email, 
         phone: this.user.phone, 
       }

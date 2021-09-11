@@ -155,9 +155,9 @@ export default defineComponent({
     },
     thisDiscussionName: function() {
       if (this.thisDiscussion.user1.id === this.myUserId){
-        return this.thisDiscussion.user2.firstName+' '+this.thisDiscussion.user2.lastName
+        return this.thisDiscussion.user2.first_name+' '+this.thisDiscussion.user2.last_name
       } else {
-        return this.thisDiscussion.user1.firstName+' '+this.thisDiscussion.user1.lastName
+        return this.thisDiscussion.user1.first_name+' '+this.thisDiscussion.user1.last_name
       }
     },
   },

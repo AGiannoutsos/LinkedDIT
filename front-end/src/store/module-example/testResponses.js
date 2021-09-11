@@ -16,8 +16,8 @@ export default {
         id: "12312312",
         username: "superandreas",
         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-        firstName: "Andreas",
-        lastName: "Giannoutsos",
+        first_name: "Andreas",
+        last_name: "Giannoutsos",
         email: "andreas.giannoutsos@gmail.com",
         phone: "6912345678",
         personalData: [
@@ -66,8 +66,8 @@ export default {
             id: "12312312",
             username: "superandreas1",
             avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-            firstName: "Andreas",
-            lastName: "Giannoutsos1",
+            first_name: "Andreas",
+            last_name: "Giannoutsos1",
             email: "andreas.giannoutsos@gmail.com",
             phone: "6912345678",
             personalData: [
@@ -102,8 +102,8 @@ export default {
             id: "12312sdfd312",
             username: "superandreas2",
             avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-            firstName: "Andreas",
-            lastName: "Giannoutsos2",
+            first_name: "Andreas",
+            last_name: "Giannoutsos2",
             email: "andreas.giannoutsos@gmail.com",
             phone: "6912345678",
             personalData: [
@@ -138,8 +138,8 @@ export default {
             id: "1231s1232dfsd2312",
             username: "superandreas3",
             avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-            firstName: "Andreas",
-            lastName: "Giannoutsos3",
+            first_name: "Andreas",
+            last_name: "Giannoutsos3",
             email: "andreas.giannoutsos@gmail.com",
             phone: "6912345678",
             personalData: [
@@ -174,8 +174,8 @@ export default {
             id: "12312g4333fgs312",
             username: "superandreas4",
             avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-            firstName: "Andreas",
-            lastName: "Giannoutsos4",
+            first_name: "Andreas",
+            last_name: "Giannoutsos4",
             email: "andreas.giannoutsos@gmail.com",
             phone: "6912345678",
             personalData: [
@@ -224,8 +224,8 @@ export default {
         {
           id: "4564576ad",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User23432",
-          lastName: "Xamodrakas",
+          first_name: "User23432",
+          last_name: "Xamodrakas",
           connected: false,
           personalData: [
               {
@@ -258,8 +258,8 @@ export default {
         {
           id: "4asd234etyr434323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -292,8 +292,8 @@ export default {
         {
           id: "4asd2344sds34323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -326,8 +326,8 @@ export default {
         {
           id: "4asd2344343dfgdf23",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -360,8 +360,8 @@ export default {
         {
           id: "4asd234dfg434323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -394,8 +394,8 @@ export default {
         {
           id: "4564asd576ad",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User234311121111111111111",
-          lastName: "Xamodrakas",
+          first_name: "User234311121111111111111",
+          last_name: "Xamodrakas",
           connected: true,
           personalData: [
               {
@@ -428,8 +428,8 @@ export default {
         {
           id: "4234434as323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -462,8 +462,8 @@ export default {
         {
           id: "45ass64576ad",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User23432",
-          lastName: "User1231231",
+          first_name: "User23432",
+          last_name: "User1231231",
           connected: false,
           personalData: [
               {
@@ -496,8 +496,8 @@ export default {
         {
           id: "42344asa34323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -547,8 +547,8 @@ export default {
             user: {
                 id: "45ass64576ad",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "User23432",
-                lastName: "User1231231",
+                first_name: "User23432",
+                last_name: "User1231231",
                 connected: false,
                 personalData: [
                     {
@@ -584,8 +584,8 @@ export default {
             user: {
                 id: "45ass64576ad",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "User23432",
-                lastName: "User1231231",
+                first_name: "User23432",
+                last_name: "User1231231",
                 connected: false,
                 personalData: [
                     {
@@ -621,8 +621,8 @@ export default {
             user: {
                 id: "45ass64576ad",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "User23432",
-                lastName: "User1231231",
+                first_name: "User23432",
+                last_name: "User1231231",
                 connected: false,
                 personalData: [
                     {
@@ -675,8 +675,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -709,8 +709,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -745,8 +745,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "gia spu ti kaneis",
@@ -756,8 +756,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "kala esu",
@@ -767,8 +767,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "gia spu ti kaneis",
@@ -778,8 +778,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "kala esu",
@@ -789,8 +789,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "gia spu ti kaneis",
@@ -800,8 +800,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "kala esu",
@@ -811,8 +811,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "gia spu ti kaneis",
@@ -822,8 +822,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "kala esu",
@@ -836,8 +836,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -870,8 +870,8 @@ export default {
             user2:  {
                 id: "5666123122",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda2",
-                lastName: "Reppa2",
+                first_name: "Smaragda2",
+                last_name: "Reppa2",
                 connected: false,
                 personalData: [
                     {
@@ -906,8 +906,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -917,8 +917,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -931,8 +931,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -965,8 +965,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -1001,8 +1001,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -1012,8 +1012,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -1026,8 +1026,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -1060,8 +1060,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -1096,8 +1096,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -1107,8 +1107,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -1121,8 +1121,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -1155,8 +1155,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -1191,8 +1191,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -1202,8 +1202,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -1216,8 +1216,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -1250,8 +1250,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -1286,8 +1286,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -1297,8 +1297,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -1311,8 +1311,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -1345,8 +1345,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -1381,8 +1381,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -1392,8 +1392,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -1406,8 +1406,8 @@ export default {
             user1:  {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
                 connected: false,
                 personalData: [
                     {
@@ -1440,8 +1440,8 @@ export default {
             user2:  {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
                 connected: false,
                 personalData: [
                     {
@@ -1476,8 +1476,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "GIAAAA kai ediii",
@@ -1487,8 +1487,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "naiii xaxa pali kalaaa",
@@ -1513,8 +1513,8 @@ export default {
         {
           id: "12312312",
           avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-          firstName: "Andreas",
-          lastName: "Giannoutsos",
+          first_name: "Andreas",
+          last_name: "Giannoutsos",
           connected: true,
           personalData: [
               {
@@ -1547,8 +1547,8 @@ export default {
         {
           id: "566612312",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Smaragda",
-          lastName: "Reppa",
+          first_name: "Smaragda",
+          last_name: "Reppa",
           connected: true,
           personalData: [
               {
@@ -1581,8 +1581,8 @@ export default {
         {
           id: "423423",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: true,
           personalData: [
               {
@@ -1615,8 +1615,8 @@ export default {
         {
           id: "34634",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Ioannis",
-          lastName: "Xamodrakas",
+          first_name: "Ioannis",
+          last_name: "Xamodrakas",
           connected: true,
           personalData: [
               {
@@ -1649,8 +1649,8 @@ export default {
         {
           id: "12312",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User1",
-          lastName: "Xamodrakas",
+          first_name: "User1",
+          last_name: "Xamodrakas",
           connected: true,
           personalData: [
               {
@@ -1683,8 +1683,8 @@ export default {
         {
           id: "5453",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User5",
-          lastName: "Xamodrakas",
+          first_name: "User5",
+          last_name: "Xamodrakas",
           connected: true,
           personalData: [
               {
@@ -1717,8 +1717,8 @@ export default {
         {
           id: "4564576",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User23432",
-          lastName: "Xamodrakas",
+          first_name: "User23432",
+          last_name: "Xamodrakas",
           connected: true,
           personalData: [
               {
@@ -1751,8 +1751,8 @@ export default {
         {
           id: "4234434323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: true,
           personalData: [
               {
@@ -1806,8 +1806,8 @@ export default {
             user: {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Pipis",
-                lastName: "Papa",
+                first_name: "Pipis",
+                last_name: "Papa",
             },
             content: {
                 text: "lorpon this is a tsting post",
@@ -1820,8 +1820,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -1854,8 +1854,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -1891,8 +1891,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "lorpon this is a tsting comment",
@@ -1902,8 +1902,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "yees lorpon this is another testing comment",
@@ -1917,8 +1917,8 @@ export default {
             user: {
                 id: "3343453453",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "User3242",
-                lastName: "Userpaa",
+                first_name: "User3242",
+                last_name: "Userpaa",
             },
             content: {
                 text: "lorpon this is a tsting post",
@@ -1931,8 +1931,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -1965,8 +1965,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2002,8 +2002,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "lorpon this is a tsting comment",
@@ -2013,8 +2013,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "yees lorpon this is another testing comment",
@@ -2028,8 +2028,8 @@ export default {
             user: {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
             },
             content: {
                 text: "ok yess this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
@@ -2042,8 +2042,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -2076,8 +2076,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2113,8 +2113,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "123 another lorpon this is a tsting comment",
@@ -2124,8 +2124,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "coment here yees it workss",
@@ -2155,8 +2155,8 @@ export default {
             user: {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
             },
             content: {
                 text: "lorpon this is a tsting post",
@@ -2169,8 +2169,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -2203,8 +2203,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2240,8 +2240,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "lorpon this is a tsting comment",
@@ -2251,8 +2251,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "yees lorpon this is another testing comment",
@@ -2266,8 +2266,8 @@ export default {
             user: {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
             },
             content: {
                 text: "lorpon this is a tsting post",
@@ -2280,8 +2280,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -2314,8 +2314,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2351,8 +2351,8 @@ export default {
                     user: {
                         id: "12312312",
                         avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                        firstName: "Andreas",
-                        lastName: "Giannoutsos",
+                        first_name: "Andreas",
+                        last_name: "Giannoutsos",
                     },      
                     content: {
                         text: "lorpon this is a tsting comment",
@@ -2362,8 +2362,8 @@ export default {
                     user: {
                         id: "566612312",
                         avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                        firstName: "Smaragda",
-                        lastName: "Reppa",
+                        first_name: "Smaragda",
+                        last_name: "Reppa",
                     },      
                     content: {
                         text: "yees lorpon this is another testing comment",
@@ -2393,8 +2393,8 @@ export default {
             user: {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
             },
             content: {
                 text: "lorpon this is a jonb proposaaalll post",
@@ -2407,8 +2407,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -2441,8 +2441,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2481,8 +2481,8 @@ export default {
             user: {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
             },
             content: {
                 text: "ok yess JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
@@ -2495,8 +2495,8 @@ export default {
                 {
                     id: "56661231sad2",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda2",
-                    lastName: "Reppa2",
+                    first_name: "Smaragda2",
+                    last_name: "Reppa2",
                     connected: true,
                     personalData: [
                         {
@@ -2529,8 +2529,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2584,8 +2584,8 @@ export default {
             user: {
                 id: "12312312",
                 avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-                firstName: "Andreas",
-                lastName: "Giannoutsos",
+                first_name: "Andreas",
+                last_name: "Giannoutsos",
             },
             content: {
                 text: "lorpon this is MYYYYYYYYYY a jonb proposaaalll post",
@@ -2598,8 +2598,8 @@ export default {
                 {
                     id: "566612312",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda",
-                    lastName: "Reppa",
+                    first_name: "Smaragda",
+                    last_name: "Reppa",
                     connected: true,
                     personalData: [
                         {
@@ -2632,8 +2632,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2672,8 +2672,8 @@ export default {
             user: {
                 id: "566612312",
                 avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                firstName: "Smaragda",
-                lastName: "Reppa",
+                first_name: "Smaragda",
+                last_name: "Reppa",
             },
             content: {
                 text: "ok yess MYYYYYYYYY JOB PROPOSAAAAAL this is another tsting post yeees, ok yess this is another tsting post yeees ok yess this is another tsting post yeees, ok yess this is another tsting post yeees",
@@ -2686,8 +2686,8 @@ export default {
                 {
                     id: "56661231SDF2",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Smaragda2",
-                    lastName: "Reppa2",
+                    first_name: "Smaragda2",
+                    last_name: "Reppa2",
                     connected: true,
                     personalData: [
                         {
@@ -2720,8 +2720,8 @@ export default {
                   {
                     id: "423423",
                     avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-                    firstName: "Pipis",
-                    lastName: "Pipa",
+                    first_name: "Pipis",
+                    last_name: "Pipa",
                     connected: true,
                     personalData: [
                         {
@@ -2773,8 +2773,8 @@ export default {
         {
           id: "4564576ad",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User23432",
-          lastName: "Xamodrakas",
+          first_name: "User23432",
+          last_name: "Xamodrakas",
           connected: false,
           personalData: [
               {
@@ -2807,8 +2807,8 @@ export default {
         {
           id: "4asd234etyr434323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -2841,8 +2841,8 @@ export default {
         {
           id: "4asd2344sds34323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -2875,8 +2875,8 @@ export default {
         {
           id: "4asd2344343dfgdf23",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -2909,8 +2909,8 @@ export default {
         {
           id: "4asd234dfg434323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -2943,8 +2943,8 @@ export default {
         {
           id: "4564asd576ad",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User234311121111111111111",
-          lastName: "Xamodrakas",
+          first_name: "User234311121111111111111",
+          last_name: "Xamodrakas",
           connected: true,
           personalData: [
               {
@@ -2977,8 +2977,8 @@ export default {
         {
           id: "4234434as323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {
@@ -3011,8 +3011,8 @@ export default {
         {
           id: "45ass64576ad",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "User23432",
-          lastName: "Xamodrakas",
+          first_name: "User23432",
+          last_name: "Xamodrakas",
           connected: false,
           personalData: [
               {
@@ -3045,8 +3045,8 @@ export default {
         {
           id: "42344asa34323",
           avatar: "https://cdn.quasar.dev/img/avatar2.jpg",
-          firstName: "Pipis",
-          lastName: "Pipa",
+          first_name: "Pipis",
+          last_name: "Pipa",
           connected: false,
           personalData: [
               {

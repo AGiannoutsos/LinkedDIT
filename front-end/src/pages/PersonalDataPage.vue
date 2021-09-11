@@ -1,6 +1,6 @@
 <template>
 <div class="q-pa-md fit column wrap justify-start items-center content-center">
-<div class="text-h5">{{user.firstName + " " + user.lastName}}</div>
+<div class="text-h5">{{user.first_name + " " + user.last_name}}</div>
   <q-img :src="user.avatar" style="max-height: 140px; max-width: 150px"/>
 </div>
   <q-page class="fit column wrap justify-start items-stretch content-center">

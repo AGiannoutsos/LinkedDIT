@@ -9,7 +9,7 @@
         </q-item-section>
 
         <q-item-section>
-          <q-item-label>{{ post.user.firstName+' '+post.user.lastName }}</q-item-label>
+          <q-item-label>{{ post.user.first_name+' '+post.user.last_name }}</q-item-label>
           <q-item-label caption>
             {{post.date}}
           </q-item-label>
@@ -119,7 +119,7 @@
               <div style="width: 100%; max-width: 500px">
                 <div v-for="(item, index) in post.comments" :key="index">
                   <q-chat-message
-                    :name="item.user.firstName+' '+item.user.lastName"
+                    :name="item.user.first_name+' '+item.user.last_name"
                     :avatar="item.user.avatar"
                     :text="[item.content.text]"
                     :sent="myUserId===item.user.id"

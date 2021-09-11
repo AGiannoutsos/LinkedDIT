@@ -12,7 +12,7 @@
               </q-item-section>
 
               <q-item-section horizontal>
-                <q-item-label>{{ user.firstName+' '+user.lastName }}</q-item-label>
+                <q-item-label>{{ user.first_name+' '+user.last_name }}</q-item-label>
                 <q-item-label caption>
                 {{user.personalData[0].content}}
               </q-item-label>

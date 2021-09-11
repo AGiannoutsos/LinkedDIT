@@ -73,8 +73,8 @@
               <q-card-section class="q-pt-none">
                 <q-form @submit.prevent="signupSubmit" @reset="onReset" class="q-gutter-md">
                   <q-input v-model="username"  filled label="Username" autofocus lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a username']"/>
-                  <q-input v-model="firstName"  filled label="First Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a First Name']"/>
-                  <q-input v-model="lastName"  filled label="Last Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a Last Name']"/>
+                  <q-input v-model="first_name"  filled label="First Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a First Name']"/>
+                  <q-input v-model="last_name"  filled label="Last Name" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type a Last Name']"/>
                   <q-input v-model="email" filled label="Email" type="email" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type an email']"/>
                   <q-input
                     filled
@@ -140,8 +140,8 @@ export default defineComponent({
       password2: ref(''),
       isPwd: ref(true),
       username: ref(''),
-      firstName: ref(''),
-      lastName: ref(''),
+      first_name: ref(''),
+      last_name: ref(''),
       email: ref(''),
       phone: ref(''),
       file: ref(null),
@@ -212,13 +212,13 @@ export default defineComponent({
 
     signupSubmit: function() {
       if (this.password === this.password2) {
-        console.log("SIGNUP FORM", this.username, this.firstName, this.lastName, this.password, this.password2, this.phone, this.file)
+        console.log("SIGNUP FORM", this.username, this.first_name, this.last_name, this.password, this.password2, this.phone, this.file)
 
         
         var postSignUpForm = {
           username: this.username, 
-          firstName: this.firstName, 
-          lastName: this.lastName, 
+          first_name: this.first_name, 
+          last_name: this.last_name, 
           email: this.email,
           phone: this.phone.replace(/\s/g, ''), 
           // file: this.file,
@@ -236,8 +236,8 @@ export default defineComponent({
       this.username = ""
       this.password = ""
       this.password2 = ""
-      this.firstName = ""
-      this.lastName = ""
+      this.first_name = ""
+      this.last_name = ""
       this.email = ""
       this.phone = ""
       this.file = null
