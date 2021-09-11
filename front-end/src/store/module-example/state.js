@@ -6,7 +6,7 @@ var userTest = {
 	last_name: "Giannoutsos",
 	email: "andreas.giannoutsos@gmail.com",
 	phone: "6912345678",
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -44,7 +44,7 @@ var connectedUsersTest = [
     first_name: "Andreas",
     last_name: "Giannoutsos",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -78,7 +78,7 @@ var connectedUsersTest = [
     first_name: "Smaragda",
     last_name: "Reppa",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -112,7 +112,7 @@ var connectedUsersTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -146,7 +146,7 @@ var connectedUsersTest = [
     first_name: "Ioannis",
     last_name: "Xamodrakas",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -180,7 +180,7 @@ var connectedUsersTest = [
     first_name: "User1",
     last_name: "Xamodrakas",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -214,7 +214,7 @@ var connectedUsersTest = [
     first_name: "User5",
     last_name: "Xamodrakas",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -248,7 +248,7 @@ var connectedUsersTest = [
     first_name: "User23432",
     last_name: "Xamodrakas",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -282,7 +282,7 @@ var connectedUsersTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -332,7 +332,7 @@ var searchUserResultsTest = [
     first_name: "User23432",
     last_name: "Xamodrakas",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -366,7 +366,7 @@ var searchUserResultsTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -400,7 +400,7 @@ var searchUserResultsTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -434,7 +434,7 @@ var searchUserResultsTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -468,7 +468,7 @@ var searchUserResultsTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -502,7 +502,7 @@ var searchUserResultsTest = [
     first_name: "User234311121111111111111",
     last_name: "Xamodrakas",
 	connected: true,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -536,7 +536,7 @@ var searchUserResultsTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -570,7 +570,7 @@ var searchUserResultsTest = [
     first_name: "User23432",
     last_name: "Xamodrakas",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -604,7 +604,7 @@ var searchUserResultsTest = [
     first_name: "Pipis",
     last_name: "Pipa",
 	connected: false,
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "KOroideuo KOsmo",
@@ -872,7 +872,7 @@ var userEmpty = {
 	last_name: "",
 	email: "",
 	phone: "",
-	personalData: [
+	personal_data: [
 		{
 			title: "Profession",
 			content: "",

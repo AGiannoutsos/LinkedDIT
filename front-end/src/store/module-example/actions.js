@@ -13,7 +13,10 @@ var apiUrl = '';
 // apiUrl = 'https://f80bef32-b7e6-4e9b-adae-17f58c980406.mock.pstmn.io';
 // apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
 // apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
-apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
+// apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
+apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io';
+
+
 
 
 
@@ -38,7 +41,7 @@ export default {
         var token = getters.token
         var url = "/admin/users"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -66,7 +69,7 @@ export default {
         var token = getters.token
         var url = "/app/user"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -90,7 +93,7 @@ export default {
         var token = getters.token
         var url = "/app/notifications/requests"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -115,7 +118,7 @@ export default {
         var token = getters.token
         var url = "/app/notifications/interactions"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -141,7 +144,7 @@ export default {
 		var token = getters.token
         var url = "/app/discussions"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -166,7 +169,7 @@ export default {
 		var token = getters.token
         var url = "/app/connected_users"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -192,7 +195,7 @@ export default {
 		var token = getters.token
         var url = "/app/posts/recommended"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -217,7 +220,7 @@ export default {
 		var token = getters.token
         var url = "/app/posts/my"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -242,7 +245,7 @@ export default {
 		var token = getters.token
         var url = "/app/proposals/recommended"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -267,7 +270,7 @@ export default {
 		var token = getters.token
         var url = "/app/proposals/my"
 
-        let headers = { "Authorization": `${token}` };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -292,7 +295,7 @@ export default {
 		var token = getters.token
         var url = "/login"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -331,7 +334,7 @@ export default {
 		var token = getters.token
         var url = "/logout"
 
-        let headers = { "Authorization": `${token}` ,  "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` ,  "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -366,7 +369,7 @@ export default {
 		var token = getters.token
         var url = "/login/forgot_password"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -398,7 +401,7 @@ export default {
 		var token = getters.token
         var url = "/sign_up"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -430,7 +433,7 @@ export default {
 		var token = getters.token
         var url = "/app/settings/user_data"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -463,7 +466,7 @@ export default {
 		var token = getters.token
         var url = "/app/settings/change_password"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -497,7 +500,7 @@ export default {
 		var token = getters.token
         var url = "/app/notifications/requests/respond"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -532,7 +535,7 @@ export default {
 		var token = getters.token
         var url = "/app/search_results"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -568,7 +571,7 @@ export default {
 		var token = getters.token
         var url = "/app/discussions/id"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -595,7 +598,7 @@ export default {
 		var token = getters.token
         var url = "/app/discussions/message"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -622,7 +625,7 @@ export default {
 		var token = getters.token
         var url = "/app/posts/comment"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -644,24 +647,24 @@ export default {
     },
 
     
-    async postPersonalData({ commit, getters, dispatch }, personalData) {
+    async postpersonal_data({ commit, getters, dispatch }, personal_data) {
 
 		var token = getters.token
         var url = "/app/personal_data"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
 			.then( response => {
-				console.log("postPersonalDataTESTING", personalData)
-				commit("POST_PERSONAL_DATA", personalData)
+				console.log("postpersonal_dataTESTING", personal_data)
+				commit("POST_PERSONAL_DATA", personal_data)
 			})
 		} else {
-			return axios.post(`${apiUrl}/${url}`, personalData, { headers: headers })
+			return axios.post(`${apiUrl}/${url}`, personal_data, { headers: headers })
 			.then(response => {
-				console.log("postPersonalData", response.data)
-				commit("POST_PERSONAL_DATA", personalData)
+				console.log("postpersonal_data", response.data)
+				commit("POST_PERSONAL_DATA", personal_data)
 				Notify.create({ 
 					type: 'positive', 
 					message: "Peronal data updated successfully.", 
@@ -686,7 +689,7 @@ export default {
 		var token = getters.token
         var url = "/app/posts/thumbs"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -719,7 +722,7 @@ export default {
 		var token = getters.token
         var url = "/app/proposals/apply"
 
-        let headers = { "Authorization": `${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -748,7 +751,7 @@ export default {
 		var token = getters.token
         var url = "/app/settings/profile_image"
 
-        let headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "Content-Type":"multipart/form-data" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -780,7 +783,7 @@ export default {
 		var token = getters.token
         var url = "/app/posts/upload"
 
-        let headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "Content-Type":"multipart/form-data" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -813,7 +816,7 @@ export default {
 		var token = getters.token
         var url = "/app/proposals/upload"
 
-        let headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
+        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "Content-Type":"multipart/form-data" };
 
 		if (TESTING){
 			return Promise.resolve()

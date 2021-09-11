@@ -26,17 +26,17 @@
         <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
       </div> -->
     </div>
-    <PersonalData :personalData="user.personalData" :ownUser="true"></PersonalData>
+    <personal_data :personal_data="user.personal_data" :ownUser="true"></personal_data>
   </q-page>
 </template>
 
 <script>
-import PersonalData from 'src/components/PersonalData.vue';
+import personal_data from 'src/components/PersonalData.vue';
 import { defineComponent, ref } from 'vue';
 import { mapActions, mapGetters } from "vuex"
 
 export default defineComponent({
-  components: { PersonalData },
+  components: { personal_data },
   name: 'PersonalDataPage',
 
    setup () {
