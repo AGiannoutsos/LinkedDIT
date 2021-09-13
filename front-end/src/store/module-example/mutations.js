@@ -33,7 +33,10 @@ export default {
     },
     
     STORE_ADMIN_ALL_USERS(state, payload) {
-        // for (let i in pay)
+        for (let i in payload){
+            if (!payload[i].avatar)
+                payload[i].avatar = defaultProfilePic
+        }
         state.adminAllUsers = payload
     },
 
@@ -80,7 +83,7 @@ export default {
         if (postsBefore === postsAfter) {
             Notify.create({ 
                 type: 'warning', 
-                message: "There are no more posts availeble at the moment.", 
+                message: "There are no more posts available at the moment.", 
                 position: "top" })
         }
 	},
@@ -100,7 +103,7 @@ export default {
         if (proposalsBefore === proposalsAfter) {
             Notify.create({ 
                 type: 'warning', 
-                message: "There are no more proposals availeble at the moment.", 
+                message: "There are no more proposals available at the moment.", 
                 position: "top" })
         }
 	},

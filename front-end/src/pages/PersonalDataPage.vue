@@ -20,7 +20,7 @@
           filled
           class="q-pa-sm"
         />
-      <q-btn type="submit" flat label="Upaload" color="primary"  />
+      <q-btn type="submit" flat label="Upload" color="primary"  />
       </q-form>
       <!-- <div class="q-pa-lg">
         <q-btn color="red" class="full-width q-pa-lg" label="Log out" @click="logOut_" />
