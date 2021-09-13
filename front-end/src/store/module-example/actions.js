@@ -14,7 +14,13 @@ var apiUrl = '';
 // apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
 // apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
 // apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
-apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io';
+
+var postmanTesting = false
+
+if (postmanTesting)
+	apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io/';
+else
+	apiUrl = "http://127.0.0.1:8000";
 
 
 
@@ -39,9 +45,9 @@ export default {
     async getAdminAllUsers({ commit, getters, dispatch }) {
 
         var token = getters.token
-        var url = "/admin/users"
+        var url = "admin/users"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -67,9 +73,9 @@ export default {
 
     async getUser({ commit, getters, dispatch }) {
         var token = getters.token
-        var url = "/app/user"
+        var url = "app/user"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -91,9 +97,9 @@ export default {
 
 	async getConnectionRequests({ commit, getters, dispatch }) {
         var token = getters.token
-        var url = "/app/notifications/requests"
+        var url = "app/notifications/requests"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -116,9 +122,9 @@ export default {
 	
 	async getInteractions({ commit, getters, dispatch }) {
         var token = getters.token
-        var url = "/app/notifications/interactions"
+        var url = "app/notifications/interactions"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -142,9 +148,9 @@ export default {
 	async getDiscussions({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/app/discussions"
+        var url = "app/discussions"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -167,9 +173,9 @@ export default {
 	async getConnectedUsers({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/app/connected_users"
+        var url = "app/connected_users"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -193,9 +199,9 @@ export default {
 	async getRecommendedPosts({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/app/posts/recommended"
+        var url = "app/posts/recommended"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -218,9 +224,9 @@ export default {
     async getMyPosts({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/app/posts/my"
+        var url = "app/posts/my"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -243,9 +249,9 @@ export default {
     async getProposals({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/app/proposals/recommended"
+        var url = "app/proposals/recommended"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -268,9 +274,9 @@ export default {
     async getMyProposals({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/app/proposals/my"
+        var url = "app/proposals/my"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` };
+        var headers = { "Authorization": `${token}` };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -293,9 +299,12 @@ export default {
     async postLogin({ commit, getters, dispatch }, postLoginForm) {
 
 		var token = getters.token
-        var url = "/login"
+        var url = "login"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -332,9 +341,9 @@ export default {
 	async postLogout({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "/logout"
+        var url = "logout"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` ,  "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}` ,  "Content-Type":"application/json" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -367,9 +376,12 @@ export default {
 	async postForgotPassword({ commit, getters, dispatch }, postForgotPasswordForm) {
 
 		var token = getters.token
-        var url = "/login/forgot_password"
+        var url = "login/forgot_password"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -399,9 +411,12 @@ export default {
 	async postSignUp({ commit, getters, dispatch }, postSignUpForm) {
 
 		var token = getters.token
-        var url = "/sign_up"
+        var url = "sign_up"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -431,9 +446,12 @@ export default {
 	async postUserSettings({ commit, getters, dispatch }, postUserSettingsForm) {
 
 		var token = getters.token
-        var url = "/app/settings/user_data"
+        var url = "app/settings/user_data"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -464,9 +482,12 @@ export default {
 	async postUserSettingsPassword({ commit, getters, dispatch }, postUserSettingsPasswordForm) {
 
 		var token = getters.token
-        var url = "/app/settings/change_password"
+        var url = "app/settings/change_password"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -498,9 +519,12 @@ export default {
     async postConnectionRequest({ commit, getters, dispatch }, answer) {
 
 		var token = getters.token
-        var url = "/app/notifications/requests/respond"
+        var url = "app/notifications/requests/respond"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -533,9 +557,12 @@ export default {
 	async postSearchResults({ commit, getters, dispatch }, postSearchResultsForm) {
 
 		var token = getters.token
-        var url = "/app/search_results"
+        var url = "app/search_results"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -569,9 +596,12 @@ export default {
 	async postDiscussion({ commit, getters, dispatch }, otherUserId) {
 		
 		var token = getters.token
-        var url = "/app/discussions/id"
+        var url = "app/discussions/id"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -596,9 +626,12 @@ export default {
 	async postMessage({ commit, getters, dispatch }, message) {   
 
 		var token = getters.token
-        var url = "/app/discussions/message"
+        var url = "app/discussions/message"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -623,9 +656,12 @@ export default {
     async postComment({ commit, getters, dispatch }, comment) {
 
 		var token = getters.token
-        var url = "/app/posts/comment"
+        var url = "app/posts/comment"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -650,9 +686,12 @@ export default {
     async postpersonal_data({ commit, getters, dispatch }, personal_data) {
 
 		var token = getters.token
-        var url = "/app/personal_data"
+        var url = "app/personal_data"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -687,9 +726,12 @@ export default {
     async postThumbsUp({ commit, getters, dispatch }, postThumbsUpForm) {
 
 		var token = getters.token
-        var url = "/app/posts/thumbs"
+        var url = "app/posts/thumbs"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -720,9 +762,12 @@ export default {
     async postApplyUp({ commit, getters, dispatch }, postApplyUpForm) {
 
 		var token = getters.token
-        var url = "/app/proposals/apply"
+        var url = "app/proposals/apply"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "x-mock-match-request-body":true, "Content-Type":"application/json" };
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
 
 		if (TESTING){
 			return Promise.resolve()
@@ -749,9 +794,9 @@ export default {
 	async postProfileImage({ commit, getters, dispatch }, postProfileImageForm) {
 
 		var token = getters.token
-        var url = "/app/settings/profile_image"
+        var url = "app/settings/profile_image"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "Content-Type":"multipart/form-data" };
+        var headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -781,9 +826,9 @@ export default {
 	async postPost({ commit, getters, dispatch }, postPostForm) {
 
 		var token = getters.token
-        var url = "/app/posts/upload"
+        var url = "app/posts/upload"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "Content-Type":"multipart/form-data" };
+        var headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
 
 		if (TESTING){
 			return Promise.resolve()
@@ -814,9 +859,9 @@ export default {
 	async postProposal({ commit, getters, dispatch }, postProposalForm) {
 
 		var token = getters.token
-        var url = "/app/proposals/upload"
+        var url = "app/proposals/upload"
 
-        var headers = { "Authorization": `${token}`, "Cookie": `jwt=${token}` , "Content-Type":"multipart/form-data" };
+        var headers = { "Authorization": `${token}` , "Content-Type":"multipart/form-data" };
 
 		if (TESTING){
 			return Promise.resolve()
