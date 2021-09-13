@@ -15,7 +15,7 @@ var apiUrl = '';
 // apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
 // apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
 
-var postmanTesting = false
+var postmanTesting = true
 
 if (postmanTesting)
 	apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io/';
@@ -299,7 +299,7 @@ export default {
     async postLogin({ commit, getters, dispatch }, postLoginForm) {
 
 		var token = getters.token
-        var url = "login"
+        var url = "app/login"
 
         var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
 
@@ -341,7 +341,7 @@ export default {
 	async postLogout({ commit, getters, dispatch }) {
 
 		var token = getters.token
-        var url = "logout"
+        var url = "app/logout"
 
         var headers = { "Authorization": `${token}` ,  "Content-Type":"application/json" };
 
@@ -376,7 +376,7 @@ export default {
 	async postForgotPassword({ commit, getters, dispatch }, postForgotPasswordForm) {
 
 		var token = getters.token
-        var url = "login/forgot_password"
+        var url = "app/login/forgot_password"
 
         var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
 
@@ -411,7 +411,7 @@ export default {
 	async postSignUp({ commit, getters, dispatch }, postSignUpForm) {
 
 		var token = getters.token
-        var url = "sign_up"
+        var url = "app/sign_up"
 
         var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
 
