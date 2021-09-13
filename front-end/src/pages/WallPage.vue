@@ -48,7 +48,7 @@
       text-color="grey"
       :options="[
         {label: 'Recommended Posts', value: 'Other Posts'},
-        {label: 'Mine Posts', value: 'My Posts'}
+        {label: 'My Posts', value: 'My Posts'}
       ]"
     />
 
