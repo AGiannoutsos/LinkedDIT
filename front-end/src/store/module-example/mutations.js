@@ -8,24 +8,35 @@ function upsert(array, item) {
     else array.push(item);
 }
 
-export default {
+var defaultProfilePic = "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="
 
+export default {
+    
     STORE_TOKEN(state, payload) {
         Cookies.set("token", payload.token)
     },
-
+    
     STORE_TOKEN_ADMIN(state, payload) {
         Cookies.set("adminToken", payload.token)
     },
-
+    
     DELETE_TOKEN(state, payload) {
         Cookies.remove("token")
         Cookies.remove("adminToken")
     },
-
+    
     STORE_USER(state, payload) {
+        // check profile image
+        if (!payload.avatar)
+            payload.avatar = defaultProfilePic
         state.user = payload
     },
+    
+    STORE_ADMIN_ALL_USERS(state, payload) {
+        // for (let i in pay)
+        state.adminAllUsers = payload
+    },
+
 
     STORE_USER_SETTINGS(state, payload) {
         // stoped here
@@ -157,9 +168,6 @@ export default {
         }
 	},
 
-    STORE_ADMIN_ALL_USERS(state, payload) {
-        state.adminAllUsers = payload
-	},
 
     
 

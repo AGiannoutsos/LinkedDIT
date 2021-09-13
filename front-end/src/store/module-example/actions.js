@@ -58,7 +58,7 @@ export default {
 				commit("STORE_ADMIN_ALL_USERS", testResponses.adminAllUsersTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getUser", response.data)
                 var allUsers = response.data
@@ -84,7 +84,7 @@ export default {
 				commit("STORE_USER", testResponses.userTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getUser", response.data)
 				commit("STORE_USER", response.data)
@@ -108,7 +108,7 @@ export default {
 				commit("STORE_CONNECTION_REQUESTS", testResponses.connectionRequests)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getConnectionRequests", response.data)
 				commit("STORE_CONNECTION_REQUESTS", response.data)
@@ -133,7 +133,7 @@ export default {
 				commit("STORE_INTERACTIONS", testResponses.interactionsTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getInteractions", response.data)
 				commit("STORE_INTERACTIONS", response.data)
@@ -159,7 +159,7 @@ export default {
 				commit("STORE_DISCUSSIONS", testResponses.testDiscussions)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getDiscussions", response.data)
 				commit("STORE_DISCUSSIONS", response.data)
@@ -184,7 +184,7 @@ export default {
 				commit("STORE_CONNECTED_USERS", testResponses.connectedUsersTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getConnectedUsers", response.data)
 				commit("STORE_CONNECTED_USERS", response.data)
@@ -210,7 +210,7 @@ export default {
 				commit("STORE_RECOMMENDED_POSTS", testResponses.postsTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getRecommendedPosts", response.data)
 				commit("STORE_RECOMMENDED_POSTS", response.data)
@@ -235,7 +235,7 @@ export default {
 				commit("STORE_MY_POSTS", testResponses.myPostsTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getMyPosts", response.data)
 				commit("STORE_MY_POSTS", response.data)
@@ -260,7 +260,7 @@ export default {
 				commit("STORE_PROPOSALS", testResponses.proposalsTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getProposals", response.data)
 				commit("STORE_PROPOSALS", response.data)
@@ -285,7 +285,7 @@ export default {
 				commit("STORE_MY_PROPOSALS", testResponses.myProposalsTest)
 			})
 		} else {
-			return axios.get(`${apiUrl}/${url}`, {}, { headers: headers })
+			return axios.get(`${apiUrl}/${url}`, { headers: headers })
 			.then(response => {
 				console.log("getMyProposals", response.data)
 				commit("STORE_MY_PROPOSALS", response.data)
