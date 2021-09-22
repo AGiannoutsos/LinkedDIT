@@ -38,7 +38,7 @@ else
 // axios.defaults.options = agent
 // console.log(process.env.NODE_ENV, `RejectUnauthorized is disabled.`)
 
-var TESTING = false
+var TESTING = true
 
 export default {
 

@@ -26,14 +26,20 @@
               <q-icon name="attach_file" />
             </template>
           </q-file>
+        
+        <q-select class="q-pa-sm" style="min-width: 130px" filled v-model="fileType" :options="fileTypeOptions" label="File Type" />
 
         <q-btn
           type="submit"
           label="Post"
           color="teal"
+          class="q-pa-sm"
           :disable="text==='' && file===null"
         >
         </q-btn>
+
+        
+
         </div>
       </form>
 
@@ -93,6 +99,8 @@ export default defineComponent({
       file: null,
       proposalsToggle: "Other Proposals",
       itema: [],
+      fileType: "file",
+      fileTypeOptions: ["image", "video", "file"],
     }
   },
 
@@ -122,7 +130,7 @@ export default defineComponent({
           content: {
             text: this.text,
             file: {
-              type: "",
+              type: this.fileType,
               url: "",
             },
           },
