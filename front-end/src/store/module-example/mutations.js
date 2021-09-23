@@ -109,6 +109,9 @@ export default {
             upsert(state.posts, element)
         });
         var postsAfter = state.posts.length
+        
+        // fix urls for django
+        fix_url(state.posts)
 
         if (postsBefore === postsAfter) {
             Notify.create({ 
@@ -129,6 +132,9 @@ export default {
             upsert(state.proposals, element)
         });
         var proposalsAfter = state.proposals.length
+
+        // fix urls for django
+        fix_url(state.proposals)
 
         if (proposalsBefore === proposalsAfter) {
             Notify.create({ 
