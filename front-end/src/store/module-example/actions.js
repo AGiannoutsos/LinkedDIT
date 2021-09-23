@@ -15,7 +15,7 @@ var apiUrl = '';
 // apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
 // apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
 
-var postmanTesting = false
+var postmanTesting = true
 
 if (postmanTesting)
 	apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io/';
@@ -38,7 +38,7 @@ else
 // axios.defaults.options = agent
 // console.log(process.env.NODE_ENV, `RejectUnauthorized is disabled.`)
 
-var TESTING = true
+var TESTING = false
 
 export default {
 

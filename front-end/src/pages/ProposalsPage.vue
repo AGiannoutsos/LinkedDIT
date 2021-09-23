@@ -130,7 +130,7 @@ export default defineComponent({
           content: {
             text: this.text,
             file: {
-              type: this.fileType,
+              type: this.file === null ? "no file" : this.fileType,
               url: "",
             },
           },

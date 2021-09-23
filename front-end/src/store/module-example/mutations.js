@@ -56,11 +56,29 @@ export default {
     },
 
     STORE_CONNECTION_REQUESTS(state, payload) {
-        state.connectionRequests = payload
+        state.connectionRequests = payload.map(user => user.sender)
     },
 
     STORE_INTERACTIONS(state, payload) {
-        state.interactions = payload
+        // transform django output to this one
+        var interactions = []
+        var interaction_object
+
+        var interactionTypes = ["likes", "comments", "apply"]
+
+        for(var type of interactionTypes) {  
+            for(var post of payload[type]) {
+                for(var user of post[type]) {
+                    interaction_object = {
+                        user: user,
+                        interaction: type
+                    }
+                    interactions.push(interaction_object)
+                }
+            }
+        }
+        // console.log(interactions)
+        state.interactions = interactions
     },
 
     STORE_DISCUSSIONS(state, payload) {
@@ -68,7 +86,7 @@ export default {
 	},
 
     STORE_CONNECTED_USERS(state, payload) {
-        state.connectedUsers = payload
+        state.connectedUsers = payload["friends"]
 	},
 
     STORE_RECOMMENDED_POSTS(state, payload) {

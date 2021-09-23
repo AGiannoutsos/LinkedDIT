@@ -20,10 +20,10 @@
 
 
               <q-item-section v-if="interactions !== '' " >
-                <q-btn disabled flat round color="teal" icon="thumb_up" v-if="interactions === 'like'"> 
+                <q-btn disabled flat round color="teal" icon="thumb_up" v-if="interactions === 'likes'"> 
                   <q-tooltip :delay="500" class="bg-accent">User liked your post</q-tooltip> 
                 </q-btn>
-                <q-btn disabled flat round color="teal" icon="comment" v-if="interactions === 'comment'">
+                <q-btn disabled flat round color="teal" icon="comment" v-if="interactions === 'comments'">
                   <q-tooltip :delay="500" class="bg-accent">User commented to your post</q-tooltip>
                 </q-btn>
                 <q-btn disabled flat round color="teal" icon="work" v-if="interactions === 'apply'">
