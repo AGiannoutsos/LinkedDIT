@@ -16,7 +16,7 @@ var apiUrl = '';
 // apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
 export var djangoUrl = "http://127.0.0.1:8000" 
 
-var postmanTesting = true
+var postmanTesting = false
 
 if (postmanTesting)
 	apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io/';
