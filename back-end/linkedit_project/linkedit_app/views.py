@@ -8,6 +8,7 @@ import jwt
 import datetime
 from django.shortcuts import get_object_or_404
 import json
+from .bonus import *
 
 
 def authorize(request):
@@ -28,8 +29,9 @@ def authorize(request):
 
 class GetAllUsersView(APIView):
     def get(self, request):
-        id = authorize(request)
-        users = MyUser.objects.all()
+        # id = authorize(request)
+        users = MyUser.objects.all().exclude(username='tedi').exclude(username='admin')
+        print('heree')
         serializer = UserAuthSerializer(users, many=True, context={'request': request})
 
         return Response(serializer.data)
@@ -53,6 +55,9 @@ class SignUpView(APIView):
         serializer = SignUpSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        user = MyUser.objects.get(username=request.data.get('username'))
+
+        FriendshipList.objects.create(user=user)
 
         response = Response()
         response.data = {
@@ -68,12 +73,13 @@ class LoginView(APIView):
         id = authorize(request)
         user = MyUser.objects.filter(id=id).first()
         if user.personal_data.count()==0:
-            profession = PersonalData.objects.create(title='Profession', visibility=True)
-            current_job = PersonalData.objects.create(title='Current Job Position', visibility=True)
-            experience = PersonalData.objects.create(title='Professional Experience', visibility=True)
-            education = PersonalData.objects.create(title='Education', visibility=True)
-            skills = PersonalData.objects.create(title='Skills', visibility=True)
+            profession = PersonalData.objects.create(title='Profession', content="", visibility=True)
+            current_job = PersonalData.objects.create(title='Current Job Position', content="", visibility=True)
+            experience = PersonalData.objects.create(title='Professional Experience', content="", visibility=True)
+            education = PersonalData.objects.create(title='Education', content="", visibility=True)
+            skills = PersonalData.objects.create(title='Skills', content="", visibility=True)
             user.personal_data.add(profession, current_job, experience, education, skills)
+            user.save()
 
         serializer = UserAuthSerializer(user, context={'request': request})
 
@@ -159,7 +165,7 @@ class ChangePasswordView(APIView):
 
 class ChangePersonalDataView(APIView):
 
-    permission_classes = [AllowAny]
+    # permission_classes = [AllowAny]
 
     def post(self, request):
         id = authorize(request)
@@ -263,9 +269,11 @@ class FriendRequestView(APIView):
 
             users_friendships = FriendshipList.objects.get(user=user)
             users_friendships.friends.add(other_user)
+            users_friendships.save()
 
             other_user_friendships = FriendshipList.objects.get(user=other_user)
             other_user_friendships.friends.add(user)
+            other_user_friendships.save()
 
         friend_request.delete()
 
@@ -285,11 +293,11 @@ class PostsView(APIView):
         id = authorize(request)
         user = MyUser.objects.filter(id=id).first()
         posts = Post.objects.all().exclude(user=user)
-        serializer = PostsSerializer(posts, many=True, context={'request': request})
+        other_serializer = PostsSerializer(posts, many=True, context={'request': request})
 
-        serializer_data = serializer.data
+        other_serializer_data = other_serializer.data
         friends = FriendshipList.objects.filter(user=user).first()
-        for index, post in enumerate(serializer_data):
+        for index, post in enumerate(other_serializer_data):
             likes = post['likes']
             for j, like in enumerate(likes):
                 other_user = like['id']
@@ -298,7 +306,28 @@ class PostsView(APIView):
                         username__contains=other_user.username).exists() and not user == other_user:
                     likes[j]['connected'] = False
 
-        return Response(serializer_data)
+        posts = Post.objects.filter(user=user)
+        my_serializer = PostsSerializer(posts, many=True, context={'request': request})
+
+        my_serializer_data = my_serializer.data
+        for index, post in enumerate(my_serializer_data):
+            likes = post['likes']
+            for j, like in enumerate(likes):
+                other_user = like['id']
+                other_user = MyUser.objects.filter(id=other_user).first()
+                if not friends.friends.filter(
+                        username__contains=other_user.username).exists() and not user == other_user:
+                    likes[j]['connected'] = False
+
+        try:
+            recommendations = get_recommendations(other_serializer_data, my_serializer_data)
+        except:
+            # print("Get other")
+            recommendations = other_serializer_data
+
+        # print(things)
+
+        return Response(recommendations)
 
     def post(self, request):
         id = authorize(request)
@@ -306,9 +335,12 @@ class PostsView(APIView):
         jason = json.loads(request.data.get('json'))
         date = jason['date']
         text = jason['content']['text']
-        file = jason['file']['type']
+        file_t = jason['content']['file']['type']
 
-        content_obj = Content.objects.create(text=text, type=type, url=file)
+        if file_t=='no file':
+            content_obj = Content.objects.create(text=text, type=file_t, url='/media/user_images/')
+        else:
+            content_obj = Content.objects.create(text=text, type=file_t, url=request.data.get('file'))
         post_obj = Post.objects.create(user=user, date=date, content=content_obj)
         serializer = PostsSerializer(post_obj)
 
@@ -372,11 +404,11 @@ class ProposalsView(APIView):
         user = MyUser.objects.filter(id=id).first()
 
         proposals = JobProposal.objects.all().exclude(user=user)
-        serializer = ProposalsSerializer(proposals, many=True, context={'request': request})
+        other_serializer = ProposalsSerializer(proposals, many=True, context={'request': request})
 
-        serializer_data = serializer.data
+        other_serializer_data = other_serializer.data
         friends = FriendshipList.objects.filter(user=user).first()
-        for index, post in enumerate(serializer_data):
+        for index, post in enumerate(other_serializer_data):
             likes = post['likes']
             for j, like in enumerate(likes):
                 other_user = like['id']
@@ -385,7 +417,26 @@ class ProposalsView(APIView):
                         username__contains=other_user.username).exists() and not user == other_user:
                     likes[j]['connected'] = False
 
-        return Response(serializer_data)
+        proposals = JobProposal.objects.filter(user=user)
+
+        my_serializer = ProposalsSerializer(proposals, many=True, context={'request': request})
+        my_serializer_data = my_serializer.data
+        for index, proposal in enumerate(my_serializer_data):
+            likes = proposal['likes']
+            for j, like in enumerate(likes):
+                other_user = like['id']
+                other_user = MyUser.objects.filter(id=other_user).first()
+                if not friends.friends.filter(
+                        username__contains=other_user.username).exists() and not user == other_user:
+                    likes[j]['connected'] = False
+
+        try:
+            recommendations = get_recommendations(other_serializer_data, my_serializer_data, False)
+        except:
+            # print("Get other")
+            recommendations = other_serializer_data
+
+        return Response(recommendations)
 
     def post(self, request):
         id = authorize(request)
@@ -393,9 +444,9 @@ class ProposalsView(APIView):
         jason = json.loads(request.data.get('json'))
         date = jason['date']
         text = jason['content']['text']
-        file = jason['file']['type']
+        file_t = jason['content']['file']['type']
 
-        content_obj = Content.objects.create(text=text, type=type, url=file)
+        content_obj = Content.objects.create(text=text, type=file_t, url=request.data.get('file'))
         proposal_obj = JobProposal.objects.create(user=user, date=date, content=content_obj)
         serializer = ProposalsSerializer(proposal_obj)
 
@@ -410,24 +461,6 @@ class UserInteractionsView(APIView):
     def get(self, request):
         id = authorize(request)
         user = MyUser.objects.filter(id=id).first()
-        # my_posts = Post.objects.filter(user=user)
-        # my_proposals = JobProposal.objects.filter(user=user)
-        # if my_posts.exists() and not my_proposals.exists():
-        #     print("hiii")
-        #     like = PostLikeInteraction(my_posts, many=True)
-        #     comments = PostCommentInteraction(my_posts, many=True)
-        #     return Response({'likes': like.data,
-        #                      'comments': comments.data})
-        # if my_proposals.exists() and not my_posts.exists():
-        #     apply = ProposalLikeInteraction(my_proposals, many=True)
-        #     return Response({'likes': apply.data})
-        # if my_proposals.exists() and my_posts.exists():
-        #     like = PostLikeInteraction(my_posts, many=True)
-        #     comments = CommentInteraction(my_posts, many=True)
-        #     apply = ProposalLikeInteraction(my_proposals, many=True)
-        #     return Response({'likes': like.data,
-        #                      'apply': apply.data,
-        #                      'comments': comments.data})
 
         interactions = {}
         interactions['likes'] = Post.objects.filter(user=user)
@@ -435,7 +468,37 @@ class UserInteractionsView(APIView):
         interactions['apply'] = JobProposal.objects.filter(user=user)
         serializer = InteractionsSerializer(interactions, context={'request': request})
 
-        return Response(serializer.data)
+        serializer_data = serializer.data
+        likes = serializer_data['likes']
+        apply = serializer_data['apply']
+        comments = serializer_data['comments']
+        friends = FriendshipList.objects.filter(user=user).first()
+        for index, like in enumerate(likes):
+            dict = like['likes']
+            for j_index, j in enumerate(dict):
+                user2 = dict[j_index]['id']
+                other_user = MyUser.objects.filter(id=user2).first()
+                if not friends.friends.filter(username__contains=other_user.username).exists():
+                    dict[j_index]['connected'] = False
+
+        for index, app in enumerate(apply):
+            dict = app['apply']
+            for j_index, j in enumerate(dict):
+                user2 = dict[j_index]['id']
+                other_user = MyUser.objects.filter(id=user2).first()
+                if not friends.friends.filter(username__contains=other_user.username).exists():
+                    dict[j_index]['connected'] = False
+
+        for index, comm in enumerate(comments):
+            dict = comm['comments']
+            for j_index, j in enumerate(dict):
+                user2 = dict[j_index]['user']['id']
+                other_user = MyUser.objects.filter(id=user2).first()
+                if not friends.friends.filter(username__contains=other_user.username).exists():
+                    dict[j_index]['user']['connected'] = False
+
+        return Response(serializer_data)
+
 
 
 class PostCommentView(APIView):
@@ -447,16 +510,21 @@ class PostCommentView(APIView):
         text = request.data.get('comment').get('content').get('text')
         post = Post.objects.filter(id=post_id).first()
 
-        user_data = request.data.get('comment').get('user')
-        if user_data:
-            user_instance = MyUser.objects.filter(id=user_data.get('id')).first()
-        else:
-            user_instance = None
+        # user_data = request.data.get('comment').get('user')
+        # if user_data:
+        user_instance = MyUser.objects.filter(id=id).first()
+        # print(user_instance)
+        # else:
+        #     user_instance = None
 
-        serializer = CommentSerializer(data=request.data.get('comment'), context={"post": post, "user": user_instance,
-                                                                                  "text": text})
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        comment = Comment.objects.create(text=text, user=user_instance)
+        post.comments.add(comment)
+        post.save()
+
+        # serializer = CommentSerializer(data=request.data.get('comment'), context={"post": post, "user": user_instance,
+        #                                                                           "text": text})
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save()
 
         response = Response()
         response.data = {
@@ -478,8 +546,10 @@ class ThumbsUpView(APIView):
 
             if request.data.get('thumbs')=='down':
                 post.likes.remove(user)
+                post.save()
             else:
                 post.likes.add(user)
+                post.save()
             # Important!!!
             # try:
             #     obj = MyModel.objects.get(pk=1)
@@ -493,8 +563,10 @@ class ThumbsUpView(APIView):
 
             if request.data.get('apply')=='down':
                 proposal.likes.remove(user)
+                proposal.save()
             else:
                 proposal.likes.add(user)
+                proposal.save()
 
         response = Response()
         response.data = {
@@ -521,9 +593,9 @@ class GetChatsView(APIView):
         for index, chat in enumerate(serializer_data):
             user1 = chat['user1']['id']
             user2 = chat['user2']['id']
+            # print(chat)
             if user1 == user.id:
                 other_user = MyUser.objects.filter(id=user2).first()
-                print(other_user.username)
                 if not friends.friends.filter(username__contains=other_user.username).exists():
                     serializer_data[index]['user2']['connected'] = False
             if user2 == user.id:
