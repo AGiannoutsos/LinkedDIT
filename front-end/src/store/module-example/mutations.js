@@ -111,7 +111,8 @@ export default {
         var postsAfter = state.posts.length
         
         // fix urls for django
-        fix_url(state.posts)
+        for(let i in state.posts)
+            fix_url(state.posts[i])
 
         if (postsBefore === postsAfter) {
             Notify.create({ 
@@ -134,7 +135,8 @@ export default {
         var proposalsAfter = state.proposals.length
 
         // fix urls for django
-        fix_url(state.proposals)
+        for(let i in state.proposals)
+            fix_url(state.proposals[i])
 
         if (proposalsBefore === proposalsAfter) {
             Notify.create({ 
