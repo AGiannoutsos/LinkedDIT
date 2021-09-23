@@ -45,7 +45,7 @@ export default {
 
     async getAdminAllUsers({ commit, getters, dispatch }) {
 
-        var token = getters.token
+        var token = getters.adminToken
         var url = "app/adminsite/users"
 
         var headers = { "Authorization": `${token}` };

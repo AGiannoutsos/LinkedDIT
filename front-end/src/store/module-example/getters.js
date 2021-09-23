@@ -7,6 +7,7 @@ export default {
     myUserId: state => ("12312312"),
 
     token: state => (Cookies.get("token")),
+    adminToken: state => (Cookies.get("adminToken")),
     isLogedin: state => (Cookies.get("token") ? true : false ),
     isLogedinAdmin: state => (Cookies.get("adminToken") ? true : false ),
 
