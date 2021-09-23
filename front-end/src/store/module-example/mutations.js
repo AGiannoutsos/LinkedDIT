@@ -11,8 +11,8 @@ function upsert(array, item) {
 
 function fix_url(item) {
     if (typeof(item.content.file) !== 'undefined') {
-        if(!item.content.file.type.startsWith("http")) {
-            item.content.file.type = djangoUrl + item.content.file.type
+        if(!item.content.file.url.startsWith("http")) {
+            item.content.file.url = djangoUrl + item.content.file.url
         }
     } else {
         item.content["file"] = {url:"", type:"no file"}
@@ -113,6 +113,7 @@ export default {
         // fix urls for django
         for(let i in state.posts)
             fix_url(state.posts[i])
+        // console.log("AFFTER", state.posts)
 
         if (postsBefore === postsAfter) {
             Notify.create({ 
@@ -124,6 +125,10 @@ export default {
 
     STORE_MY_POSTS(state, payload) {
         state.myPosts = payload
+
+        // fix urls for django
+        for(let i in state.myPosts)
+            fix_url(state.myPosts[i])
 	},
 
     STORE_PROPOSALS(state, payload) {
@@ -148,6 +153,10 @@ export default {
 
     STORE_MY_PROPOSALS(state, payload) {
         state.myProposals = payload
+
+        // fix urls for django
+        for(let i in state.myProposals)
+            fix_url(state.myProposals[i])
 	},
 
     STORE_CURRENT_DISCUSSION(state, payload) {
