@@ -40,7 +40,7 @@ const routes = [
     ]
   },
   {
-    path: '/admin',
+    path: '/app/admin',
     meta: { authAdmin: true },
     component: () => import('layouts/AdminLayout.vue'),
     children: [

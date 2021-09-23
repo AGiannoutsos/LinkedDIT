@@ -1,5 +1,6 @@
 import { Cookies } from 'quasar'
 import { Notify } from 'quasar'
+import { djangoUrl } from './actions';
 
 // taken from https://stackoverflow.com/questions/25764719/update-if-exists-or-add-new-element-to-array-of-objects-elegant-way-in-javascr
 function upsert(array, item) {
@@ -7,6 +8,17 @@ function upsert(array, item) {
     if (i > -1) array[i] = item;
     else array.push(item);
 }
+
+function fix_url(item) {
+    if (typeof(item.content.file) !== 'undefined') {
+        if(!item.content.file.type.startsWith("http")) {
+            item.content.file.type = djangoUrl + item.content.file.type
+        }
+    } else {
+        item.content["file"] = {url:"", type:"no file"}
+    }
+}
+
 
 var defaultProfilePic = "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="
 

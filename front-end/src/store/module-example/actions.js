@@ -14,13 +14,14 @@ var apiUrl = '';
 // apiUrl = 'https://003da9ea-c296-4616-839e-2c65f99a4872.mock.pstmn.io';
 // apiUrl = 'https://df81af3d-3590-43aa-bfa9-ca96a7cd6e83.mock.pstmn.io';
 // apiUrl = 'https://1d7b2721-b2db-4611-aa92-fbeab0cbddcb.mock.pstmn.io';
+export var djangoUrl = "http://127.0.0.1:8000" 
 
 var postmanTesting = true
 
 if (postmanTesting)
 	apiUrl = 'https://5fed44e3-3d5b-4cb3-aa4d-63d1b0538dc3.mock.pstmn.io/';
 else
-	apiUrl = "http://127.0.0.1:8000";
+	apiUrl = djangoUrl;
 
 
 
@@ -45,7 +46,7 @@ export default {
     async getAdminAllUsers({ commit, getters, dispatch }) {
 
         var token = getters.token
-        var url = "admin/users"
+        var url = "app/adminsite/users"
 
         var headers = { "Authorization": `${token}` };
 
@@ -726,7 +727,7 @@ export default {
     async postThumbsUp({ commit, getters, dispatch }, postThumbsUpForm) {
 
 		var token = getters.token
-        var url = "app/posts/thumbs"
+        var url = "app/proposals/apply"
 
         var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
 
