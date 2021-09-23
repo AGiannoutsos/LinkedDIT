@@ -169,6 +169,14 @@ class TheFileField(serializers.Field):
         }
         return ret
 
+    def to_internal_value(self, data):
+
+        ret = {
+            "type": data['type'],
+            "url": data['url']
+        }
+        return ret
+
 
 class ContentSerializer(serializers.ModelSerializer):
     file = TheFileField(source='*')
@@ -176,11 +184,6 @@ class ContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
         fields = ['text', 'file']
-
-    # def get_url_url(self, obj):
-    #     request = self.context.get('request')
-    #     photo_url = obj.fingerprint.url
-    #     return request.build_absolute_uri(photo_url)
 
 
 class TextContentField(serializers.Field):
@@ -250,11 +253,6 @@ class PostsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ['id', 'date', 'user', 'content', 'likes', 'comments']
-
-    # def get_url_url(self, obj):
-    #     request = self.context.get('request')
-    #     photo_url = obj.fingerprint.url
-    #     return request.build_absolute_uri(photo_url)
 
 
 class ProposalLikeInteraction(serializers.ModelSerializer):

@@ -27,7 +27,7 @@ urlpatterns = [
     ###############################        POSTS AND PROPOSALS        ################################
     path('posts/recommended/', PostsView.as_view(), name='all_posts'),
     path('posts/upload', PostsView.as_view(), name='post_post'),
-    path('posts/my/', MyPostsView.as_view(), name='my_posts'),
+    path('posts/my', MyPostsView.as_view(), name='my_posts'),
     path('proposals/apply', ThumbsUpView.as_view(), name='like_post_proposal'),
     path('posts/comment', PostCommentView.as_view(), name='post_comment'),
     path('proposals/recommended', ProposalsView.as_view(), name='all_proposals'),
