@@ -4,7 +4,7 @@ import { Cookies } from 'quasar'
 export default {
     // user: state => (state.user === undefined || state.user == null ? userTest : state.user),
     // posts: state => (state.posts === undefined || state.posts.length == 0 ? testing ? postsTest : [] : state.posts),
-    myUserId: state => ("12312312"),
+    myUserId: state => state.user.id,
 
     token: state => (Cookies.get("token")),
     adminToken: state => (Cookies.get("adminToken")),
@@ -39,7 +39,7 @@ export default {
     discussionOtherUsers: (state,getters) => () => {
         var discussionOtherUsers = []
         for (let disc of getters.discussions) {
-            if (disc.user1.id === getters.myUserId){
+            if (disc.user1.id === state.user.id){
                 discussionOtherUsers.push(disc.user2)
             } else {
                 discussionOtherUsers.push(disc.user1)

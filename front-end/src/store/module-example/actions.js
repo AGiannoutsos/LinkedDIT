@@ -555,6 +555,42 @@ export default {
 		}
     },
 
+	async postSendConnectionRequest({ commit, getters, dispatch }, request) {
+
+		var token = getters.token
+        var url = "app/notifications/requests/send"
+
+        var headers = { "Authorization": `${token}`, "Content-Type":"application/json" };
+
+		if (postmanTesting)
+			headers["x-mock-match-request-body"] = true
+
+		if (TESTING){
+			return Promise.resolve()
+			.then( response => {
+				console.log("postSendConnectionRequestTESTING", request)
+			})
+		} else {
+			return axios.post(`${apiUrl}/${url}`, request, { headers: headers })
+			.then(response => {
+				console.log("postSendConnectionRequest", response.data)
+
+				Notify.create({ 
+						type: 'positive', 
+						message: "Connection request was send successfully.", 
+						position: "top" })
+			})
+			.catch(error => { 
+				Notify.create({ 
+					type: 'negative', 
+					message: "Error in connection request.", 
+					icon: 'report_problem',
+					position: "top" })
+				throw error
+			})
+		}
+    },
+
 	async postSearchResults({ commit, getters, dispatch }, postSearchResultsForm) {
 
 		var token = getters.token
@@ -846,6 +882,7 @@ export default {
 					type: 'positive', 
 					message: "Post was uploaded successfully.", 
 					position: "top" })
+					dispatch("getMyPosts")
 			})
 			.catch(error => { 
 				Notify.create({ 
@@ -879,6 +916,7 @@ export default {
 					type: 'positive', 
 					message: "Proposal was uploaded successfully.", 
 					position: "top" })
+				dispatch("getMyProposals")
 			})
 			.catch(error => { 
 				Notify.create({ 

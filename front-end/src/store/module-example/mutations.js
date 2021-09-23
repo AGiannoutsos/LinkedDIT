@@ -86,10 +86,10 @@ export default {
                         interaction: type
                     }
                     interactions.push(interaction_object)
+                    // console.log("INTERAACTIONS", user, post[type])
                 }
             }
         }
-        // console.log(interactions)
         state.interactions = interactions
     },
 
@@ -160,7 +160,10 @@ export default {
 	},
 
     STORE_CURRENT_DISCUSSION(state, payload) {
+        // discussion from post discussion must not be an array
+        payload = payload[0]
         state.currentDiscussionId = payload.id
+        console.log("THISSS DISCUSSION", state.currentDiscussionId)
 
         const idx = state.discussions.findIndex(d => d.id === payload.id);
         if (idx > -1) 

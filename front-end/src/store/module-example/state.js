@@ -48,6 +48,6 @@ export default  {
   connectionRequests: [],
   interactions: [],
   discussions: [],
-  currentDiscussionId: "",
+  currentDiscussionId: null,
   adminAllUsers: [],
 }
