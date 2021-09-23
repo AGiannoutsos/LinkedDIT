@@ -430,7 +430,7 @@ export default {
 				console.log("postSignUp", response.data)
 				Notify.create({ 
 						type: 'positive', 
-						message: "Your account has been created. Please verify email to log in.", 
+						message: "Your account has been created.", 
 						position: "top" })
 			})
 			.catch(error => { 
