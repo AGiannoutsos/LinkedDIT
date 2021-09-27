@@ -132,7 +132,11 @@ class ChangeUserDataView(APIView):
 
     def post(self, request):
         id = authorize(request)
-        user = MyUser.objects.get(username=request.data['username'])
+
+        try:
+            user = MyUser.objects.get(username=request.data['username'])
+        except MyUser.DoesNotExist:
+            raise Http404("No MyModel matches the given query.")
         serializer = ChangeUserSerializer(user, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -248,7 +252,7 @@ class GetFriendsView(APIView):
         id = authorize(request)
         user = MyUser.objects.filter(id=id).first()
         other_user = MyUser.objects.get(id=request.data['id'])
-        request_instance = FriendRequest.objects.get(sender=user, receiver=other_user)
+        request_instance = FriendRequest.objects.filter(sender=user, receiver=other_user).first()
         if not request_instance:
             FriendRequest.objects.create(sender=user, receiver=other_user)
 
@@ -272,24 +276,21 @@ class FriendRequestView(APIView):
     def post(self, request):
         id = authorize(request)
         user = MyUser.objects.get(id=id)
-        print(user)
         other_user = MyUser.objects.get(id=request.data['id'])
-        print(other_user)
         friend_request = FriendRequest.objects.get(sender=other_user, receiver=user)
-        print(friend_request)
 
         if request.data['answer']=='accept':
             print("in accept")
 
             users_friendships = FriendshipList.objects.filter(user=user).first()
-            if not users_friendships:
-                users_friendships = FriendshipList.objects.create(user=user)
+            # if not users_friendships:
+            #     users_friendships = FriendshipList.objects.create(user=user)
             users_friendships.friends.add(other_user)
             users_friendships.save()
 
             other_user_friendships = FriendshipList.objects.filter(user=other_user).first()
-            if not other_user_friendships:
-                other_user_friendships = FriendshipList.objects.create(user=other_user)
+            # if not other_user_friendships:
+            #     other_user_friendships = FriendshipList.objects.create(user=other_user)
             other_user_friendships.friends.add(user)
             other_user_friendships.save()
 
@@ -565,11 +566,6 @@ class ThumbsUpView(APIView):
             else:
                 post.likes.add(user)
                 post.save()
-            # Important!!!
-            # try:
-            #     obj = MyModel.objects.get(pk=1)
-            # except MyModel.DoesNotExist:
-            #     raise Http404("No MyModel matches the given query.")
 
         else:
 

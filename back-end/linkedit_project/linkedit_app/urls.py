@@ -23,7 +23,7 @@ urlpatterns = [
     path('notifications/requests', FriendRequestView.as_view(), name='friend_requests'),
     path('notifications/requests/respond', FriendRequestView.as_view(), name='respond_to_friend_request'),
     path('connected_users', GetFriendsView.as_view(), name='users_friends'),
-    path('notifications/requests/send', GetFriendsView.as_view(), name='send_request'),
+    path('notifications/requests/send', GetFriendsView.as_view(), name='send_request'),#
 
     ###############################        POSTS AND PROPOSALS        ################################
     path('posts/recommended/', PostsView.as_view(), name='all_posts'),
@@ -34,7 +34,7 @@ urlpatterns = [
     path('proposals/recommended', ProposalsView.as_view(), name='all_proposals'),
     path('proposals/upload', ProposalsView.as_view(), name='post_proposal'),
     path('proposals/my', MyProposalsView.as_view(), name='my_proposals'),
-    path('notifications/interactions', UserInteractionsView.as_view(), name='interactions'),
+    path('notifications/interactions', UserInteractionsView.as_view(), name='interactions'),#
 
     #####################################          CHAT          ######################################
     path('discussions', GetChatsView.as_view(), name='get_chats'),
