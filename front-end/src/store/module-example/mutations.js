@@ -76,7 +76,7 @@ export default {
         var interactions = []
         var interaction_object
 
-        var interactionTypes = ["likes", "comments", "apply"]
+        var interactionTypes = ["likes", "apply"]
 
         for(var type of interactionTypes) {  
             for(var post of payload[type]) {
@@ -86,10 +86,26 @@ export default {
                         interaction: type
                     }
                     interactions.push(interaction_object)
+                    // console.log("INTERAACTIONS", user, post[type])
                 }
             }
         }
-        // console.log(interactions)
+
+        interactionTypes = ["comments"]
+
+        for(var type of interactionTypes) {  
+            for(var post of payload[type]) {
+                for(var user of post[type]) {
+                    interaction_object = {
+                        user: user["user"],
+                        interaction: type
+                    }
+                    interactions.push(interaction_object)
+                    // console.log("INTERAACTIONS", user, post[type])
+                }
+            }
+        }
+
         state.interactions = interactions
     },
 
@@ -160,7 +176,10 @@ export default {
 	},
 
     STORE_CURRENT_DISCUSSION(state, payload) {
+        // discussion from post discussion must not be an array
+        payload = payload[0]
         state.currentDiscussionId = payload.id
+        console.log("THISSS DISCUSSION", state.currentDiscussionId)
 
         const idx = state.discussions.findIndex(d => d.id === payload.id);
         if (idx > -1) 

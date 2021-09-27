@@ -14,7 +14,7 @@
               <q-item-section horizontal>
                 <q-item-label>{{ user.first_name+' '+user.last_name }}</q-item-label>
                 <q-item-label caption>
-                {{user.personal_data[0].content}}
+                {{getProfession}}
               </q-item-label>
               </q-item-section>
 
@@ -42,14 +42,14 @@
             </q-card-actions>
           </q-item-section> -->
 
-        <q-card-actions align="right" >
+        <q-card-actions align="right" v-if="user.id !== myUser.id">
             <q-btn flat round color="blue" icon="visibility" @click="personal_dataPop = true; "> 
               <q-tooltip :delay="500" class="bg-accent">View User's profile</q-tooltip> 
             </q-btn>
             <q-btn flat round color="blue" icon="chat" v-if="!admin" @click="startDiscussion({otherUserId:user.id})">
               <q-tooltip :delay="500" class="bg-accent">Start a Discussion</q-tooltip>
             </q-btn>
-            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin && !acceptConnection">
+            <q-btn flat round color="blue" icon="person_add" v-if="!user.connected && !admin && !acceptConnection" @click="postSendConnectionRequest({id:user.id})">
               <q-tooltip :delay="500" class="bg-accent">Add User to your Network</q-tooltip>
             </q-btn>
             <q-btn flat round color="green" icon="person_add" v-if="!user.connected && !admin && acceptConnection" @click="postConnectionRequest({id:user.id, answer:'accept'})">
@@ -120,7 +120,7 @@ export default defineComponent({
   },
 
   methods: {
-    ...mapActions(["selectUser", "postDiscussion", "postConnectionRequest"]),
+    ...mapActions(["selectUser", "postDiscussion", "postConnectionRequest", "postSendConnectionRequest"]),
     checkSelected: function () {
       this.selectUser(this.user.id)
     },
@@ -133,7 +133,20 @@ export default defineComponent({
   },
 
   computed:{
-    ...mapGetters({ }),
+    ...mapGetters({ myUser: "user" }),
+    
+    getProfession: function () {
+      console.log("USEEER", this.user.id, this.user.personal_data)
+      if (typeof(this.user.personal_data) !== 'undefined' || this.user.personal_data === null) {
+        return ""  
+      }
+      for(let data of this.user.personal_data){
+        if (data.title === "Profession"){
+          return data.content
+        }
+      }
+      return ""
+    },
 
   },
 

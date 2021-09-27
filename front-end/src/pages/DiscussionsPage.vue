@@ -21,7 +21,7 @@
     </div>
     
     <div class="q-pa-none">
-      <q-card flat class="messages-card" v-if="thisDiscussion.messages.length != 0">
+      <q-card flat class="messages-card" v-if="currentDiscussionId !== null" >
 
         <q-card-section>
           <div class="text-h6">{{thisDiscussionName}}</div>
@@ -151,6 +151,7 @@ export default defineComponent({
     
     thisDiscussion: function() {
       var disc = this.discussions.find(d => d.id === this.currentDiscussionId) 
+      console.log("THISSS", disc)
       return  disc ? disc : {messages: []}
     },
     thisDiscussionName: function() {
