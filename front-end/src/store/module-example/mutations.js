@@ -76,7 +76,7 @@ export default {
         var interactions = []
         var interaction_object
 
-        var interactionTypes = ["likes", "comments", "apply"]
+        var interactionTypes = ["likes", "apply"]
 
         for(var type of interactionTypes) {  
             for(var post of payload[type]) {
@@ -90,6 +90,22 @@ export default {
                 }
             }
         }
+
+        interactionTypes = ["comments"]
+
+        for(var type of interactionTypes) {  
+            for(var post of payload[type]) {
+                for(var user of post[type]) {
+                    interaction_object = {
+                        user: user["user"],
+                        interaction: type
+                    }
+                    interactions.push(interaction_object)
+                    // console.log("INTERAACTIONS", user, post[type])
+                }
+            }
+        }
+
         state.interactions = interactions
     },
 
