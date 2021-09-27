@@ -15,7 +15,7 @@
         /> -->
         <q-file
           v-model="imageFile"
-          label="Upaload Profile Image"
+          label="Upload Profile Image"
           accept=".jpg, .png, image/*"
           filled
           class="q-pa-sm"

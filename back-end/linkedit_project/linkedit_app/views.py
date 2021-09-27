@@ -12,8 +12,8 @@ from .bonus import *
 
 
 def authorize(request):
-    token = request.COOKIES.get('jwt')
-    # token = request.META['HTTP_AUTHORIZATION']
+    # token = request.COOKIES.get('jwt')
+    token = request.META['HTTP_AUTHORIZATION']
 
     if not token:
         raise AuthenticationFailed('Unauthenticated')
@@ -248,7 +248,7 @@ class GetFriendsView(APIView):
         id = authorize(request)
         user = MyUser.objects.filter(id=id).first()
         other_user = MyUser.objects.get(id=request.data['id'])
-        request_instance = FriendRequest.objects.get(sender=user, receiver=other_user)
+        request_instance = FriendRequest.objects.filter(sender=user, receiver=other_user).first()
         if not request_instance:
             FriendRequest.objects.create(sender=user, receiver=other_user)
 
