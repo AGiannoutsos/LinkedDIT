@@ -25,7 +25,7 @@ The following commands must be executed to install the back end. The prerequisit
 
 `pip install numpy, sklearn, matplotlib`
 
-CP to back end directory and exexute these commands.
+Change directory to back end directory and exexute these commands.
 
 `python3 manage.py makekigrations`
 
@@ -46,7 +46,7 @@ The following commands must be executed to install the front end. The prerequisi
 
 `sudo npm install -g @quasar/cli`
 
-CP to front end directory and exexute these commands.
+Change directory to front end directory and exexute these commands.
 
 `sudo npm install`
 
