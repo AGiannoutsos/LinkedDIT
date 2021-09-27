@@ -12,8 +12,8 @@ from .bonus import *
 
 
 def authorize(request):
-    token = request.COOKIES.get('jwt')
-    # token = request.META['HTTP_AUTHORIZATION']
+    # token = request.COOKIES.get('jwt')
+    token = request.META['HTTP_AUTHORIZATION']
 
     if not token:
         raise AuthenticationFailed('Unauthenticated')

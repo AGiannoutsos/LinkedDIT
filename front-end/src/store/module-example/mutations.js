@@ -43,6 +43,11 @@ export default {
             payload.avatar = defaultProfilePic
         state.user = payload
     },
+
+    DELETE_USER(state, payload) {
+        // check profile image
+        state.user = {}
+    },
     
     STORE_ADMIN_ALL_USERS(state, payload) {
         for (let i in payload){
@@ -178,7 +183,7 @@ export default {
     STORE_CURRENT_DISCUSSION(state, payload) {
         // discussion from post discussion must not be an array
         payload = payload[0]
-        state.currentDiscussionId = payload.id
+        state.currentDiscussionId = JSON.parse(JSON.stringify(payload.id))
         console.log("THISSS DISCUSSION", state.currentDiscussionId)
 
         const idx = state.discussions.findIndex(d => d.id === payload.id);
@@ -241,7 +246,7 @@ export default {
     
 
     POST_MESSAGE(state, payload) {
-        const discussionIdx = state.discussions.findIndex(d => d.id = payload.id)
+        const discussionIdx = state.discussions.findIndex(d => d.id === payload.id)
         state.discussions[discussionIdx].messages.push(payload.message)
 	},
 
