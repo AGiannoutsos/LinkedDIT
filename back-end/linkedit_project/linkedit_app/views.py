@@ -12,8 +12,8 @@ from .bonus import *
 
 
 def authorize(request):
-    # token = request.COOKIES.get('jwt')
-    token = request.META['HTTP_AUTHORIZATION']
+    token = request.COOKIES.get('jwt')
+    # token = request.META['HTTP_AUTHORIZATION']
 
     if not token:
         raise AuthenticationFailed('Unauthenticated')
@@ -31,7 +31,6 @@ class GetAllUsersView(APIView):
     def get(self, request):
         # id = authorize(request)
         users = MyUser.objects.all().exclude(username='tedi').exclude(username='admin')
-        print('heree')
         serializer = UserAuthSerializer(users, many=True, context={'request': request})
 
         return Response(serializer.data)
@@ -132,6 +131,7 @@ class ChangeUserDataView(APIView):
     # permission_classes = [AllowAny]
 
     def post(self, request):
+        id = authorize(request)
         user = MyUser.objects.get(username=request.data['username'])
         serializer = ChangeUserSerializer(user, data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -145,8 +145,6 @@ class ChangeUserDataView(APIView):
 
 
 class ChangePasswordView(APIView):
-
-    # permission_classes = [AllowAny]
 
     def post(self, request):
         id = authorize(request)
@@ -165,12 +163,9 @@ class ChangePasswordView(APIView):
 
 class ChangePersonalDataView(APIView):
 
-    # permission_classes = [AllowAny]
-
     def post(self, request):
         id = authorize(request)
         user = MyUser.objects.filter(id=id).first()
-        # print(user)
 
         serializer = PersonalDataSerializer(data=request.data, context={"user": user})
 
@@ -248,6 +243,21 @@ class GetFriendsView(APIView):
 
         return Response(serializer.data)
 
+#########
+    def post(self, request):
+        id = authorize(request)
+        user = MyUser.objects.filter(id=id).first()
+        other_user = MyUser.objects.get(id=request.data['id'])
+        request_instance = FriendRequest.objects.get(sender=user, receiver=other_user)
+        if not request_instance:
+            FriendRequest.objects.create(sender=user, receiver=other_user)
+
+        response = Response()
+        response.data = {
+            'message': 'ok'
+        }
+        return response
+
 
 class FriendRequestView(APIView):
 
@@ -261,17 +271,25 @@ class FriendRequestView(APIView):
 
     def post(self, request):
         id = authorize(request)
-        user = MyUser.objects.filter(id=id).first()
+        user = MyUser.objects.get(id=id)
+        print(user)
         other_user = MyUser.objects.get(id=request.data['id'])
-        friend_request = FriendRequest.objects.get(sender=other_user)
+        print(other_user)
+        friend_request = FriendRequest.objects.get(sender=other_user, receiver=user)
+        print(friend_request)
 
         if request.data['answer']=='accept':
+            print("in accept")
 
-            users_friendships = FriendshipList.objects.get(user=user)
+            users_friendships = FriendshipList.objects.filter(user=user).first()
+            if not users_friendships:
+                users_friendships = FriendshipList.objects.create(user=user)
             users_friendships.friends.add(other_user)
             users_friendships.save()
 
-            other_user_friendships = FriendshipList.objects.get(user=other_user)
+            other_user_friendships = FriendshipList.objects.filter(user=other_user).first()
+            if not other_user_friendships:
+                other_user_friendships = FriendshipList.objects.create(user=other_user)
             other_user_friendships.friends.add(user)
             other_user_friendships.save()
 
@@ -322,10 +340,7 @@ class PostsView(APIView):
         try:
             recommendations = get_recommendations(other_serializer_data, my_serializer_data)
         except:
-            # print("Get other")
             recommendations = other_serializer_data
-
-        # print(things)
 
         return Response(recommendations)
 
@@ -642,21 +657,24 @@ class SendMessageView(APIView):
 
     def post(self, request):
         id = authorize(request)
-        user_data = request.data.get('message').get('user')
+        user_data = MyUser.objects.filter(id=id).first()
         chat_id = request.data.get('id')
         text = request.data.get('message').get('content').get('text')
         chat = Chat.objects.filter(id=chat_id).first()
 
-        if user_data:
-            user_instance = MyUser.objects.filter(id=user_data.get('id')).first()
-        else:
-            user_instance = None
-
-        serializer = MessageSerializer(data=request.data.get('message'), context={"chat": chat, "user": user_instance,
-                                                                   "text": text, "request": request})
-
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        # if user_data:
+        #     user_instance = MyUser.objects.filter(id=user_data.id).first()
+        # else:
+        #     user_instance = None
+        #
+        # serializer = MessageSerializer(data=request.data.get('message'), context={"chat": chat, "user": user_instance,
+        #                                                            "text": text, "request": request})
+        #
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save()
+        message_instance = Message.objects.create(text=text, user=user_data)
+        chat.messages.add(message_instance)
+        chat.save()
 
         response = Response()
         response.data = {
