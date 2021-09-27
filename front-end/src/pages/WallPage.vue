@@ -121,7 +121,7 @@ export default defineComponent({
         // this.items.push(...this.posts)
 
         done()
-       }, 2500)
+       }, 7000)
     },
 
 

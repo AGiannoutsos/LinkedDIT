@@ -183,7 +183,7 @@ export default {
     STORE_CURRENT_DISCUSSION(state, payload) {
         // discussion from post discussion must not be an array
         payload = payload[0]
-        state.currentDiscussionId = JSON.parse(JSON.stringify(payload.id))
+        state.currentDiscussionId = payload.id
         console.log("THISSS DISCUSSION", state.currentDiscussionId)
 
         const idx = state.discussions.findIndex(d => d.id === payload.id);
