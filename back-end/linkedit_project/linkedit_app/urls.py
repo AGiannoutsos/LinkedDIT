@@ -23,6 +23,7 @@ urlpatterns = [
     path('notifications/requests', FriendRequestView.as_view(), name='friend_requests'),
     path('notifications/requests/respond', FriendRequestView.as_view(), name='respond_to_friend_request'),
     path('connected_users', GetFriendsView.as_view(), name='users_friends'),
+    path('notifications/requests/send', GetFriendsView.as_view(), name='send_request'),
 
     ###############################        POSTS AND PROPOSALS        ################################
     path('posts/recommended/', PostsView.as_view(), name='all_posts'),

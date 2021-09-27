@@ -289,16 +289,16 @@ class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = ['user', 'content']
-
-    def create(self, validated_data):
-        text = self.context.get('text')
-        message_instance = Message.objects.create(text=text, user=self.context.get('user'))
-
-        chat = self.context.get('chat')
-        chat.messages.add(message_instance)
-        chat.save()
-
-        return message_instance
+    #
+    # def create(self, validated_data):
+    #     text = self.context.get('text')
+    #     message_instance = Message.objects.create(text=text, user=self.context.get('user'))
+    #
+    #     chat = self.context.get('chat')
+    #     chat.messages.add(message_instance)
+    #     chat.save()
+    #
+    #     return message_instance
 
 
 class ChatSerializer(serializers.ModelSerializer):
