@@ -44,7 +44,7 @@ The following commands must be executed to install the front end. The prerequisi
 
 `sudo npm install -g @quasar/cli`
 
-CP to back end directory and exexute these commands.
+CP to front end directory and exexute these commands.
 
 `sudo npm install`
 
