@@ -351,6 +351,7 @@ export default {
 			.then( response => {
 				console.log("postLogoutTESTING")
 				commit("DELETE_TOKEN")
+				commit("DELETE_USER")
 			})
 		} else {
 			return axios.post(`${apiUrl}/${url}`, {}, { headers: headers })
@@ -361,6 +362,7 @@ export default {
 					message: "You have been successfully loged out.", 
 					position: "top" })
 				commit("DELETE_TOKEN")
+				commit("DELETE_USER")
 			})
 			.catch(error => { 
 				Notify.create({ 

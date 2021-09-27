@@ -43,6 +43,11 @@ export default {
             payload.avatar = defaultProfilePic
         state.user = payload
     },
+
+    DELETE_USER(state, payload) {
+        // check profile image
+        state.user = {}
+    },
     
     STORE_ADMIN_ALL_USERS(state, payload) {
         for (let i in payload){
