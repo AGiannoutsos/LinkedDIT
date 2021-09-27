@@ -5,6 +5,8 @@ The aim of this work is to develop a professional networking application. The us
 will have access to the application via a modern web browser
 browser. The application was created using the Vue.js and Django frameworks for the front and back respectively. 
 
+More information about the implementation and the API can be found in the [report](https://github.com/AGiannoutsos/LinkedDIT/blob/master/report.pdf).
+
 # Installation
 ## Back end
 The following commands must be executed to install the back end. The prerequisites are that the python 3.6 is installed.
