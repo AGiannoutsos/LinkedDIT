@@ -115,7 +115,7 @@ export default defineComponent({
         
 
         done()
-       }, 2000)
+       }, 7000)
     },
 
 

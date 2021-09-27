@@ -114,8 +114,8 @@
                 </q-card-section>
 
                   <q-card-actions align="right" class="text-primary">
-                    <q-btn type="submit" flat label="Submit" v-close-popup />
                     <q-btn type="reset" flat label="Cancel" v-close-popup />
+                    <q-btn type="submit" flat label="Submit" v-close-popup />
                     
                   </q-card-actions>
 
@@ -145,8 +145,8 @@
 
                 <q-card-section class="q-pt-none">
                   <q-card-actions align="right" class="text-primary">
-                    <q-btn type="submit" flat label="Submit" v-close-popup />
                     <q-btn type="reset" flat label="Cancel" v-close-popup />
+                    <q-btn type="submit" flat label="Submit" v-close-popup />
                   </q-card-actions>
                 </q-card-section>
 
