@@ -23,7 +23,7 @@ The following commands must be executed to install the back end. The prerequisit
 
 `pip3 install PyJWT`
 
-`pip3 install numpy, sklearn, matplotlib`
+`pip3 install numpy sklearn matplotlib`
 
 Change directory to back end directory and exexute these commands.
 
