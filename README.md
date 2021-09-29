@@ -15,19 +15,19 @@ The following commands must be executed to install the back end. The prerequisit
 
 `sudo apt install python3-pip`
 
-`pip install Django==3.2.6`
+`pip3 install Django==3.2.6`
 
-`pip install django-rest-framework`
+`pip3 install django-rest-framework`
 
-`pip install django-cors-headers`
+`pip3 install django-cors-headers`
 
-`pip install PyJWT`
+`pip3 install PyJWT`
 
-`pip install numpy, sklearn, matplotlib`
+`pip3 install numpy, sklearn, matplotlib`
 
 Change directory to back end directory and exexute these commands.
 
-`python3 manage.py makekigrations`
+`python3 manage.py makemigrations`
 
 `python3 manage.py migrate`
 
